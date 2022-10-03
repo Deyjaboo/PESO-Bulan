@@ -18,6 +18,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', function () {
     return Redirect::to('login');
 });
+Route::get('/log', function () {
+     return view('log');
+});
 // Route::get('/', function () {
 //     return view('auth.login');
 // })->name('auth.login');
