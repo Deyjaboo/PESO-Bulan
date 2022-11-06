@@ -16,7 +16,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return Redirect::to('login');
+    return Redirect::to('UserDash');
 });
 Route::get('/log', function () {
      return view('log');
@@ -30,14 +30,48 @@ Route::get('/log', function () {
 //         return view('dashboard');
 //     });
 // });
- Route::get('/dashboard', function () {
-     return view('dashboard');
- })->middleware(['auth','isAdmin'])->name('dashboard');
+//  Route::get('/dashboard', function () {
+//      return view('dashboard');
+//  })->middleware(['auth','isAdmin'])->name('dashboard');
+Route::middleware(['auth','isAdmin'])->group(function(){
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+   
+    Route::get('/Manageduser', function () {
+      return view('Manageduser');
+   });
+
+   Route::get('/ManagedCompany', function () {
+    return view('ManagedCompany');
+ });
+
+
+});
+Route::get('/UserDash', function () {
+    return view('UserDash');
+ });
 
   Route::middleware(['auth'])->group(function(){
-     Route::get('/UserDash', function () {
-       return view('UserDash');
-    });
+   
+
+    Route::get('/jobs', function () {
+        return view('jobs');
+     });
+
+
+     Route::get('/Chart', function () {
+        return view('Chart');
+     });
+
+    
  });
+
+ Route::get('/Aboutus', function () {
+    return view('Aboutus');
+ });
+
+
+
 
 require __DIR__.'/auth.php';

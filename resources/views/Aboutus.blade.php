@@ -314,77 +314,7 @@ nav{
 
 
 
-div.input-block {
-  position: relative;
-  padding-left: 20px;
-}
-div.input-block input {
-  font-size: 16px;
-  color: #495055;
-  width: 350px;
-  padding: 15px 15px;
-  border-radius: 0.5rem;
-  border: 2px solid #D9D9D9;
-  outline: none;
-}
-div.input-block span.placeholder {
-  position: absolute;
-  margin: 17px 0;
-  padding: 0 4px;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  top: 0;
-  left: 25px;
-  transition: all 0.2s;
-  transform-origin: 0% 0%;
-  background: none;
-  pointer-events: none;
-}
-div.input-block input:valid+span.placeholder,
-div.input-block input:focus+span.placeholder {
-  transform: scale(0.8) translateY(-30px);
-  background: #fff;
-}
-div.input-block input:focus {
-  color: #284B63;
-  border-color: #284B63;
-}
-div.input-block input:focus+span.placeholder {
-  color: #1B4F72;
-}
-.place{
-    width: 400px;
-}
 
-.card {
-  /* background-color: dodgerblue;
-  color: white; */
-  padding: 1rem;
-  height: 3rem;
-  
-
-}
-
-.cards {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-}
-
-/* Screen larger than 600px? 2 column */
-@media (min-width: 767px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
-
-
-}
 
 
 
@@ -409,59 +339,6 @@ div.input-block input:focus+span.placeholder {
 }
 
 
-
-.wrapper{
-  max-width: 1200px;
-  width: 100%;
-  margin: 30px auto 0;
-  padding: 10px;
-}
-
-.wrapper .form_container{
-  background: #fff;
-  padding: 30px;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
-}
-
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; 
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@media screen and (max-width: 767px) {
-  .column {
-    width: 100%;
-  }
-} 
-
-
-
-.wrapper { 
-  /* margin-left:30px;
-  margin-right:30px; */
-  /* border : 2px solid #1B4F72;  */
-  overflow:hidden;
-  margin-bottom: 50px;
-  
-}
-
-.wrapper div {
-  
-   min-height: 150px;
-   padding: 10px;
-}
 #one {
    background-color: white;
   margin-left:30px;
@@ -519,11 +396,11 @@ div.input-block input:focus+span.placeholder {
             <div class="line3"></div>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="UserDash">Home</a></li>
             <li><a href="#">Jobs</a></li>
             <li><a href="#">Companies</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="Aboutus">About Us</a></li>
+            <li><a href="#">About Us</a></li>
             @if (Route::has('login'))
             @auth
               <li>
@@ -544,49 +421,13 @@ div.input-block input:focus+span.placeholder {
         </ul>
     </nav>
    
+<!-- 
+    <img src="images/cover2.png" style="width:100%;height:200px;"> -->
 
-    <img src="images/cover2.png" style="width:100%;height:200px;">
-
-
-<div class="cards">
-  <div class="card"> 
-    <div class="place">
-    <div class="input-block" >
-  <input type="text" name="input-text" id="input-text" required spellcheck="false">
-  <span class="placeholder">
-  Search for Job tittle or Company name
-  </span>
-</div></div></div>
-  <div class="card"> 
-    <div class="input-block">
-  <input type="text" name="input-text" id="input-text" required spellcheck="false" >
-  <span class="placeholder">
-  Location
-  </span>
-</div></div>
-  <div class="card">
-  <button class="btn"><i class="fa fa-search"></i> Search</button>
-   </div>
-</div>
-    
-
-<div class="wrapper">
-    <div id="one">
-    <i class='fas fa-bullhorn' style='font-size:30px;color:blue'>Seminars</i>
-      <h2 style="color:blue;">Seminars</h2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Quis delectus perferendis dicta nesciunt, iure at qui culpa deleniti, eaque est sequi laboriosam 
-    deserunt natus voluptates excepturi perspiciatis quaerat beatae voluptas.
-    </div>
-    <br>
-
-
-
-			
   <div id="two">
         <div class="course">
           <div class="course-info">
-          <img src="images/ftemi.png" style="width:100%;height:100%;">
+          <img src="images/Peso.png" style="width:100%;height:150%;">
           </div>
           <div class="course-progress">
             <div class="progress-container">
@@ -594,36 +435,24 @@ div.input-block input:focus+span.placeholder {
                 
             </div>
           
-            <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
-              Performs all clerical activities and transactions involved in the preparation and processing of all accounting documents necessary and in support to the operational requirements of the Operating Units and the enterprise.
-               Prepares payroll for employees Performs other duties as may be assigned by the Superiors. </p>
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
-              
+            <h2 id="card_text">Public Employment Service Office (PESO)</h2>
+            <h4 id="card_text">Bulan,Sorsogon</h4>
+            <p id="texts">The Public Employment Service Office or PESO is a non-free charging multi-employment service 
+              facility or entity established or accredited pursuant to Republic Act. No. 8579, otherwise known as 
+              the PESO Act of 1999. This office is a venue where people could explore simultaneously various
+               employment options and seek assistance they prefer; service as referral and information center for 
+               the various services and programs of DOLE, TESDA, POEA, OWWA, and other recruitment agencies; 
+               Provide clients with adequate information in employment and labor market situation in the area, and
+                network with other PESOs within the region on employment for job exchange purposes. 
+                This office is linked to the regional offices if the Department of Labor and Employment
+                 (DOLE) for coordination and technical supervision, 
+              and to the DOLE central office, to constitute the national employment service network. </p>
+      
+             <br><br> 
           </div>
        </div>
 
-       <div class="course">
-          <div class="course-info">
-          <img src="images/sync.jpg" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
-          
-            <h3 id="card_text">Synchrony Global Service Philippines Inc.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-    Make use of problem-solving/decision making skills to achieve the highest level of customer satisfaction </p>
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
-              
-          </div>
-       </div>
+    
    
   </div>
 

@@ -52,9 +52,21 @@ body {
     text-align: center;
 }
 
+#signup{
+    padding-top: 80px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+#signin{
+    padding-bottom: 90px;
+}
+
 .form-wrapper {
     width: 100%;
     max-width: 28rem;
+    
+    
 }
 
 .form {
@@ -81,14 +93,14 @@ body {
     top: 50%;
     left: 1rem;
     transform: translateY(-50%);
-    font-size: 1.4rem;
+    font-size: 12px;
     color: var(--gray-2);
 }
 
 .input-group input,select {
     width: 100%;
     padding: 1rem 3rem;
-    font-size: 1rem;
+    font-size: 12px;
     background-color: var(--gray);
     border-radius: .5rem;
     border: 0.125rem solid var(--white);
@@ -212,10 +224,12 @@ body {
 }
 
 .text h2 {
+
     font-size: 3.5rem;
-    font-weight: 800;
-    margin: 2rem 0;
+    font-weight: 700;
+    margin-top: 2rem 50rem;
     transition: 1s ease-in-out;
+   
 }
 
 .text p {
@@ -273,6 +287,7 @@ body {
     border-bottom-right-radius: max(50vw, 50vh);
     border-top-left-radius: max(50vw, 50vh);
 }
+
 
 .container.sign-in::before {
     transform: translate(0, 0);
