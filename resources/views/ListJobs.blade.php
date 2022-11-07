@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Charts</title>
+  <title> PESO ADMIN</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/logo_peso.png"/>
+   <!-- table css -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container-scroller">
@@ -67,9 +69,9 @@
                     </a>
                     </form>
 
+
             </div>
           </li>
-        
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -277,13 +279,14 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListJobs">Lists Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListJobs">List Of Jobs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
               </ul>
             </div>
           </li>
 
          
+
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
@@ -304,13 +307,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="Manageduser">
+            <a class="nav-link" href="Chart">
               <i class="icon-bar-graph menu-icon"></i>
               <span class="menu-title">Chart</span>
             </a>
           </li>
-<!--           
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">UI Elements</span>
@@ -397,7 +399,7 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
               </ul>
             </div>
-          </li>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" href="log">
               <i class="icon-paper menu-icon"></i>
@@ -409,15 +411,72 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">Charts</h3>
+        <h3 class="font-weight-bold">List of Jobs</h3>
         
+        <div class="form_container">
+                        <div class="card-body">
+                                <table id="datatablesSimple" class="TableData">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Student ID</th>
+                                            <th>First Name</th>
+                                            <th>Middle Name</th>
+                                            <th>Last Name</th>
+                                            <th>Suffix</th>
+                                            <th>Course</th>
+                                            <th>Year</th>
+                                            <th>Mobile Number</th>
+                                            <th>Processes</th>
+                                        </tr>
+                                    </thead>
+                                     <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th>Student ID</th>
+                                            <th>First Name</th>
+                                            <th>Middle Name</th>
+                                            <th>Last Name</th>
+                                            <th>Suffix</th>
+                                            <th>Course</th>
+                                            <th>Year</th>
+                                            <th>Mobile Number</th>
+                                            <th>Processes</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                   
+                                        <tr>
+                                            <td>id</td>
+                                            <td>student_id</td>
+                                            <td>First_Name</td>
+                                            <td>Middle_Name</td>
+                                            <td>Last_Name</td>
+                                            <td>suffix</td>
+                                            <td>course</td>
+                                            <td>year</td>
+                                            <td>cp_num</td>
+                                            <td>
+                                            <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
+                                                <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->
+                                            </td>
+                                        </tr>
+                                 
+                                    </tbody>
+
+                                </table>
+                                </div>
+                          </div>
+                      </div>  
+                      <!-- end table  -->
             </div>
         </div>
-       
+        
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-    </div>   
+     
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -443,6 +502,11 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
+  <!-- Table-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
+        <script src="js/datatables-simple-demo.js"></script>
 </body>
 
 </html>

@@ -68,6 +68,10 @@ Route::get('/UserDash', function () {
         return view('companies');
      });
 
+     Route::get('/ListJobs', function () {
+        return view('ListJobs');
+     });
+
     
  });
 
