@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/logo_peso.png"/>
- 
+
 </head>
 <style>
   *{
@@ -37,7 +37,7 @@ body{
 }
 
 .wrapper{
-  max-width: 950px;
+  max-width: 850px;
   width: 100%;
   margin: 30px auto 0;
   padding: 10px;
@@ -180,23 +180,23 @@ textarea{
                     <a  class="dropdown-item" href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                         <i class="ti-power-off text-primary"></i>     
-                    <span>Logout</span> 
+                         <i class="ti-power-off text-primary"></i>
+                    <span>Logout</span>
                     </a>
                     </form>
 
             </div>
           </li>
-        
+
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
       </div>
     </nav>
- 
+
     <div class="container-fluid page-body-wrapper">
-   
+
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -214,8 +214,12 @@ textarea{
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Lists Of Jobs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
+                <div  class="nav-item">
+                <a class="nav-link" href="#">Lists Of Jobs</a>
+                <a class="nav-link" href="jobs">Add Jobs</a>
+                </div>
+                <!-- <li class="nav-item"> <a class="nav-link" href="#">Lists Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li> -->
               </ul>
             </div>
           </li>
@@ -251,11 +255,11 @@ textarea{
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">PESO-Bulan Jobs</h3>
-        
+        <h3 class="font-weight-bold">PESO-Bulan Add Jobs</h3>
+
 
         <div class="wrapper">
-          
+
  <div class="form_container">
         <form name="form">
 
@@ -268,9 +272,12 @@ textarea{
       </div>
 
 
+      
 
-            <div class="form_item">
-          <label>Company Name</label>
+      <div class="form_wrap fullname">
+
+        <div class="form_item">
+        <label>Company Name</label>
             <select name="country">
           <option selected disabled></option>
           <option>Jollibee</option>
@@ -278,35 +285,46 @@ textarea{
           <option>LCC</option>
           <option>Mcdonald</option>
             </select>
-            </div>
+        </div>
 
+
+        <div class="form_item">
+            <label>Number Of Vacancies</label>
+            <input type="text">
+        </div>
+
+        </div>
+
+
+
+           
 
           <div class="form_wrap fullname">
 
           <div class="form_item">
               <label>Working Location</Address></label>
-              <input type="text"> 
+              <input type="text">
           </div>
 
 
           <div class="form_item">
-              <label>Company Email</label>
+              <label>Industry</label>
               <input type="text">
           </div>
 
          </div>
 
 
-          <div class="form_wrap fullname">
+          <!-- <div class="form_wrap fullname">
           <div class="form_item">
               <label>Website</Address></label>
-              <input type="text"> 
+              <input type="text">
           </div>
           <div class="form_item">
               <label>Industry</label>
               <input type="text">
           </div>
-          </div>
+          </div> -->
 
 
           <div class="form_wrap">
@@ -324,17 +342,17 @@ textarea{
           </div>
 
 
-          
+
 
 
            <div class="form_wrap fullname">
 
           <div class="form_item">
-              <label>Date</label>
-              <input type="date"> 
+              <label>Posted on:</label>
+              <input type="date">
           </div>
 
-        <div class="form_item">
+        <!-- <div class="form_item">
           <div class="form">
             <div class="grid">
               <div class="form-element">
@@ -346,18 +364,12 @@ textarea{
               </div>
                 </label>
               </div>
-  
-          </div> 
+
+          </div>
+          </div>
+        </div> -->
 
 
-    
-
-         
-  
-  </div>
-</div>
-
-          
 
 </div>
  <button class="btn btn-primary"  id="right">Submit</button>
@@ -371,15 +383,15 @@ textarea{
 
             </div>
         </div>
-       
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-    </div>   
+    </div>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
- 
+
 
 
   <script>

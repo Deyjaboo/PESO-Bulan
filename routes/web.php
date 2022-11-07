@@ -64,6 +64,10 @@ Route::get('/UserDash', function () {
         return view('Chart');
      });
 
+     Route::get('/companies', function () {
+        return view('companies');
+     });
+
     
  });
 

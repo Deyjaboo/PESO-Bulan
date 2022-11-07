@@ -321,7 +321,7 @@ div.input-block {
 div.input-block input {
   font-size: 16px;
   color: #495055;
-  width: 350px;
+  width: 850px;
   padding: 15px 15px;
   border-radius: 0.5rem;
   border: 2px solid #D9D9D9;
@@ -354,24 +354,13 @@ div.input-block input:focus {
 div.input-block input:focus+span.placeholder {
   color: #1B4F72;
 }
-.place{
-    width: 400px;
-}
 
-.card {
-  /* background-color: dodgerblue;
-  color: white; */
-  padding: 1rem;
-  height: 3rem;
-  
-
-}
 
 .cards {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 
 /* Screen larger than 600px? 2 column */
@@ -381,7 +370,7 @@ div.input-block input:focus+span.placeholder {
 
 /* Screen larger than 900px? 3 columns */
 @media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+  .cards { grid-template-columns: repeat(3ss, 1fr); }
 
 
 }
@@ -392,12 +381,12 @@ div.input-block input:focus+span.placeholder {
 
 
 .btn {
-  margin-left:20px;
+  
   background-color: #1B4F72;
-  width: 90%;
-  height: 52px;
+  width: 150px;
+  height: 60px;
   color: white;
-  padding: 12px 16px;
+  padding: 12px 12px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -506,6 +495,50 @@ div.input-block input:focus+span.placeholder {
 } 
 
 
+#box1 {
+    
+   background-color: white;
+  color:black;
+  float:left; 
+  width:50%;
+  max-width: 960px;
+ height: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+#box2 {
+   background-color: white;
+  color:black;
+  float:right;
+  width:50%;
+  max-width: 960px;
+  height: 100%;
+}
+
+
+
+@media screen and (max-width: 767px) {
+   #box1 { 
+    float: none;
+    margin-right:20px;
+    margin-left:20px;
+    width:auto;
+    border:0;
+    
+    /* border-bottom:2px solid #000;     */
+ 
+  }
+  #box2 { 
+    float: none;
+    margin-right:20px;
+    margin-left:20px;
+    width:auto;
+    border:0;
+    /* border-bottom:2px solid #000;     */
+  }
+}
+
 
 </style>
 <body>
@@ -519,7 +552,7 @@ div.input-block input:focus+span.placeholder {
             <div class="line3"></div>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="UserDash">Home</a></li>
             <li><a href="#">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
             <li><a href="#">Services</a></li>
@@ -544,46 +577,29 @@ div.input-block input:focus+span.placeholder {
         </ul>
     </nav>
    
+<br>
+    <!-- <img src="images/cover2.png" style="width:100%;height:200px;"> -->
 
-    <img src="images/cover2.png" style="width:100%;height:200px;">
 
-
-<div class="cards">
+    <div class="cards">
   <div class="card"> 
-    <div class="place">
-    <div class="input-block" >
-  <input type="text" name="input-text" id="input-text" required spellcheck="false">
+    <div class="input-block">
+  <input type="text" name="input-text" id="c" required spellcheck="false">
   <span class="placeholder">
   Search for Job tittle or Company name
   </span>
-</div></div></div>
-  <div class="card"> 
-    <div class="input-block">
-  <input type="text" name="input-text" id="input-text" required spellcheck="false" >
-  <span class="placeholder">
-  Location
-  </span>
-</div></div>
-  <div class="card">
-  <button class="btn"><i class="fa fa-search"></i> Search</button>
-   </div>
+
 </div>
-    
+</div>
 
-<div class="wrapper">
-    <div id="one">
-    <i class='fas fa-bullhorn' style='font-size:30px;color:blue'>Seminars</i>
-      <h2 style="color:blue;">Seminars</h2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Quis delectus perferendis dicta nesciunt, iure at qui culpa deleniti, eaque est sequi laboriosam 
-    deserunt natus voluptates excepturi perspiciatis quaerat beatae voluptas.
-    </div>
-    <br>
+  <div class="card"> 
+    <button class="btn"><i class="fa fa-search"></i>Search</button>
+</div>
 
+</div>
 
-
-			
-  <div id="two">
+        <div class="wrapper">
+        <div id="box1">
         <div class="course">
           <div class="course-info">
           <img src="images/ftemi.png" style="width:100%;height:100%;">
@@ -597,14 +613,16 @@ div.input-block input:focus+span.placeholder {
             <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
             <h6 id="card_text">Job Description</h6>
             <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
-              Performs all clerical activities and transactions involved in the preparation and processing of all accounting documents necessary and in support to the operational requirements of the Operating Units and the enterprise.
-               Prepares payroll for employees Performs other duties as may be assigned by the Superiors. </p>
-                <button class="w3-button w3-right w3-green">Apply Now &raquo;</button>
+             works in accordance with the accounting policies, systems and procedures and good practices. 
+                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
               
           </div>
        </div>
+        </div>
+            
 
-       <div class="course">
+        <div id="box2">
+        <div class="course">
           <div class="course-info">
           <img src="images/sync.jpg" style="width:100%;height:100%;">
           </div>
@@ -619,15 +637,70 @@ div.input-block input:focus+span.placeholder {
             <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
     Setup payment arrangements to bring past due accounts current 
     Education customers regarding their past due credits 
-    Make use of problem-solving/decision making skills to achieve the highest level of customer satisfaction </p>
-                <button class="w3-button w3-right w3-green">Apply Now &raquo;</button>
+   </p>
+                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
               
           </div>
        </div>
    
-  </div>
+        </div>
 
-</body>
+
+        <div id="box1">
+        <div class="course">
+          <div class="course-info">
+          <img src="images/ftemi.png" style="width:100%;height:100%;">
+          </div>
+          <div class="course-progress">
+            <div class="progress-container">
+                <div class="progress"></div>
+                
+            </div>
+          
+            <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
+            <h6 id="card_text">Job Description</h6>
+            <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
+             works in accordance with the accounting policies, systems and procedures and good practices. 
+                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
+              
+          </div>
+       </div>
+        </div>
+            
+
+        <div id="box2">
+        <div class="course">
+          <div class="course-info">
+          <img src="images/sync.jpg" style="width:100%;height:100%;">
+          </div>
+          <div class="course-progress">
+            <div class="progress-container">
+                <div class="progress"></div>
+                
+            </div>
+          
+            <h3 id="card_text">Synchrony Global Service Philippines Inc.</h3>
+            <h6 id="card_text">Job Description</h6>
+            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
+    Setup payment arrangements to bring past due accounts current 
+    Education customers regarding their past due credits 
+   </p>
+                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
+              
+          </div>
+       </div>
+   
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
 <script>
     const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
