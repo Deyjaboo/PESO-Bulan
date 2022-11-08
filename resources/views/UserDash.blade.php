@@ -505,6 +505,38 @@ div.input-block input:focus+span.placeholder {
 
 } 
 
+/* CSS */
+.button-62 {
+  /* background: #1B4F72; */
+  background: RoyalBlue;
+  
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
 
 
 </style>
@@ -572,7 +604,6 @@ div.input-block input:focus+span.placeholder {
 
 <div class="wrapper">
     <div id="one">
-    <i class='fas fa-bullhorn' style='font-size:30px;color:blue'>Seminars</i>
       <h2 style="color:blue;">Seminars</h2>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Quis delectus perferendis dicta nesciunt, iure at qui culpa deleniti, eaque est sequi laboriosam 
@@ -599,7 +630,14 @@ div.input-block input:focus+span.placeholder {
             <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
               Performs all clerical activities and transactions involved in the preparation and processing of all accounting documents necessary and in support to the operational requirements of the Operating Units and the enterprise.
                Prepares payroll for employees Performs other duties as may be assigned by the Superiors. </p>
-                <button class="w3-button w3-right w3-green">Apply Now &raquo;</button>
+                <!-- <button class="w3-button w3-right w3-green">Apply Now &raquo;</button> -->
+          <br>
+          <form action="">
+            <button class="button-62 w3-right" role="button">Apply Now &raquo;</button>
+          </form>
+
+
+
               
           </div>
        </div>
@@ -620,8 +658,11 @@ div.input-block input:focus+span.placeholder {
     Setup payment arrangements to bring past due accounts current 
     Education customers regarding their past due credits 
     Make use of problem-solving/decision making skills to achieve the highest level of customer satisfaction </p>
-                <button class="w3-button w3-right w3-green">Apply Now &raquo;</button>
-              
+                <!-- <button class="w3-button w3-right w3-green">Apply Now &raquo;</button> -->
+                <br>
+                <form action="">
+                  <button class="button-62 w3-right" role="button">Apply Now &raquo;</button>
+                </form>
           </div>
        </div>
    

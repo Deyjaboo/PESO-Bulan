@@ -138,7 +138,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -290,7 +290,7 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Available Jobs</p>
+                      <p class="mb-4">Registered Users</p>
                       <p class="fs-30 mb-2">46</p>
                       <p>5.00% (7 days)</p>
                     </div>
@@ -299,7 +299,7 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="mb-4">UnAvailbale Jobs</p>
+                      <p class="mb-4">Registered Companies</p>
                       <p class="fs-30 mb-2">44</p>
                       <p>2.00% (30 days)</p>
                     </div>
@@ -322,7 +322,7 @@
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
                     <div class="card-body">
-                      <p class="mb-4">Number of Meetings</p>
+                      <p class="mb-4">Number of Jobs</p>
                       <p class="fs-30 mb-2">34040</p>
                       <p>2.00% (30 days)</p>
                     </div>
@@ -331,7 +331,7 @@
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
-                      <p class="mb-4">Numbers of Applicant</p>
+                      <p class="mb-4">Available Jobs</p>
                       <p class="fs-30 mb-2">433</p>
                       <p>50.22% (30 days)</p>
                     </div>
@@ -867,7 +867,7 @@
               </div>
             </div>
           </div> -->
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -898,7 +898,7 @@
                 
               </div>
             </div>
-        </div>
+        </div> -->
        
         <!-- partial -->
       </div>

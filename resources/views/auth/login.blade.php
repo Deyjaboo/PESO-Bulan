@@ -59,7 +59,7 @@
 						<div class="flex-parent-element">
 						<div class="flex-child-element ">	
 						
-							<select class="input-group"  name="job1" id="job1" required>
+						<select class="input-group"  name="job1" id="job1" required>
 							<option value="" selected="selected" disabled="disabled">Industry</option>
 							<option value="Accounting & Finance">Accounting & Finance</option>
 							<option value="BPO">BPO</option>
@@ -82,8 +82,6 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-							
-							
 						</select>
 					</div>
 						<div class="flex-child-element ">

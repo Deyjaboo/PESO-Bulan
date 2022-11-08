@@ -263,12 +263,14 @@
             </a>
           </li>
 
+
           <li class="nav-item">
             <a class="nav-link" href="Manageduser">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Manage User</span>
+              <span class="menu-title">Managed Users</span>
             </a>
           </li>
+
 
 
           <li class="nav-item">
@@ -279,14 +281,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListJobs">List Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListJobs">Lists Of Jobs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
               </ul>
             </div>
           </li>
 
          
-
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
@@ -411,61 +412,52 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">List of Jobs</h3>
-        
+        <h3 class="font-weight-bold">List Of Companies</h3>
+       
         <div class="form_container">
                         <div class="card-body">
                                 <table id="datatablesSimple" class="TableData">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>Job Title</th>
+                                            <th>Company Logo</th>
+                                            <th>ID</th>
                                             <th>Company Name</th>
-                                            <th>CompanyWebsite</th>
-                                            <th>CompanyContact</th>
-                                            <th>NumVacancies</th>
-                                            <th>WorkingLocation</th>
+                                            <th>Location</th>
+                                            <th>Contact</th>
+                                            <th>Website</th>
                                             <th>Industry</th>
-                                            <!-- <th>JobDescription</th>
-                                            <th>Requirements</th> -->
-                                            <th>DatePosted</th>
-                                            <th>Status</th>
+                                            <!-- <th>About</th> -->
+                                            <!-- <th>Date of registration</th> -->
                                             <th>Processes</th>
                                         </tr>
                                     </thead>
                                      <tfoot>
                                         <tr>
-                                        <th>id</th>
-                                            <th>Job Title</th>
+                                            <th>Company Logo</th>
+                                            <th>ID</th>
                                             <th>Company Name</th>
-                                            <th>CompanyWebsite</th>
-                                            <th>CompanyContact</th>
-                                            <th>NumVacancies</th>
-                                            <th>WorkingLocation</th>
+                                            <th>Location</th>
+                                            <th>Contact</th>
+                                            <th>Website</th>
                                             <th>Industry</th>
-                                            <!-- <th>JobDescription</th>
-                                            <th>Requirements</th> -->
-                                            <th>DatePosted</th>
-                                            <th>Status</th>
+                                            <!-- <th>About</th> -->
+                                            <!-- <th>Date of registration</th> -->
                                             <th>Processes</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     @foreach($data as $data)
                                         <tr>
+                                            <td><img src="images/{{$data->logo}}" alt=""></td>
                                             <td>{{$data->id}}</td>
-                                            <td>{{$data->JobTitle}}</td>
                                             <td>{{$data->CompanyName}}</td>
-                                            <td>{{$data->CompanyWebsite}}</td>
-                                            <td>{{$data->CompanyContact}}</td>
-                                            <td>{{$data->NumVacancies}}</td>
-                                            <td>{{$data->WorkingLocation}}</td>
+                                            <td>{{$data->Location}}</td>
+                                            <td>{{$data->Contact}}</td>
+                                            <td>{{$data->Website}}</td>
                                             <td>{{$data->Industry}}</td>
-                                            <!-- <td>{{$data->JobDescription}}</td>
-                                            <td>{{$data->Requirements}}</td> -->
-                                            <td>{{$data->DatePosted}}</td>
-                                            <td>{{$data->Status}}</td>
-                                    
+                                            <!-- <td>{{$data->About}}</td> -->
+                                            <!-- <td>{{$data->Date}}</td> -->
+                                          
                                             <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
                                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
                                                 <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->

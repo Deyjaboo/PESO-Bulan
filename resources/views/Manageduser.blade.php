@@ -301,7 +301,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -412,7 +412,7 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">Managed Users</h3>
+        <h3 class="font-weight-bold">Manage Users</h3>
        
         <div class="form_container">
                         <div class="card-body">
@@ -445,16 +445,16 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                   
+                                    @foreach($data as $data)
                                         <tr>
-                                            <td>ID</td>
-                                            <td>full_name</td>
-                                            <td>address</td>
-                                            <td>sex</td>
-                                            <td>cp_num</td>
-                                            <td>job1</td>
-                                            <td>job2</td>
-                                            <td>Email</td>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->name}}</td>
+                                            <td>{{$data->address}}</td>
+                                            <td>{{$data->sex}}</td>
+                                            <td>{{$data->contact}}</td>
+                                            <td>{{$data->job1}}</td>
+                                            <td>{{$data->job2}}</td>
+                                            <td>{{$data->email}}</td>
                                             
                                           
                                             <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
@@ -462,7 +462,7 @@
                                                 <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->
                                             </td>
                                         </tr>
-                                 
+                                        @endforeach
                                     </tbody>
 
                                 </table>

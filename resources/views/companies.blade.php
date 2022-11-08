@@ -383,6 +383,7 @@ div.input-block input:focus+span.placeholder {
 .btn {
   
   background-color: #1B4F72;
+  /* background-color: RoyalBlue; */
   width: 150px;
   height: 60px;
   color: white;
@@ -609,13 +610,53 @@ div.input-block input:focus+span.placeholder {
                 <div class="progress"></div>
                 
             </div>
-          
+        
             <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
             <h6 id="card_text">Job Description</h6>
-            <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
-             works in accordance with the accounting policies, systems and procedures and good practices. 
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
-              
+            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
+    Setup payment arrangements to bring past due accounts current 
+    Education customers regarding their past due credits 
+              <form action="">
+                <!-- <button type="submit" class="btn btn-info">View Details &raquo;</button> -->
+                <button class="button-32" role="button">View Details</button>
+                <!-- <a href="" class="btn btn-outline-primary">View Details &raquo;</a> -->
+                <!-- HTML !-->
+              </form>
+
+<style>/* CSS */
+.button-32 {
+  
+  background-color: #1B4F72;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background-color: RoyalBlue;
+  box-shadow: rgba(87, 166, 230, 0.95);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}</style>
+
+              </form>  
           </div>
        </div>
         </div>
@@ -638,8 +679,10 @@ div.input-block input:focus+span.placeholder {
     Setup payment arrangements to bring past due accounts current 
     Education customers regarding their past due credits 
    </p>
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
-              
+                <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
+                <form action="">
+                  <button class="button-32" role="button">View Details</button>
+                </form>
           </div>
        </div>
    
@@ -659,9 +702,13 @@ div.input-block input:focus+span.placeholder {
           
             <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
             <h6 id="card_text">Job Description</h6>
-            <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
-             works in accordance with the accounting policies, systems and procedures and good practices. 
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
+            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
+    Setup payment arrangements to bring past due accounts current 
+    Education customers regarding their past due credits 
+     <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
+                 <form action="">
+                  <button class="button-32" role="button">View Details</button>
+                </form>
               
           </div>
        </div>
@@ -685,7 +732,10 @@ div.input-block input:focus+span.placeholder {
     Setup payment arrangements to bring past due accounts current 
     Education customers regarding their past due credits 
    </p>
-                <button class="w3-button w3-right w3-green">View Details &raquo;</button>
+                 <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
+                 <form action="">
+                  <button class="button-32" role="button">View Details</button>
+                </form>
               
           </div>
        </div>

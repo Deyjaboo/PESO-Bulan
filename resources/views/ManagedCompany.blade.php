@@ -237,7 +237,7 @@ body{
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -255,18 +255,34 @@ body{
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">PESO-Bulan Jobs</h3>
+        <h3 class="font-weight-bold">Add Company</h3>
         
 
         <div class="wrapper">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+       @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+          <br>
           
  <div class="form_container">
-        <form name="form">
+ <form name="form" action="addcompany" method="post" enctype="multipart/form-data">
+       {{ csrf_field() }}
 
         <div class="form_wrap">
         <div class="form_item">
           <label>Company Name</label>
-          <input type="text">
+          <input type="text" name="CompanyName" id="CompanyName" required>
         </div>
       </div>
 
@@ -274,14 +290,14 @@ body{
           <div class="form_wrap fullname">
 
           <div class="form_item">
-              <label>Location</Address></label>
-              <input type="text"> 
+              <label>Location</label>
+              <input type="text" name="Location" id="Location" required> 
           </div>
 
 
           <div class="form_item">
               <label>Contact Number</label>
-              <input type="text">
+              <input type="text" name="ContactNum" id="ContactNum" required>
           </div>
 
          </div>
@@ -290,11 +306,36 @@ body{
           <div class="form_wrap fullname">
           <div class="form_item">
               <label>Website</Address></label>
-              <input type="text"> 
+              <input type="text" name="Website" id="Website"> 
           </div>
           <div class="form_item">
               <label>Industry</label>
-              <input type="text">
+              <!-- <input type="text" name="Industry" id="Industry"> -->
+              <select class="input-group"  name="Industry" id="Industry" required>
+                <option value="" selected="selected" disabled="disabled"></option>
+                <option value="Accounting & Finance">Accounting & Finance</option>
+                <option value="BPO">BPO</option>
+                <option value="Consumer Products">Consumer Products</option>
+                <option value="Financial Services">Financial Services</option>
+                <option value="Government">Government</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Tourism">Tourism</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Call Center">Call Center</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Food & Beverages">Food & Beverages</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Legal">Legal</option>
+                <option value="Non-Profit Organisation">Non-Profit Organisation</option>
+                <option value="Retail">Retail</option>
+                <option value="Telecommunications">Telecommunications</option>
+                <option value="Training & Education">Training & Education</option>
+						  </select>
+              
           </div>
           </div>
 
@@ -302,7 +343,7 @@ body{
           <div class="form_wrap">
             <div class="form_item">
               <label>About the Company</label>
-              <input  style=" height: 100px;"  type="text">
+              <input  style=" height: 100px;"  type="text" name="About" id="About" required>
             </div>
           </div>
 
@@ -310,17 +351,15 @@ body{
            <div class="form_wrap fullname">
 
           <div class="form_item">
-              <label>Date</label>
-              <input type="date"> 
           </div>
 
         <div class="form_item">
           <div class="form">
             <div class="grid">
               <div class="form-element">
-            <input type="file" id="file-1" accept="image/*">
+            <input type="file" id="file-1" accept="image/*" name="Picture" id="Picture" required>
             <label for="file-1" id="file-1-preview">
-              <img src="https://bit.ly/3ubuq5o" alt="">
+              <img src="https://bit.ly/3ubuq5o" alt="" >
               <div>
                 <span>+</span>
               </div>
@@ -336,12 +375,11 @@ body{
   
   </div>
 </div>
-
           
 
 </div>
- <button class="btn btn-primary"  id="right">Submit</button>
-        </form>
+ <button type="submit" class="btn btn-primary"  id="right">Submit</button>
+  </form>
 
         <br><br>
  </div>
