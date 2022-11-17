@@ -69,6 +69,18 @@ class CompanyController extends Controller
         $data = DB::table('companies')->get();
         return view('ListOfCompany',['data'=>$data]);
     }
+    public function details_company()
+    {
+        $data = DB::table('companies')->get();
+        return view('companies',['data'=>$data]);
+    }
+    public function details_company1($id)
+    {
+        // $data = DB::table('companies')->get();
+        $data = DB::select('select * from companies where id = ?', [$id]);
+        return view('modal.CompanyView',['data'=>$data]);
+    }
+    
     /**
      * Display the specified resource.
      *

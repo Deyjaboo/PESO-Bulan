@@ -19,6 +19,7 @@ class Jobs extends Model
         'JobDescription',
         'Requirements',
         'DatePosted',
+        'logo',//New
         'Status',//New
     ];
 }

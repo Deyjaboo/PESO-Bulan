@@ -22,6 +22,13 @@
   <link rel="shortcut icon" href="images/logo_peso.png"/>
    <!-- table css -->
   <link rel="stylesheet" href="css/styles.css">
+
+   <!-- Button-->
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <!-- Button-->
 </head>
 <body>
   <div class="container-scroller">
@@ -412,7 +419,21 @@
       <div class="main-panel">
         <div class="content-wrapper">
         <h3 class="font-weight-bold">List of Jobs</h3>
-        
+        <br>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if(session()->has('message'))
+            <div class="alert alert-danger">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="form_container">
                         <div class="card-body">
                                 <table id="datatablesSimple" class="TableData">
@@ -421,14 +442,14 @@
                                             <th>id</th>
                                             <th>Job Title</th>
                                             <th>Company Name</th>
-                                            <th>CompanyWebsite</th>
+                                            <!-- <th>CompanyWebsite</th> -->
                                             <th>CompanyContact</th>
-                                            <th>NumVacancies</th>
+                                            <th>Vacancies</th>
                                             <th>WorkingLocation</th>
                                             <th>Industry</th>
                                             <!-- <th>JobDescription</th>
                                             <th>Requirements</th> -->
-                                            <th>DatePosted</th>
+                                            <!-- <th>DatePosted</th> -->
                                             <th>Status</th>
                                             <th>Processes</th>
                                         </tr>
@@ -438,14 +459,14 @@
                                         <th>id</th>
                                             <th>Job Title</th>
                                             <th>Company Name</th>
-                                            <th>CompanyWebsite</th>
+                                            <!-- <th>CompanyWebsite</th> -->
                                             <th>CompanyContact</th>
-                                            <th>NumVacancies</th>
+                                            <th>Vacancies</th>
                                             <th>WorkingLocation</th>
                                             <th>Industry</th>
                                             <!-- <th>JobDescription</th>
                                             <th>Requirements</th> -->
-                                            <th>DatePosted</th>
+                                            <!-- <th>DatePosted</th> -->
                                             <th>Status</th>
                                             <th>Processes</th>
                                         </tr>
@@ -456,17 +477,20 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->JobTitle}}</td>
                                             <td>{{$data->CompanyName}}</td>
-                                            <td>{{$data->CompanyWebsite}}</td>
+                                            <!-- <td>{{$data->CompanyWebsite}}</td> -->
                                             <td>{{$data->CompanyContact}}</td>
                                             <td>{{$data->NumVacancies}}</td>
                                             <td>{{$data->WorkingLocation}}</td>
                                             <td>{{$data->Industry}}</td>
                                             <!-- <td>{{$data->JobDescription}}</td>
                                             <td>{{$data->Requirements}}</td> -->
-                                            <td>{{$data->DatePosted}}</td>
+                                            <!-- <td>{{$data->DatePosted}}</td> -->
                                             <td>{{$data->Status}}</td>
                                     
-                                            <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                            <!-- <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td> -->
+                                            <td>
+                                             
+                                              <a class="btn btn-primary" href="{{ url ('/download_file',$data->id)}}"><i class='bx bx-download'></i>
                                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
                                                 <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->
                                             </td>

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use DB;
 use DateTime;
 use Carbon\Carbon;
+use App\Models\Application;
+use Illuminate\Support\Facades\Stroage;
+
 class JobsController extends Controller
 {
     /**
@@ -43,6 +46,7 @@ class JobsController extends Controller
                 // $company = DB::table('companies')->where('CompanyName', $request->input('CompanyName'))->value('CompanyName');
                 $web = DB::table('companies')->where('CompanyName', $request->input('CompanyName'))->value('Website');
                 $contact = DB::table('companies')->where('CompanyName', $request->input('CompanyName'))->value('Contact');
+                $logo = DB::table('companies')->where('CompanyName', $request->input('CompanyName'))->value('logo');
 
                 $data->CompanyWebsite = $web;
                 $data->CompanyContact = $contact;
@@ -55,6 +59,7 @@ class JobsController extends Controller
                 $createdAt = Carbon::parse(date('Y-m-d H:i:s'));
                 $data->DatePosted = $createdAt->format('M d Y');
 
+                $data->logo = $logo;
                 $data->Status = "New";
             $data->save();
             return redirect('jobs')->with('message','Job has been added!');
@@ -104,6 +109,11 @@ class JobsController extends Controller
     {
         //
     }
+    public function view_jobs()
+    {
+        $data = DB::table('jobs')->get();
+        return view('UserDash',['data'=>$data]);
+    }
 
     public function data_view()
     {
@@ -115,5 +125,34 @@ class JobsController extends Controller
         $data = DB::table('jobs')->get();
         return view('ListJobs',['data'=>$data]);
     }
-
+    public function details_jobs($id)
+    {
+        // $data = DB::table('companies')->get();
+        $data = DB::select('select * from jobs where id = ?', [$id]);
+        return view('modal.UserDashView',['data'=>$data]);
+    }
+    public function download_resume($id)
+    {
+         $data = DB::table('applications')->where("JobTitle",$id)->value('Resume');
+        // $data = DB::table('applications')->where("JobTitle",$id)->value('Resume');
+        $count = DB::table('applications')->where("JobTitle",$id)->count();
+        // foreach($data as $data){
+        //     foreach ($data->Resume as $resume) {
+        //         response()->download(public_path('resume/'.$resume));
+        //     }
+        // }
+        // for($i=0;$i < $count;$i++){
+        //      response()->download(public_path('resume/'.$data[$i]->Resume));
+        // }
+        if($count == 0){
+            return redirect('ListJobs')->with('message','Nothing to download!');
+        }else{
+            // for($i=0;$i < $count;$i++){
+                return response()->download(public_path('resume/'.$data->Resume));
+            // }
+            // return redirect('ListJobs')->with('message','Download successful!');
+        }
+        
+        
+    }
 }

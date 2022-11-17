@@ -448,7 +448,7 @@
                                     <tbody>
                                     @foreach($data as $data)
                                         <tr>
-                                            <td><img src="images/{{$data->logo}}" alt=""></td>
+                                            <td><img src="images/{{$data->logo}}" alt=""  width="100px" height="100px"></td>
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->CompanyName}}</td>
                                             <td>{{$data->Location}}</td>

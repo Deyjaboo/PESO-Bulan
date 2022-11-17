@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/logo_peso.png"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <!-- boostrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- card -->
   <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -22,7 +27,7 @@ box-sizing: border-box;
 }
 
 .course{
-background: #FFF;
+/* background: #FFF; */
 border-radius: 4px;
 box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
 display: inline-block;
@@ -55,7 +60,7 @@ color: #FFF;
 display: inline-block;
 font-size: 8px;
 opacity: 0.8;
-margin-top: 30px;
+/* margin-top: 30px; */
 text-decoration: none;
 }
 .progress-container{
@@ -135,7 +140,7 @@ body{
 nav{
     height: 6rem;
     width: 100vw;
-    background-color: #1B4F72;
+    background-color: #1E5298;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     /* position: fixed; */
@@ -256,7 +261,8 @@ nav{
     }
     .nav-links{
         position: fixed;
-        background: #1B4F72;;
+        background: #1B4F72;
+        color:white;
         height: 100vh;
         width: 100%;
         flex-direction: column;
@@ -411,7 +417,7 @@ div.input-block input:focus+span.placeholder {
 
 
 .wrapper{
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   margin: 30px auto 0;
   padding: 10px;
@@ -461,15 +467,16 @@ div.input-block input:focus+span.placeholder {
   
    min-height: 150px;
    padding: 10px;
-}
+} 
+
 #one {
    background-color: white;
-  margin-left:30px;
+  margin-left:10px;
   color:black;
   float:left; 
-  margin-right:20px;
-  width:200px;
-  border : 2px solid #1B4F72; 
+  margin-right:10px;
+  width:300px;
+ 
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   /* border-right:2px solid #1B4F72;; */
@@ -478,7 +485,6 @@ div.input-block input:focus+span.placeholder {
   background-color: white;
   color:black;
   overflow:hidden;
-
   /* border:2px dashed #ccc; */
   min-height:170px;
   /* border : 2px solid #1B4F72;  */
@@ -538,6 +544,17 @@ div.input-block input:focus+span.placeholder {
   box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
+nav ul li a{
+color:white;
+}
+
+nav ul li{
+  display:inline-block;
+  line-height:100px;
+  margin-top:20px;
+}
+
+
 
 </style>
 <body>
@@ -550,11 +567,11 @@ div.input-block input:focus+span.placeholder {
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Jobs</a></li>
+        <ul class="nav-links" >
+            <li style="color:red"><a href="#">Home</a></li>
+            <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
-            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
             @if (Route::has('login'))
             @auth
@@ -577,97 +594,99 @@ div.input-block input:focus+span.placeholder {
     </nav>
    
 
-    <img src="images/cover2.png" style="width:100%;height:200px;">
-
+    <img src="images/Bulan.png" style="width:100%;height:300px;">
+<hr>
 
 <div class="cards">
-  <div class="card"> 
-    <div class="place">
     <div class="input-block" >
   <input type="text" name="input-text" id="input-text" required spellcheck="false">
   <span class="placeholder">
   Search for Job tittle or Company name
   </span>
-</div></div></div>
-  <div class="card"> 
+</div>
+ 
     <div class="input-block">
   <input type="text" name="input-text" id="input-text" required spellcheck="false" >
   <span class="placeholder">
   Location
   </span>
-</div></div>
-  <div class="card">
+</div>
+ 
   <button class="btn"><i class="fa fa-search"></i> Search</button>
    </div>
-</div>
-    
+<hr>
+   
 
 <div class="wrapper">
+
+
     <div id="one">
-      <h2 style="color:blue;">Seminars</h2>
+      <img src="images/seminar.png" alt=""  width="100%" height="100%">
+   
+    <h2 style="color:blue;">Seminars</h2>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Quis delectus perferendis dicta nesciunt, iure at qui culpa deleniti, eaque est sequi laboriosam 
-    deserunt natus voluptates excepturi perspiciatis quaerat beatae voluptas.
+   
+<hr>
+    <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
+
     </div>
-    <br>
 
-
-
-			
+			@foreach($data as $data)
   <div id="two">
         <div class="course">
           <div class="course-info">
-          <img src="images/ftemi.png" style="width:100%;height:100%;">
+          <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
           </div>
           <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
           
-            <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
+            <h3 id="card_text">{{$data->CompanyName}}</h3>
             <h6 id="card_text">Job Description</h6>
-            <p id="texts">Coordinates with the immediate superior to implement accounting works in accordance with the accounting policies, systems and procedures and good practices. 
-              Performs all clerical activities and transactions involved in the preparation and processing of all accounting documents necessary and in support to the operational requirements of the Operating Units and the enterprise.
-               Prepares payroll for employees Performs other duties as may be assigned by the Superiors. </p>
-                <!-- <button class="w3-button w3-right w3-green">Apply Now &raquo;</button> -->
+                  <?php
+                   $About = Str::limit($data->JobDescription, 250);
+                   ?>
+            <p id="texts">{{$About}} </p>  
+               
           <br>
-          <form action="">
-            <button class="button-62 w3-right" role="button">Apply Now &raquo;</button>
-          </form>
-
-
+       
+          
+          <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
+            @include('modal.UserDashView');
 
               
           </div>
        </div>
+       @endforeach
+  </div> 
 
-       <div class="course">
-          <div class="course-info">
-          <img src="images/sync.jpg" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
-          
-            <h3 id="card_text">Synchrony Global Service Philippines Inc.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-    Make use of problem-solving/decision making skills to achieve the highest level of customer satisfaction </p>
-                <!-- <button class="w3-button w3-right w3-green">Apply Now &raquo;</button> -->
-                <br>
-                <form action="">
-                  <button class="button-62 w3-right" role="button">Apply Now &raquo;</button>
-                </form>
-          </div>
-       </div>
-   
   </div>
 
+  
+ 
+  <!-- <div class="row">
+  <div class="column">
+
+  <div class="wrapper">
+ <div class="form_container">
+ 
+     
+ </div>
+</div>
+
+  </div>
+
+  <div class="column" >
+
+  <div class="wrapper">
+ <div class="form_container">
+  
+ </div>
+</div>
+  </div>
+</div> -->
+
+   
+    
 </body>
 <script>
     const hamburger = document.querySelector(".hamburger");

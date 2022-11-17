@@ -25,6 +25,7 @@ return new class extends Migration
             $table->longText('JobDescription');
             $table->longText('Requirements');
             $table->string('DatePosted');
+            $table->string('logo');
             $table->string('Status');
             $table->timestamps();
         });

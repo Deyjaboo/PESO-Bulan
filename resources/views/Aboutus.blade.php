@@ -397,9 +397,9 @@ nav{
         </div>
         <ul class="nav-links">
             <li><a href="UserDash">Home</a></li>
-            <li><a href="#">Jobs</a></li>
+            <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
-            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
             <li><a href="#">About Us</a></li>
             @if (Route::has('login'))
             @auth

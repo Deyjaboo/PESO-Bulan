@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- card -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- modal script -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <title>PESO-Bulan</title>
 </head>
@@ -24,20 +31,21 @@ box-sizing: border-box;
 .course{
 background: #FFF;
 border-radius: 4px;
-box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 display: inline-block;
 overflow: hidden;
 width: 100%;
 }
 .course-info{
 
-height: 200px;
+height: 110px;
 background-repeat: no-repeat;
-  background-size: cover;
+background-size: cover;
 color: #FFF;
 float: left;
 padding: 30px;
 width: 30%;
+
 }
 .course-progress{
 float: left;
@@ -81,6 +89,8 @@ letter-spacing: 1px;
 #texts{
   color:black;
   font-size: 12px;
+  text-align: justify;
+  padding-right: 30px;
 }
 
 .bttn{
@@ -120,7 +130,6 @@ margin: 16px 0px;
 }
 
 
-
     *{
     margin: 0;
     padding: 0;
@@ -155,16 +164,16 @@ nav{
 /*Styling Links*/
 .nav-links{
     display: flex;
-    list-style: none; 
+    list-style: none;
     width: 88vw;
-    padding: 0 0.7vw;
+    padding: 0 0.5vw;
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
 }
 .nav-links li a{
     text-decoration: none;
-    margin: 0 0.7vw;
+    margin: 0 0.5vw;
 }
 .nav-links li a:hover {
     color: #61DAFB;
@@ -208,21 +217,7 @@ nav{
     font-weight: 600;
     font-weight: bold;
 }
-.join-button{
-    color: #131418;
-    background-color: #61DAFB;
-    border: 1.5px solid #61DAFB;
-    border-radius: 2em;
-    padding: 0.6rem 0.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-}
-.join-button:hover {
-    color: #f2f5f7;
-    background-color: transparent;
-    border:1.5px solid #f2f5f7;
-    transition: all ease-in-out 350ms;
-}
+
 
 /*Styling Hamburger Icon*/
 .hamburger div{
@@ -381,7 +376,7 @@ div.input-block input:focus+span.placeholder {
 
 
 .btn {
-  
+
   background-color: #1B4F72;
   /* background-color: RoyalBlue; */
   width: 150px;
@@ -419,7 +414,7 @@ div.input-block input:focus+span.placeholder {
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; 
+  height: 300px;
 }
 
 
@@ -434,21 +429,21 @@ div.input-block input:focus+span.placeholder {
   .column {
     width: 100%;
   }
-} 
+}
 
 
 
-.wrapper { 
+.wrapper {
   /* margin-left:30px;
   margin-right:30px; */
   /* border : 2px solid #1B4F72;  */
   overflow:hidden;
   margin-bottom: 50px;
-  
+
 }
 
 .wrapper div {
-  
+
    min-height: 150px;
    padding: 10px;
 }
@@ -456,15 +451,15 @@ div.input-block input:focus+span.placeholder {
    background-color: white;
   margin-left:30px;
   color:black;
-  float:left; 
+  float:left;
   margin-right:20px;
   width:200px;
-  border : 2px solid #1B4F72; 
+  border : 2px solid #1B4F72;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   /* border-right:2px solid #1B4F72;; */
 }
-#two { 
+#two {
   background-color: white;
   color:black;
   overflow:hidden;
@@ -477,7 +472,7 @@ div.input-block input:focus+span.placeholder {
 }
 
 @media screen and (max-width: 767px) {
-   #one { 
+   #one {
     float: none;
     /* margin-right:0; */
     margin-right:20px;
@@ -492,20 +487,20 @@ div.input-block input:focus+span.placeholder {
 
 #card_text{
   color: black;
+  margin-top:10px;
 
-} 
+}
 
 
 #box1 {
-    
    background-color: white;
   color:black;
-  float:left; 
+  /* float:left; */
   width:50%;
   max-width: 960px;
  height: 100%;
-  justify-content: space-between;
-  display: flex;
+  /* justify-content: space-between;
+  display: flex; */
 }
 
 #box2 {
@@ -520,17 +515,17 @@ div.input-block input:focus+span.placeholder {
 
 
 @media screen and (max-width: 767px) {
-   #box1 { 
+   #box1 {
     float: none;
     margin-right:20px;
     margin-left:20px;
     width:auto;
     border:0;
-    
+
     /* border-bottom:2px solid #000;     */
- 
+
   }
-  #box2 { 
+  #box2 {
     float: none;
     margin-right:20px;
     margin-left:20px;
@@ -539,93 +534,9 @@ div.input-block input:focus+span.placeholder {
     /* border-bottom:2px solid #000;     */
   }
 }
-
-
-</style>
-<body>
-    <nav>
-        <div class="logo">
-            <img src="images/logo_peso.png" alt="Logo Image">
-        </div>
-        <div class="hamburger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="UserDash">Home</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="companies">Companies</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="Aboutus">About Us</a></li>
-            @if (Route::has('login'))
-            @auth
-              <li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf  
-                      <a class="login-button" href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">{{ Auth::user()->name }}
-                      </a>
-                </form>  
-              </li>
-                  @else
-                  <b> <li><a class="login-button" href="login">Login</a></li></b>
-                  <!-- <li><button class="join-button" href="#">Join</button></li> -->
-              @endauth
-            @endif
-          
-        </ul>
-    </nav>
-   
-<br>
-    <!-- <img src="images/cover2.png" style="width:100%;height:200px;"> -->
-
-
-    <div class="cards">
-  <div class="card"> 
-    <div class="input-block">
-  <input type="text" name="input-text" id="c" required spellcheck="false">
-  <span class="placeholder">
-  Search for Job tittle or Company name
-  </span>
-
-</div>
-</div>
-
-  <div class="card"> 
-    <button class="btn"><i class="fa fa-search"></i>Search</button>
-</div>
-
-</div>
-
-        <div class="wrapper">
-        <div id="box1">
-        <div class="course">
-          <div class="course-info">
-          <img src="images/ftemi.png" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
-        
-            <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-              <form action="">
-                <!-- <button type="submit" class="btn btn-info">View Details &raquo;</button> -->
-                <button class="button-32" role="button">View Details</button>
-                <!-- <a href="" class="btn btn-outline-primary">View Details &raquo;</a> -->
-                <!-- HTML !-->
-              </form>
-
-<style>/* CSS */
+/* CSS */
 .button-32 {
-  
+
   background-color: #1B4F72;
   border-radius: 12px;
   color: white;
@@ -654,107 +565,192 @@ div.input-block input:focus+span.placeholder {
   filter: saturate(0.2) opacity(0.5);
   -webkit-filter: saturate(0.2) opacity(0.5);
   cursor: not-allowed;
-}</style>
+}
 
-              </form>  
-          </div>
-       </div>
+
+nav ul li a{
+color:white;
+}
+
+
+nav ul li{
+  display:inline-block;
+  line-height:100px;
+  margin-top:20px;
+}
+
+#arrow {
+  color:#ff3300;
+  font-weight: 900;
+
+}
+#view{
+  color:#ff3300;
+  font-weight: 600;
+}
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logo_peso.png" alt="Logo Image">
         </div>
-            
-
-        <div id="box2">
-        <div class="course">
-          <div class="course-info">
-          <img src="images/sync.jpg" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
-          
-            <h3 id="card_text">Synchrony Global Service Philippines Inc.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-   </p>
-                <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
-                <form action="">
-                  <button class="button-32" role="button">View Details</button>
-                </form>
-          </div>
-       </div>
-   
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
-
-
-        <div id="box1">
-        <div class="course">
-          <div class="course-info">
-          <img src="images/ftemi.png" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
-          
-            <h3 id="card_text">Fluid Technologies & Environmental Mgt.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-     <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
-                 <form action="">
-                  <button class="button-32" role="button">View Details</button>
+        <ul class="nav-links">
+            <li><a href="UserDash">Home</a></li>
+            <li><a href="dashjobs">Jobs</a></li>
+            <li><a href="companies">Companies</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
+            <li><a href="Aboutus">About Us</a></li>
+            @if (Route::has('login'))
+            @auth
+              <li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                      <a class="login-button" href="route('logout')"
+                            onclick="event.preventDefault();
+                            this.closest('form').submit();">{{ Auth::user()->name }}
+                      </a>
                 </form>
+              </li>
+                  @else
+                  <b> <li><a class="login-button" href="login">Login</a></li></b>
+                  <!-- <li><button class="join-button" href="#">Join</button></li> -->
+              @endauth
+            @endif
+
+        </ul>
+    </nav>
+
+<br>
+    <!-- <img src="images/cover2.png" style="width:100%;height:200px;"> -->
+
+
+    <div class="cards">
+ 
+    <div class="input-block">
+  <input type="text" name="input-text" id="c" required spellcheck="false">
+  <span class="placeholder">
+  Search for Company
+  </span>
+
+</div>
+
+
+    <button class="btn"><i class="fa fa-search"></i>Search</button>
+
+</div>
+
+
+<!-- <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div> -->
+
+
+
+
+<style>
+  #asd{
+      color:black;
+    }
+.row1 {
+display: flex;
+flex-direction: row;
+}
+
+
+
+.items-bar{
+  margin-top: 40px;
+  /* margin-bottom: 10px; */
+  
+}
+
+.items-bar .box-item{
+  background-color: #f8f8f8;
+  /* margin-bottom: 30px; */
+  box-shadow: 0 10px 20px rgb(0,0,0,0,19), 0 6px 6px rgb(0,0,0,0,23);
+  
+}
+
+/* .items-bar .box-item:hover{
+  box-shadow: 3px 5px 5px 0px rgba(99, 99, 99, 0.9);
+  transform: scale(1.01);
+} */
+
+.box-item .box-img .item_image{
+  width: 100%;
+  height: 100px;
+}
+
+.items-bar .box-item .box-body{
+  padding: 5px 0px 10px 15px;
+}
+
+
+
+</style>
+    <!-- <input id="CompName" class="CompName" type="text"> -->
+
+    <section class="items-bar">
+      	<div class="container position-relative">
+      		<div class="row gy-5">
               
-          </div>
-       </div>
-        </div>
-            
-
-        <div id="box2">
-        <div class="course">
-          <div class="course-info">
-          <img src="images/sync.jpg" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
+              @foreach($data as $data)
+			      <div class="col-md-4">
+      				<div class="box-item">
+                <div class="course">
+                  <div class="course-info">
+                   <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
+                  </div>
+                  <div class="box-body">
+                  <?php
+                          $CompName = Str::limit($data->CompanyName, 10);
+                          ?>
+                    <h5 id="card_text" class="CompName" value="{{$CompName}}">{{$CompName}}</h5>
+                    <!-- <b><h6 id="card_text" class="AboutComp" value="{{$data->About}}">About Company</h6></b> -->
+                    <?php
+                          $About = Str::limit($data->About, 180);
+                          ?>
+                    <!-- <i><p id="texts" >{{$About}}</p></i> -->
+                    <!-- <b><h6 id="card_text" class="AboutComp" >Industry:</h6></b> -->
+                    <p id="card_text" class="CompName" value="{{$data->Industry}}">{{$data->Industry}}</p>
+                      <form action="">
+                        <!-- <a class="btn btn-primary" data-toggle="modal" data-target="#applicantModal{{$data->id}}">View Details</a> -->
+                        <!-- Button trigger modal -->
+                        <b><a href="#" data-toggle="modal" data-target="#applicantModal{{$data->id}}" id="view">View Details</a>
+                        <span id="arrow" style="font-size:22px">&#8594;</span></b>
+                        @include('modal.CompanyView')
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applicantModal{{$data->id}}"> -->
+                      </form>
+                  </div>
+        
+      				</div>
+      			</div>
             </div>
-          
-            <h3 id="card_text">Synchrony Global Service Philippines Inc.</h3>
-            <h6 id="card_text">Job Description</h6>
-            <p id="texts">Handle outbound calls and/or receive inbound calls surrounding consumer past due credit card accounts 
-    Setup payment arrangements to bring past due accounts current 
-    Education customers regarding their past due credits 
-   </p>
-                 <!-- <button class="w3-button w3-right w3-green">View Details &raquo;</button> -->
-                 <form action="">
-                  <button class="button-32" role="button">View Details</button>
-                </form>
-              
-          </div>
-       </div>
-   
-        </div>
-
-        </div>
-
-
-
+            @endforeach
+      		</div>
+      	</div>
+      </section>
 
 
 
 
 
 <script>
-    const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links li");
 
 hamburger.addEventListener('click', ()=>{
    //Animate Links
@@ -767,4 +763,5 @@ hamburger.addEventListener('click', ()=>{
     hamburger.classList.toggle("toggle");
 });
 </script>
+
 </html>

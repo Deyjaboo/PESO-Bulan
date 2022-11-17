@@ -20,14 +20,83 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/logo_peso.png"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <style>
 #bttns{
   height: 40px;
   font-size: 16px;
 }
+.card-box {
+    position: relative;
+    color: #fff;
+    padding: 20px 10px 40px;
+    margin: 20px 0px;
+}
+.card-box:hover {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+.card-box:hover .icon i {
+    font-size: 100px;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+.card-box .inner {
+    padding: 5px 10px 0 10px;
+}
+.card-box h3 {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    padding: 0;
+    text-align: left;
+}
+.card-box p {
+    font-size: 15px;
+}
+.card-box .icon {
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    right: 5px;
+    z-index: 0;
+    font-size: 72px;
+    color: rgba(0, 0, 0, 0.15);
+}
+.card-box .card-box-footer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding: 3px 0;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-decoration: none;
+}
+.card-box:hover .card-box-footer {
+    background: rgba(0, 0, 0, 0.3);
+}
+.bg-blue {
+    background-color: #00c0ef !important;
+}
+.bg-green {
+    background-color: #00a65a !important;
+}
+.bg-orange {
+    background-color: #f39c12 !important;
+}
+.bg-red {
+    background-color: #d9534f !important;
+}
 
-
+#cardtale{
+  height: 100%;
+}
 </style>
 <body>
   <div class="container-scroller">
@@ -285,61 +354,84 @@
                   <img src="images/bulan.jpeg" alt="people">
               </div>
             </div>
+
             <div class="col-md-6 grid-margin transparent">
               <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body">
-                      <p class="mb-4">Registered Users</p>
-                      <p class="fs-30 mb-2">46</p>
-                      <p>5.00% (7 days)</p>
+                <div class="col-md-6 mb-2  stretch-card transparent">
+                  <div class="card card-tale" id="cardtale">
+                  <div class="card-box">
+                    <div class="inner">
+                    <p class="mb-4">Registered Users</p>
+                      <p class="fs-30 mb-2">{{$users_num}}
                     </div>
+                    <div class="icon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
                   </div>
                 </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="col-md-6 mb-2 stretch-card transparent">
                   <div class="card card-dark-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Registered Companies</p>
-                      <p class="fs-30 mb-2">44</p>
-                      <p>2.00% (30 days)</p>
+                   
+                  <div class="card-box">
+                    <div class="inner">
+                    <p class="mb-4">Registered Companies</p>
+                      <p class="fs-30 mb-2">{{$companies_num}}</p>
                     </div>
+                    <div class="icon">
+                        <i class="fa fa-building" aria-hidden="true"></i>
+                    </div>
+                    <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+
                   </div>
                 </div>
                 
-                <!-- <div class="col-md-12 stretch-card transparent">
-                  <div class="card card-light">
-                    <div class="card-body">
-                      <p class="mb-4">Seminar:</p>
-              <textarea rows="5" cols="55" placeholder="Seminar..."></textarea>
-                      <button class="badge badge-success" id="bttns">Update</button>
-              
-                    </div>
-                  </div>
-                </div> -->
-
+                
               </div>
                <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                <div class="col-md-6 mb-2 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Jobs</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
+                  <div class="card-box">
+                    <div class="inner">
+                    <p class="mb-4">Total Number of Jobs</p>
+                      <p class="fs-30 mb-2">{{$jobs_num}}</p>
                     </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </div>
+                    <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
                   </div>
                 </div>
+
+
                 <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4">Available Jobs</p>
-                      <p class="fs-30 mb-2">433</p>
-                      <p>50.22% (30 days)</p>
+                  <div class="card  card-light-danger">
+                  <div class="card-box">
+                    <div class="inner">
+                    <p class="mb-4">Available Jobs</p>
+                      <p class="fs-30 mb-2">{{$jobs_new}}</p>
                     </div>
+                    <div class="icon">
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    </div>
+                    <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
                   </div>
                 </div>
               </div> 
-            </div>
+            </div> 
+
+
           </div>
+
+      
+
+
+
+
           <!-- <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">

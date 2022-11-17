@@ -11,10 +11,25 @@ use DB;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
+    
+    public function show_dash()
+    {
+        $users_num = DB::table('users')->where("role","user")->count();
+        $companies_num = DB::table('companies')->count();
+        
+        $jobs_num = DB::table('jobs')->count();
+        $jobs_new = DB::table('jobs')->where("Status","New")->count();
+        return view('dashboard',['users_num'=>$users_num,'companies_num'=>$companies_num,'jobs_num'=>$jobs_num,'jobs_new'=>$jobs_new]);
+    }
     public function data_view()
     {
         $data = DB::table('users')->where("role","user")->get();
         return view('Manageduser',['data'=>$data]);
+    }
+ 
+    public function user_show()
+    {
+        $data = DB::table('users')->where("id", $id)->get();
+        return view('modal.UserEdit',['data'=>$data]);
     }
 }

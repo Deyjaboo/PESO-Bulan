@@ -23,7 +23,7 @@ class isAdmin
               return $next($request);
             }
             else{
-              return redirect('/UserDash')->with('status','Access Denied! You are not an Admin!');
+                return redirect('/UserDash')->with('status','Access Denied! You are not an Admin!');
             }
           }
           else{
