@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('JobTitle');
             $table->string('UserName');
+            $table->string('JobID');
+            $table->string('UserID');
             $table->string('Resume');
             $table->timestamps();
         });

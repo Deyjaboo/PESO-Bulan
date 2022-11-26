@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use Illuminate\Http\Request;
-
+use Auth;
 class ApplicationController extends Controller
 {
     /**
@@ -35,16 +35,18 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $folder_name = $request->input('job_id');
         $data = new Application();
-            $data->JobTitle = $request->input('job_id');
-            $data->UserName = auth()->user()->id;
+            $data->JobID = $request->input('job_id');
+            $data->JobTitle = $request->input('JobTitle');
+            $data->UserID = auth()->user()->id;
+            $data->UserName = auth()->user()->name;
               //for File Resume
             $file1 = $request->file('resume');
             $extension = $file1->getClientOriginalName();
             $filename = $extension;
-            $file1->move('resume/', $filename);
-            $data->Resume = $filename;
+            $file1->move($folder_name, "(".auth()->user()->name.")".$filename);
+            $data->Resume = "(".auth()->user()->name.")".$filename;
         $data->save();
         return redirect('UserDash')->with('message','Job has been added!');
     }

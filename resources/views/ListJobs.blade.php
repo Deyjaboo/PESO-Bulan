@@ -490,8 +490,11 @@
                                             <!-- <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td> -->
                                             <td>
                                              
-                                              <a class="btn btn-primary" href="{{ url ('/download_file',$data->id)}}"><i class='bx bx-download'></i>
-                                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
+                                              <!-- <a class="btn btn-primary" href="{{ url ('/download_file',$data->id)}}"><i class='bx bx-download'></i></a> -->
+                                              <a class="btn btn-primary" data-toggle="modal" data-target="#download_view{{$data->id}}"><i class='bx bx-download'></i></a>
+                                              @include('modal.DownloadView')
+                                              <!-- <a class="btn btn-danger" href="{{ url ('/download',$data->id)}}"><i class='bx bx-download'></i> </a>   -->
+                                              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
                                                 <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->
                                             </td>
                                         </tr>

@@ -80,6 +80,13 @@ class CompanyController extends Controller
         $data = DB::select('select * from companies where id = ?', [$id]);
         return view('modal.CompanyView',['data'=>$data]);
     }
+    public function search(Request $request){
+        $search = $request->input('input-text');
+        $data = Company::query()
+        ->where('CompanyName', 'LIKE', "%{$search}%")->get();
+
+        return view('companies',['data'=>$data]);
+    }
     
     /**
      * Display the specified resource.

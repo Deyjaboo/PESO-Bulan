@@ -632,18 +632,19 @@ nav ul li{
     <div class="cards">
  
     <div class="input-block">
-  <input type="text" name="input-text" id="c" required spellcheck="false">
+    
+    <form name="form" action="SearchCompany" method="get" enctype="multipart/form-data">
+       {{ csrf_field() }}
+      <input type="text" name="input-text" id="search"  spellcheck="false" autocomplete="off" required>
+  
   <span class="placeholder">
   Search for Company
   </span>
+  </div>
+    <button type="submit" class="btn"><i class="fa fa-search"></i>Search</button>
 
 </div>
-
-
-    <button class="btn"><i class="fa fa-search"></i>Search</button>
-
-</div>
-
+</form>  
 
 <!-- <div class="row">
   <div class="column" style="background-color:#aaa;">

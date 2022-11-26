@@ -59,18 +59,18 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 //Edit
 Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
  
- //CompanyController
+ //CompanyController 
  Route::get('ListOfCompany',[CompanyController::class ,'data_view_company']);
-
  Route::post('addcompany',[CompanyController::class ,'store']);
-
+ Route::get('SearchCompany',[CompanyController::class ,'search']);
  //JobsController
  Route::get('jobs',[JobsController::class ,'data_view'])->name('jobs');
  Route::post('addjob',[JobsController::class ,'store']);
  Route::get('ListJobs',[JobsController::class ,'data_view_jobs']);
  Route::get('download_file/{id}',[JobsController::class ,'download_resume']);
-
-
+ Route::get('download/{id}',[JobsController::class ,'download']);
+ Route::get('download_view/{id}',[JobsController::class ,'details_download']);
+ Route::get('SearchUserDash',[JobsController::class ,'search']);
 });
 // Route::get('/UserDash', function () {
 //     return view('UserDash');

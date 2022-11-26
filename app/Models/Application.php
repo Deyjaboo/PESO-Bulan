@@ -12,5 +12,7 @@ class Application extends Model
         'JobTitle', //Get from table Job
         'UserName', //Get from table User
         'Resume',
+        'JobID',
+        'UserID',
     ];
 }

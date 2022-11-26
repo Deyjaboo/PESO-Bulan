@@ -596,17 +596,19 @@ nav ul li{
 
     <img src="images/Bulan.png" style="width:100%;height:300px;">
 <hr>
-
+<form name="form" action="SearchCompany" method="get" enctype="multipart/form-data">
+       {{ csrf_field() }}
 <div class="cards">
     <div class="input-block" >
-  <input type="text" name="input-text" id="input-text" required spellcheck="false">
+    <input type="text" name="input-text1" id="input-text1"  spellcheck="false" autocomplete="off">
+  <!-- <input type="text" name="input-text1" id="input-text1" required spellcheck="false" autocomplete="off"> -->
   <span class="placeholder">
   Search for Job tittle or Company name
   </span>
 </div>
  
     <div class="input-block">
-  <input type="text" name="input-text" id="input-text" required spellcheck="false" >
+  <input type="text" name="input-text2" id="input-text2"  spellcheck="false" autocomplete="off">
   <span class="placeholder">
   Location
   </span>
@@ -615,7 +617,7 @@ nav ul li{
   <button class="btn"><i class="fa fa-search"></i> Search</button>
    </div>
 <hr>
-   
+</form>  
 
 <div class="wrapper">
 

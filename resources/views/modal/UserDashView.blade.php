@@ -88,6 +88,7 @@ p,input{
 
            <hr>
             <input type="hidden" value="{{$data->id}}" id="job_id" name="job_id">
+            <input type="hidden" value="{{$data->JobTitle}}" id="JobTitle" name="JobTitle">
 
             <label for="" id="asd">Job Description:</label>
             <p id="asd">{{$data->JobDescription}}</p>
