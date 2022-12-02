@@ -486,7 +486,7 @@ div.input-block input:focus+span.placeholder {
   color:black;
   overflow:hidden;
   /* border:2px dashed #ccc; */
-  min-height:170px;
+  min-height:150px;
   /* border : 2px solid #1B4F72;  */
    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
 }
@@ -500,6 +500,13 @@ div.input-block input:focus+span.placeholder {
     width:auto;
     border:0;
     /* border-bottom:2px solid #000;     */
+  }
+
+  #two{
+    float: right;
+display: inline-block;
+width: 100%;
+height: 450px;
   }
 }
 
@@ -718,7 +725,7 @@ p{
       @if($count != 0)
 		            	@foreach($data as $data)
       <div id="two">
-              <div class="course">
+          
                     <div class="course-info">
                     <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
                     </div>
@@ -736,7 +743,7 @@ p{
                             @include('modal.UserDashView'); 
                         </div>
 
-               </div>
+              
                </div> 
                     @endforeach
                     @else

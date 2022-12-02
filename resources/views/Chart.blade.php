@@ -531,8 +531,10 @@
                                             <td>{{$data->Status}}</td>
                                             <td class="font-weight-medium">
                                              
-                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target=""><i class='bx bx-comment-edit' ></i></button>
-                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=""><i class='bx bx-info-square'></i></button>
+                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#seminar_edit{{$data->id}}"><i class='bx bx-comment-edit' ></i></button>
+                                              @include('modal.SeminarDetailsEdit')
+                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seminar_details{{$data->id}}"><i class='bx bx-info-square'></i></button>
+                                              @include('modal.SeminarDetails')
                                             </td>
                                         </tr>
                                         @endforeach

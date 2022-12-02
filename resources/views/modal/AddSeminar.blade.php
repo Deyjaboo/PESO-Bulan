@@ -42,22 +42,20 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label id="headlabel" for="inputEmail4"><b>Starting Date:</b></label>
                 <input type="date" class="form-control" name="DateStart" id="DateStart" placeholder="" required>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label id="headlabel" for="inputEmail4"><b>Up to:</b></label>
                 <input type="date" class="form-control" name="DateEnd" id="DateEnd" placeholder="" required>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label id="headlabel" for="inputEmail4"><b>Slots:</b></label>
                 <input type="number" class="form-control" name="Slots" id="Slots" placeholder="" required>
             </div>
         </div>
-
+      
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Add</button>

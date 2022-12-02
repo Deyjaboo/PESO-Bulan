@@ -21,10 +21,27 @@
           }
 label{
   font-weight: 600;
+  margin-left: 20px;
 }
 
 p,input{
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: justify;
+}
+#imga{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.modal-title{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  img#imga{
+  padding-right: 20px;
+}
 }
 </style>
 <!-- <form action="">
@@ -55,9 +72,9 @@ p,input{
 
             <div class="row">
           <div class="column">
-
-          <img src="images/{{$data->logo}}" alt="" width="100%" height="100%">
-
+           
+          <img  src="images/{{$data->logo}}" id="imga"  alt="" width="100%" height="100%">
+     
           </div>
 
           <div class="column" >

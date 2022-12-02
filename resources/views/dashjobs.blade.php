@@ -480,13 +480,14 @@ div.input-block input:focus+span.placeholder {
     border:0;
     /* border-bottom:2px solid #000;     */
   }
+
 }
 
 
 
 #card_text{
   color: black;
-  margin-top:10px;
+  margin-top:5px;
 
 }
 
@@ -532,6 +533,12 @@ div.input-block input:focus+span.placeholder {
     border:0;
     /* border-bottom:2px solid #000;     */
   }
+
+  #butt{
+    margin-bottom: 20px;
+  }
+
+
 }
 /* CSS */
 .button-32 {
@@ -695,7 +702,6 @@ flex-direction: row;
 }
 
 
-
 </style>
 
 
@@ -709,7 +715,7 @@ flex-direction: row;
                     <div class="course">
 
                         <div class="course-info">
-                            <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
+                            <img src="images/{{$data->logo}}" id="log" style="width:100%;height:120%;">
                         </div>
 
                         <div class="course-progress">
@@ -723,7 +729,7 @@ flex-direction: row;
                             ?>
                         <p id="texts">{{$About}} </p>  
                        
-                        <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
+                        <a class="button-62 w3-right" id="butt" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
                         @include('modal.UserDashView');
                      </div>
 

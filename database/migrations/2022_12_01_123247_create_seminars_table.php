@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('SeminarSlots');
             $table->string('DateStart');
             $table->string('DateEnd');
+            $table->string('DateStart1');
+            $table->string('DateEnd1');
             $table->string('Status');
             $table->timestamps();
         });

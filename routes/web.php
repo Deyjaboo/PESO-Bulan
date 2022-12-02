@@ -73,6 +73,7 @@ Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
   //SeminarController
 Route::post('add_seminar',[SeminarController::class ,'store']);
 Route::get('Chart',[SeminarController::class ,'data_view_seminar']);
+Route::post('edit_seminar/{id}',[SeminarController::class ,'seminar_edit'])->name('edit_seminar');
 
 });
 // Route::get('/UserDash', function () {

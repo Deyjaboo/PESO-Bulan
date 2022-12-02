@@ -22,6 +22,12 @@
   <link rel="shortcut icon" href="images/logo_peso.png"/>
    <!-- table css -->
   <link rel="stylesheet" href="css/styles.css">
+     <!-- Button-->
+     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <!-- Button-->
 </head>
 <body>
   <div class="container-scroller">
@@ -458,10 +464,18 @@
                                             <!-- <td>{{$data->About}}</td> -->
                                             <!-- <td>{{$data->Date}}</td> -->
                                           
-                                            <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                                            <!-- <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td> -->
+                                            <td>
+                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#company_edit{{$data->id}}"><i class='bx bx-comment-edit' ></i></button>
+                                                @include('modal.CompanyEdit')
+                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seminar_details{{$data->id}}"><i class='bx bx-info-square'></i></button>
+                                             
+                                             
+                                            </td>
+                                            
                                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->
                                                 <!-- <button type="button" class="btn btn-success"><i class='bx bx-receipt'></i></button> -->
-                                            </td>
+                                            
                                         </tr>
                                         @endforeach
                                     </tbody>

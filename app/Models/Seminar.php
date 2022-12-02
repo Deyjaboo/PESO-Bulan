@@ -16,6 +16,8 @@ class Seminar extends Model
         'SeminarSlots',
         'DateStart',
         'DateEnd',
+        'DateStart1',
+        'DateEnd1',
         'Status',
     ];
 }
