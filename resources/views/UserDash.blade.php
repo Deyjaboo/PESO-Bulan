@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/logo_peso.png"/>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- boostrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@ box-sizing: border-box;
 .course{
 /* background: #FFF; */
 border-radius: 4px;
-box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
+/* box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2); */
 display: inline-block;
 overflow: hidden;
 width: 100%;
@@ -426,7 +426,7 @@ div.input-block input:focus+span.placeholder {
 .wrapper .form_container{
   background: #fff;
   padding: 30px;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15); 
   border-radius: 3px;
 }
 
@@ -482,14 +482,13 @@ div.input-block input:focus+span.placeholder {
   /* border-right:2px solid #1B4F72;; */
 }
 #two { 
-  background-color: white;
+  /* background-color: white; */
   color:black;
   overflow:hidden;
   /* border:2px dashed #ccc; */
   min-height:170px;
   /* border : 2px solid #1B4F72;  */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
 }
 
 @media screen and (max-width: 767px) {
@@ -555,140 +554,198 @@ nav ul li{
 }
 
 
+.txtt {
+  font-size: 1.5em;
+  letter-spacing: 0.04em;
+  margin: 0;
+  font-weight: normal;
+  color: #ff5252;
+  font-size: 20px;
+}
 
+.announcement {
+  padding: 10px 15px 0px;
+  border: 1px solid #e1e1e1;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+p{
+  color:black;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+#eyy{
+  color: black;
+}
 </style>
 <body>
     <nav>
+
         <div class="logo">
             <img src="images/logo_peso.png" alt="Logo Image">
         </div>
+
         <div class="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
+
         <ul class="nav-links" >
             <li style="color:red"><a href="#">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
-            <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
             @if (Route::has('login'))
             @auth
-              <li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf  
-                      <a class="login-button" href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">{{ Auth::user()->name }}
-                      </a>
-                </form>  
-              </li>
+                <div class="dropdown">
+
+                  <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
+
+                        <div class="dropdown-content">
+                          <form action="{{ route('logout') }}" method="POST">
+                                    @csrf  
+                            <a href="route('logout')"
+                              onclick="event.preventDefault();
+                            this.closest('form').submit();">Logout
+                              <i class="ti-power-off text-primary"></i> 
+                              </a>
+                              </form>  
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                </div>
                   @else
+
                   <b> <li><a class="login-button" href="login">Login</a></li></b>
-                  <!-- <li><button class="join-button" href="#">Join</button></li> -->
               @endauth
             @endif
-          
-        </ul>
-    </nav>
+
+             </ul>
+         </nav>
    
 
     <img src="images/Bulan.png" style="width:100%;height:300px;">
 <hr>
-<form name="form" action="SearchCompany" method="get" enctype="multipart/form-data">
-       {{ csrf_field() }}
-<div class="cards">
-    <div class="input-block" >
-    <input type="text" name="input-text1" id="input-text1"  spellcheck="false" autocomplete="off">
-  <!-- <input type="text" name="input-text1" id="input-text1" required spellcheck="false" autocomplete="off"> -->
-  <span class="placeholder">
-  Search for Job tittle or Company name
-  </span>
-</div>
- 
-    <div class="input-block">
-  <input type="text" name="input-text2" id="input-text2"  spellcheck="false" autocomplete="off">
-  <span class="placeholder">
-  Location
-  </span>
-</div>
- 
-  <button class="btn"><i class="fa fa-search"></i> Search</button>
-   </div>
+<form name="form" action="SearchUserDash" method="get" enctype="multipart/form-data">
+            {{ csrf_field() }}
+        <div class="cards">
+              <div class="input-block" >
+              <input type="text" name="input-text1" id="input-text1"  spellcheck="false" autocomplete="off">
+              <!-- <input type="text" name="input-text1" id="input-text1" required spellcheck="false" autocomplete="off"> -->
+              <span class="placeholder">
+              Search for Job tittle or Company name
+              </span>
+              </div>
+      
+              <div class="input-block">
+              <input type="text" name="input-text2" id="input-text2"  spellcheck="false" autocomplete="off">
+              <span class="placeholder">
+              Location
+              </span>
+              </div>
+      
+                    <button class="btn"><i class="fa fa-search"></i> Search</button>
+        </div>
 <hr>
 </form>  
 
+
+
 <div class="wrapper">
+  @foreach($sem as $sem)
+          <div id="one">
+                <img src="images/seminar.png" alt=""  width="100%" height="100%">
 
-
-    <div id="one">
-      <img src="images/seminar.png" alt=""  width="100%" height="100%">
-   
-    <h2 style="color:blue;">Seminars</h2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Quis delectus perferendis dicta nesciunt, iure at qui culpa deleniti, eaque est sequi laboriosam 
-   
-<hr>
-    <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
-
-    </div>
-
-			@foreach($data as $data)
-  <div id="two">
-        <div class="course">
-          <div class="course-info">
-          <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
-          </div>
-          <div class="course-progress">
-          
-            <h3 id="card_text">{{$data->CompanyName}}</h3>
-            <h6 id="card_text">Job Description</h6>
-                  <?php
-                   $About = Str::limit($data->JobDescription, 250);
-                   ?>
-            <p id="texts">{{$About}} </p>  
+                <div class="announcement">
+                <!-- <img src="images/ccc.png" alt="" width="50px" height="50px"> -->
                
-          <br>
-       
-          
-          <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
-            @include('modal.UserDashView');
+                <span class="txtt">{{$sem->SeminarTitle}}</span>
 
-              
+                  <br>
+                  <br>
+                  <p>(Duration: From {{$sem->DateStart}} to {{$sem->DateEnd}})</p>
+                  <p>Slots: {{$sem->SeminarSlots}}</p>
+                  <!-- <p>{{$sem->SeminarDescription}}</p> -->
+                  <a class="button-62 w3-right" data-toggle="modal" data-target="#seminar_view{{$sem->id}}">Learn more &raquo;</a>
+                
+                    @include('modal.SeminarView')
+                </div>
+                
+                  <hr>
+                  <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
           </div>
-       </div>
-       @endforeach
-  </div> 
+      @endforeach
+
+      @if($count != 0)
+		            	@foreach($data as $data)
+      <div id="two">
+              <div class="course">
+                    <div class="course-info">
+                    <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
+                    </div>
+
+                    <div class="course-progress">
+                          <h3 id="card_text">{{$data->CompanyName}}</h3>
+                          <h6 id="card_text">Job Description</h6>
+                                <?php
+                                $About = Str::limit($data->JobDescription, 250);
+                                ?>
+                          <p id="texts">{{$About}} </p>  
+                    
+                          <br>       
+                        <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
+                            @include('modal.UserDashView'); 
+                        </div>
+
+               </div>
+               </div> 
+                    @endforeach
+                    @else
+                            <center><h1 id="eyy">No Job Available!</h1></center>
+                    @endif
+      
 
   </div>
 
-  
- 
-  <!-- <div class="row">
-  <div class="column">
-
-  <div class="wrapper">
- <div class="form_container">
- 
-     
- </div>
-</div>
-
-  </div>
-
-  <div class="column" >
-
-  <div class="wrapper">
- <div class="form_container">
-  
- </div>
-</div>
-  </div>
-</div> -->
-
-   
-    
 </body>
 <script>
     const hamburger = document.querySelector(".hamburger");

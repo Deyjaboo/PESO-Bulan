@@ -114,13 +114,20 @@ class JobsController extends Controller
     public function view_jobs()
     {
         $data = DB::table('jobs')->get();
-        return view('UserDash',['data'=>$data]);
+        $count = DB::table('jobs')->count();
+        $sem = DB::table('seminars')->get();
+        return view('UserDash',['data'=>$data,'sem'=>$sem,'count'=>$count]);
     }
 
     public function data_view()
     {
         $data = DB::table('companies')->get();
         return view('jobs',['data'=>$data]);
+    }
+    public function data_view_dashjobs()
+    {
+        $data = DB::table('jobs')->get();
+        return view('dashjobs',['data'=>$data]);
     }
     public function data_view_jobs()
     {   
@@ -215,7 +222,11 @@ class JobsController extends Controller
         }else{
             $data = DB::table('jobs')->get();
         }
+        
+        $count = DB::table('jobs')->count();
+        $sem = DB::table('seminars')->get();
 
-        return view('UserDash',['data'=>$data]);
+        return view('UserDash',['data'=>$data,'sem'=>$sem,'count'=>$count]);
+       
     }
 }

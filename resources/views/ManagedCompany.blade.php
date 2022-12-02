@@ -246,7 +246,7 @@ body{
           <li class="nav-item">
             <a class="nav-link" href="Chart">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Chart</span>
+              <span class="menu-title">Seminar/Trainings</span>
             </a>
           </li>
 

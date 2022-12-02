@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- card -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- modal script -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <title>PESO-Bulan</title>
 </head>
@@ -24,20 +31,20 @@ box-sizing: border-box;
 .course{
 background: #FFF;
 border-radius: 4px;
-box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 display: inline-block;
 overflow: hidden;
 width: 100%;
 }
 .course-info{
-
 height: 200px;
 background-repeat: no-repeat;
-  background-size: cover;
+background-size: cover;
 color: #FFF;
 float: left;
 padding: 30px;
 width: 30%;
+
 }
 .course-progress{
 float: left;
@@ -81,6 +88,8 @@ letter-spacing: 1px;
 #texts{
   color:black;
   font-size: 12px;
+  text-align: justify;
+  padding-right: 30px;
 }
 
 .bttn{
@@ -120,7 +129,6 @@ margin: 16px 0px;
 }
 
 
-
     *{
     margin: 0;
     padding: 0;
@@ -155,16 +163,16 @@ nav{
 /*Styling Links*/
 .nav-links{
     display: flex;
-    list-style: none; 
+    list-style: none;
     width: 88vw;
-    padding: 0 0.7vw;
+    padding: 0 0.5vw;
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
 }
 .nav-links li a{
     text-decoration: none;
-    margin: 0 0.7vw;
+    margin: 0 0.5vw;
 }
 .nav-links li a:hover {
     color: #61DAFB;
@@ -208,21 +216,7 @@ nav{
     font-weight: 600;
     font-weight: bold;
 }
-.join-button{
-    color: #131418;
-    background-color: #61DAFB;
-    border: 1.5px solid #61DAFB;
-    border-radius: 2em;
-    padding: 0.6rem 0.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-}
-.join-button:hover {
-    color: #f2f5f7;
-    background-color: transparent;
-    border:1.5px solid #f2f5f7;
-    transition: all ease-in-out 350ms;
-}
+
 
 /*Styling Hamburger Icon*/
 .hamburger div{
@@ -313,31 +307,95 @@ nav{
 }
 
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  /* padding: 10px; */
-  /* height: 200px;  */
-  
+
+div.input-block {
+  position: relative;
+  padding-left: 20px;
+}
+div.input-block input {
+  font-size: 16px;
+  color: #495055;
+  width: 850px;
+  padding: 15px 15px;
+  border-radius: 0.5rem;
+  border: 2px solid #D9D9D9;
+  outline: none;
+}
+div.input-block span.placeholder {
+  position: absolute;
+  margin: 17px 0;
+  padding: 0 4px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  top: 0;
+  left: 25px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.input-block input:valid+span.placeholder,
+div.input-block input:focus+span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+  background: #fff;
+}
+div.input-block input:focus {
+  color: #284B63;
+  border-color: #284B63;
+}
+div.input-block input:focus+span.placeholder {
+  color: #1B4F72;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+
+.cards {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+/* Screen larger than 600px? 2 column */
+@media (min-width: 767px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3ss, 1fr); }
+
+
+}
+
+
+
+
+
+
+.btn {
+
+  background-color: #1B4F72;
+  /* background-color: RoyalBlue; */
+  width: 150px;
+  height: 60px;
+  color: white;
+  padding: 12px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 2px solid #D9D9D9;
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
 
 .wrapper{
-  max-width: 650px;
+  max-width: 1200px;
   width: 100%;
   margin: 30px auto 0;
   padding: 10px;
@@ -348,6 +406,219 @@ nav{
   padding: 30px;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
   border-radius: 3px;
+}
+
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 767px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+.wrapper {
+  /* margin-left:30px;
+  margin-right:30px; */
+  /* border : 2px solid #1B4F72;  */
+  overflow:hidden;
+  margin-bottom: 50px;
+
+}
+
+.wrapper div {
+
+   min-height: 150px;
+   padding: 10px;
+}
+#one {
+   background-color: white;
+  margin-left:30px;
+  color:black;
+  float:left;
+  margin-right:20px;
+  width:200px;
+  border : 2px solid #1B4F72;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  /* border-right:2px solid #1B4F72;; */
+}
+#two {
+  background-color: white;
+  color:black;
+  overflow:hidden;
+
+  /* border:2px dashed #ccc; */
+  min-height:170px;
+  /* border : 2px solid #1B4F72;  */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+@media screen and (max-width: 767px) {
+   #one {
+    float: none;
+    /* margin-right:0; */
+    margin-right:20px;
+    margin-left:20px;
+    width:auto;
+    border:0;
+    /* border-bottom:2px solid #000;     */
+  }
+}
+
+
+
+#card_text{
+  color: black;
+  margin-top:10px;
+
+}
+
+
+#box1 {
+   background-color: white;
+  color:black;
+  /* float:left; */
+  width:50%;
+  max-width: 960px;
+ height: 100%;
+  /* justify-content: space-between;
+  display: flex; */
+}
+
+#box2 {
+   background-color: white;
+  color:black;
+  float:right;
+  width:50%;
+  max-width: 960px;
+  height: 100%;
+}
+
+
+
+@media screen and (max-width: 767px) {
+   #box1 {
+    float: none;
+    margin-right:20px;
+    margin-left:20px;
+    width:auto;
+    border:0;
+
+    /* border-bottom:2px solid #000;     */
+
+  }
+  #box2 {
+    float: none;
+    margin-right:20px;
+    margin-left:20px;
+    width:auto;
+    border:0;
+    /* border-bottom:2px solid #000;     */
+  }
+}
+/* CSS */
+.button-32 {
+
+  background-color: #1B4F72;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background-color: RoyalBlue;
+  box-shadow: rgba(87, 166, 230, 0.95);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+
+nav ul li a{
+color:white;
+}
+
+
+nav ul li{
+  display:inline-block;
+  line-height:100px;
+  margin-top:20px;
+}
+
+#arrow {
+  color:#ff3300;
+  font-weight: 900;
+
+}
+#view{
+  color:#ff3300;
+  font-weight: 600;
+}
+
+/* CSS */
+.button-62 {
+  /* background: #1B4F72; */
+  background: RoyalBlue;
+  
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 </style>
 <body>
@@ -362,7 +633,7 @@ nav{
         </div>
         <ul class="nav-links">
             <li><a href="UserDash">Home</a></li>
-            <li><a href="#">Jobs</a></li>
+            <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
             <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
@@ -370,52 +641,108 @@ nav{
             @auth
               <li>
                 <form action="{{ route('logout') }}" method="POST">
-                    @csrf  
+                    @csrf
                       <a class="login-button" href="route('logout')"
                             onclick="event.preventDefault();
                             this.closest('form').submit();">{{ Auth::user()->name }}
                       </a>
-                </form>  
+                </form>
               </li>
                   @else
                   <b> <li><a class="login-button" href="login">Login</a></li></b>
                   <!-- <li><button class="join-button" href="#">Join</button></li> -->
               @endauth
             @endif
-          
+
         </ul>
     </nav>
-<!-- <img src="images/ulan(1).png" style="width:100%;height:400px;"> -->
-<!-- <h3>Find Jobs In PESO-Bulan</h3> -->
 
-    <div class="row">
-  <div class="column">
-
-  <div class="wrapper">
- <div class="form_container">
-  
- </div>
-</div>
-
-  </div>
-
-  <div class="column" >
-
-  <div class="wrapper">
- <div class="form_container">
-  
- </div>
-</div>
-  </div>
-</div>
+<br>
    
 
 
-</body>
+<style>
+  #asd{
+      color:black;
+    }
+.row1 {
+display: flex;
+flex-direction: row;
+}
+
+
+
+.items-bar{
+  margin-top: 40px;
+  /* margin-bottom: 10px; */
+  
+}
+
+.items-bar .box-item{
+  background-color: #f8f8f8;
+  box-shadow: 0 10px 20px rgb(0,0,0,0,19), 0 6px 6px rgb(0,0,0,0,23);
+  
+}
+/
+
+.box-item .box-img .item_image{
+  width: 100%;
+  height: 100px;
+}
+
+.items-bar .box-item .box-body{
+  padding: 5px 0px 10px 15px;
+}
+
+
+
+</style>
+
+
+    <section class="items-bar">
+      	<div class="container position-relative">
+      		<div class="row gy-5">
+              
+              @foreach($data as $data)
+			    <div class="col-md-6">
+      			  <div class="box-item">
+                    <div class="course">
+
+                        <div class="course-info">
+                            <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
+                        </div>
+
+                        <div class="course-progress">
+                        <?php
+                        $CompanyName = Str::limit($data->CompanyName, 15);
+                        ?>
+                        <h3 id="card_text">{{$CompanyName}}</h3>
+                        <h6 id="card_text">Job Description</h6>
+                            <?php
+                            $About = Str::limit($data->JobDescription, 200);
+                            ?>
+                        <p id="texts">{{$About}} </p>  
+                       
+                        <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
+                        @include('modal.UserDashView');
+                     </div>
+
+      			    </div>
+      			  </div>
+                </div>
+            @endforeach
+      		</div>
+      	</div>
+      </section>
+
+
+
+
+
 <script>
-    const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links li");
 
 hamburger.addEventListener('click', ()=>{
    //Animate Links
@@ -428,4 +755,5 @@ hamburger.addEventListener('click', ()=>{
     hamburger.classList.toggle("toggle");
 });
 </script>
+
 </html>

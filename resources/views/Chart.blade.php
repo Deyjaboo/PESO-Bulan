@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Charts</title>
+  <title> PESO ADMIN</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -20,6 +20,19 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/logo_peso.png"/>
+   <!-- table css -->
+  <link rel="stylesheet" href="css/styles.css">
+<!-- modal -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <!-- Button-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <!-- Button-->
 </head>
 <body>
   <div class="container-scroller">
@@ -46,17 +59,11 @@
           </li>
         </ul> -->
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+          <!-- <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" data-target="#exampleModal1">
               <img src="images/usericon.png" alt="profile"/>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <!-- <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a> -->
-
-
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown" id="exampleModal1" aria-hidden="true">
                     <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <a  class="dropdown-item" href="route('logout')"
@@ -66,10 +73,8 @@
                     <span>Logout</span> 
                     </a>
                     </form>
-
             </div>
-          </li>
-        
+          </li> -->
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -261,12 +266,14 @@
             </a>
           </li>
 
+
           <li class="nav-item">
             <a class="nav-link" href="Manageduser">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Manage User</span>
             </a>
           </li>
+
 
 
           <li class="nav-item">
@@ -304,13 +311,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="Manageduser">
+            <a class="nav-link" href="Chart">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Chart</span>
+              <span class="menu-title">Seminar/Trainings</span>
             </a>
           </li>
-<!--           
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">UI Elements</span>
@@ -397,7 +403,7 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
               </ul>
             </div>
-          </li>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" href="log">
               <i class="icon-paper menu-icon"></i>
@@ -406,18 +412,148 @@
           </li> -->
         </ul>
       </nav>
+      <style>
+        
+.wrapper{
+  max-width: 950px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
+}
+
+.wrapper .form_container{
+  background: #fff;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.wrapper .form_container .form_item{
+  margin-bottom: 25px;
+}
+
+.form_wrap.fullname,
+.form_wrap.select_box{
+  display: flex;
+}
+
+.form_wrap.fullname .form_item,
+.form_wrap.select_box .form_item{
+  width: 50%;
+}
+
+.form_wrap.fullname .form_item:first-child,
+.form_wrap.select_box .form_item:first-child{
+  margin-right: 4%;
+}
+
+.wrapper .form_container .form_item label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form_item input[type="text"],input[type="date"],
+.form_item select{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+}
+
+.form_item input[type="text"]:focus{
+  border-color: #6271f0;
+}
+        #add{
+          float: right;
+        }
+      </style>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <h3 class="font-weight-bold">Charts</h3>
-        
+        <button type="button" class="btn btn-primary" id="add"  data-toggle="modal" data-target="#add_seminar"><i class='bx bxs-layer-plus' ></i> Add Seminar</button>
+        @include('modal.AddSeminar')
+        <h3 class="font-weight-bold">Seminar/Trainings</h3>
+        <br>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+        <div class="form_container">
+                        <div class="card-body">
+                                <table id="datatablesSimple" class="TableData">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>SeminarTitle</th>
+                                            <!-- <th>SeminarDescription</th>
+                                            <th>SeminarRequirements</th> -->
+                                            <th>SeminarSlots</th>
+                                            <th>DateStart</th>
+                                            <th>DateEnd</th>
+                                            <th>Status</th>
+                                            <th>Processes</th>
+                                        </tr>
+                                    </thead>
+                                     <tfoot>
+                                        <tr>
+                                        <th>ID</th>
+                                            <th>SeminarTitle</th>
+                                            <!-- <th>SeminarDescription</th>
+                                            <th>SeminarRequirements</th> -->
+                                            <th>SeminarSlots</th>
+                                            <th>DateStart</th>
+                                            <th>DateEnd</th>
+                                            <th>Status</th>
+                                            <th>Processes</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    @foreach($data as $data)
+                                        <tr>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->SeminarTitle}}</td>
+                                            <!-- <td>{{$data->SeminarDescription}}</td>
+                                            <td>{{$data->SeminarRequirements}}</td> -->
+                                            <td>{{$data->SeminarSlots}}</td>
+                                            <td>{{$data->DateStart}}</td>
+                                            <td>{{$data->DateEnd}}</td>
+                                            <td>{{$data->Status}}</td>
+                                            <td class="font-weight-medium">
+                                             
+                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target=""><i class='bx bx-comment-edit' ></i></button>
+                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=""><i class='bx bx-info-square'></i></button>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+
+                                </table>
+                                </div>
+                          </div>
+                      
+                      </div>  
+                      <!-- end table  -->
+                      
             </div>
         </div>
-       
+
+        
+        
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-    </div>   
+     
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -443,6 +579,11 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
+  <!-- Table-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
+        <script src="js/datatables-simple-demo.js"></script>
 </body>
 
 </html>

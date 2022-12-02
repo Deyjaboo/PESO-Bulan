@@ -151,6 +151,8 @@
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
+
+        
       </div>
     </nav>
     <!-- partial -->
@@ -161,12 +163,25 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+      
+
           <li class="nav-item">
             <a class="nav-link" href="dashboard">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="UserDash">
+            <i class="fa fa-home" style="font-size:20px;"></i>
+           <i class="icon- menu-icon"></i>
+              <span class="menu-title">Home</span>
+
+            </a>
+          </li>
+
 
 
           <li class="nav-item">
@@ -230,7 +245,7 @@
           <li class="nav-item">
             <a class="nav-link" href="Chart">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Chart</span>
+              <span class="menu-title">Seminar/Trainings</span>
             </a>
           </li>
 
@@ -991,6 +1006,10 @@
               </div>
             </div>
         </div> -->
+
+
+  
+
        
         <!-- partial -->
       </div>

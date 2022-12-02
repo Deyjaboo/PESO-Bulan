@@ -6,6 +6,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\SeminarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,9 +50,7 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('/ManagedCompany', function () {
      return view('ManagedCompany');
     });
-    Route::get('/dashjobs', function () {
-        return view('dashjobs');
-       });
+ 
 
 //Controller
  Route::get('Manageduser',[Controller::class ,'data_view']);
@@ -71,6 +70,10 @@ Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
  Route::get('download/{id}',[JobsController::class ,'download']);
  Route::get('download_view/{id}',[JobsController::class ,'details_download']);
  Route::get('SearchUserDash',[JobsController::class ,'search']);
+  //SeminarController
+Route::post('add_seminar',[SeminarController::class ,'store']);
+Route::get('Chart',[SeminarController::class ,'data_view_seminar']);
+
 });
 // Route::get('/UserDash', function () {
 //     return view('UserDash');
@@ -82,10 +85,7 @@ Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
  Route::post('apply_job',[ApplicationController::class ,'store']);
    
 
-     Route::get('/Chart', function () {
-        return view('Chart');
-     });
-
+   
     
  });
 //  view jobs userdash
@@ -95,6 +95,10 @@ Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
     return view('Aboutus');
  });
 
+ Route::get('/dashjobs', function () {
+    return view('dashjobs');
+   });
+   Route::get('dashjobs',[JobsController::class ,'data_view_dashjobs']);
 //  Route::get('/companies', function () {
 //    return view('companies');
 // });

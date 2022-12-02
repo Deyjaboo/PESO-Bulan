@@ -31,11 +31,18 @@ box-sizing: border-box;
 .course{
 background: #FFF;
 border-radius: 4px;
-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 display: inline-block;
 overflow: hidden;
 width: 100%;
 }
+
+.course:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
 .course-info{
 
 height: 110px;
@@ -709,7 +716,7 @@ flex-direction: row;
               
               @foreach($data as $data)
 			      <div class="col-md-4">
-      				<div class="box-item">
+      				<div class="">
                 <div class="course">
                   <div class="course-info">
                    <img src="images/{{$data->logo}}" style="width:100%;height:100%;">

@@ -103,6 +103,7 @@ letter-spacing: 1px;
 width: 100%;
 height: 200px;
 float: none;
+display: inline-block;
 }
 .course-info{
 height: 140px;
@@ -420,20 +421,15 @@ nav{
           
         </ul>
     </nav>
-   
-<!-- 
-    <img src="images/cover2.png" style="width:100%;height:200px;"> -->
 
-  <div id="two">
+
+ 
         <div class="course">
           <div class="course-info">
           <img src="images/Peso.png" style="width:100%;height:150%;">
           </div>
+
           <div class="course-progress">
-            <div class="progress-container">
-                <div class="progress"></div>
-                
-            </div>
           
             <h2 id="card_text">Public Employment Service Office (PESO)</h2>
             <h4 id="card_text">Bulan,Sorsogon</h4>
@@ -450,11 +446,12 @@ nav{
       
              <br><br> 
           </div>
+          
        </div>
 
     
    
-  </div>
+
 
 </body>
 <script>
