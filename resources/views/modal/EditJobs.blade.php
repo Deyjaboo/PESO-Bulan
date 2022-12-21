@@ -1,90 +1,5 @@
-<script src="js/mod.js"></script>
-<style>
-
-.center {
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-}
-.form-input {
-  width:350px;
-  padding:20px;
-  background:#fff;
-  box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377),
-              3px 3px 7px rgba(94, 104, 121, 0.377);
-}
-
-.form-input img {
-  width:100%;
-  display:none;
-  margin-bottom:30px;
-}
-.form-input input {
-  display:none;
-}
-
-.form-input label {
-  display:block;
-  width:45%;
-  height:45px;
-  margin-left: 25%;
-  line-height:50px;
-  text-align:center;
-  background:#1172c2;
-  color:#fff;
-  font-size:15px;
-  font-family:"Open Sans",sans-serif;
-  text-transform:Uppercase;
-  font-weight:600;
-  border-radius:5px;
-  cursor:pointer;
-}
-
-
-
-
-
-
-
-.form .grid {
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  gap:20px;
-}
-.form .grid .form-element {
-  width:200px;
-  height:200px;
-  box-shadow:0px 0px 20px 5px rgba(100,100,100,0.1);
-}
-.form .grid .form-element input {
-  display:none;
-}
-.form .grid .form-element img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.form .grid .form-element div {
-  position:relative;
-  height:40px;
-  margin-top:-40px;
-  background:rgba(0,0,0,0.5);
-  text-align:center;
-  line-height:40px;
-  font-size:13px;
-  color:#f5f5f5;
-  font-weight:600;
-}
-.form .grid .form-element div span {
-  font-size:40px;
-}
-</style>
-
 <!-- Modal -->
-<div class="modal fade" id="company_edit{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="editjobs{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -94,13 +9,15 @@
         </button>
       </div>
       
-      <form action="{{ route ('edit_company' , $data->id) }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route ('edit_jobs' , $data->id) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       <div class="modal-body">
-
-    
-       
-
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label id="headlabel" for="inputEmail4"><b>Job Title:</b></label>
+                <input type="text" class="form-control" name="JobTitle" id="JobTitle" placeholder="" value="{{$data->JobTitle}}" required>
+            </div>
+        </div>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>Company Name:</b></label>
@@ -109,28 +26,28 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
-                <label id="headlabel" for="inputEmail4"><b>Location:</b></label>
-                <input type="text" class="form-control" name="Location" id="Location" placeholder="" value="{{$data->Location}}" required>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label id="headlabel" for="inputEmail4"><b>Website:</b></label>
-                <input type="text" class="form-control" name="Website" id="Website" placeholder="" value="{{$data->Website}}" required>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label id="headlabel" for="inputEmail4"><b>About:</b></label>
-                <textarea class="form-control" name="About" id="About" cols="10" rows="5">{{$data->About}}</textarea>
+                <label id="headlabel" for="inputEmail4"><b>Company Website:</b></label>
+                <input type="text" class="form-control" name="CompanyWebsite" id="CompanyWebsite" placeholder="" value="{{$data->CompanyWebsite}}" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label id="headlabel" for="inputEmail4"><b>Contact:</b></label>
-                <input type="text" class="form-control" name="Contact" id="Contact" placeholder="" value="{{$data->Contact}}" required>
+                <label id="headlabel" for="inputEmail4"><b>Company Contact:</b></label>
+                <input type="text" class="form-control" name="CompanyContact" id="CompanyContact" placeholder="" value="{{$data->CompanyContact}}" required>
             </div>
             <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Number of Vaccancies:</b></label>
+                <input type="number" class="form-control" name="NumVacancies" id="NumVacancies" placeholder="" value="{{$data->NumVacancies}}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label id="headlabel" for="inputEmail4"><b>Working Location:</b></label>
+                <input type="text" class="form-control" name="WorkingLocation" id="WorkingLocation" placeholder="" value="{{$data->WorkingLocation}}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>Industry:</b></label>
                 <select id="Industry" name="Industry" class="form-control" required>
                         @if($data->Industry == 'Accounting & Finance')
@@ -155,7 +72,6 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
                         @elseif($data->Industry == 'BPO')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" selected>BPO</option>
@@ -592,6 +508,7 @@
 							<option value="Retail" >Retail</option>
 							<option value="Telecommunications" selected>Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
+                           
                         @else
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
@@ -616,69 +533,45 @@
 							<option value="Training & Education" selected>Training & Education</option>
                         @endif
                         </select>
-                <!-- <input type="text" class="form-control" name="Industry" id="Industry" placeholder="" value="{{$data->Industry}}" required> -->
+
+            </div>
             </div>
 
-             <!-- <div class="form_item">
-            <div class="form">
-            <div class="grid">
-                <div class="form-element">
-                  <input type="file" id="file-1" accept="image/*" name="Picture" id="Picture" required>
-                  <label for="file-1" id="file-1-preview">
-                  <img src="https://bit.ly/3ubuq5o" alt="" >
-                  <div>
-                    <span>+</span>
-             </div>
-                  </label>
-              </div>
-            </div> 
-          </div>
-        </div> -->
-			
-					<div class="center">
-			<div class="form-input">
-		<div class="preview">
-		<img  id="file-ip-1-preview">
-		</div>
-		<label for="file-ip-1">Change Logo</label>
-        <input type="file" name="logo" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label id="headlabel" for="inputEmail4"><b>Job Description:</b></label>
+                    <textarea  class="form-control" name="JobDescription" id="JobDescription" cols="30" rows="10">{{$data->JobDescription}}</textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label id="headlabel" for="inputEmail4"><b>Requirements:</b></label>
+                    <textarea  class="form-control" name="Requirements" id="Requirements" cols="30" rows="10">{{$data->Requirements}}</textarea>
+                </div>
+            </div>
 
-			</div>
-			</div> 
-
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Status:</b></label>
+               <select name="Status" id="Status" class="form-control">
+                @if($data->Status == "New")
+                    <option value="New" selected>New</option>
+                    <option value="Unavailable">Unavailable</option>
+                @else
+                    <option value="New">New</option>
+                    <option value="Unavailable" selected>Unavailable</option>
+                @endif
+               </select>
+            </div>
         </div>
+ 
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="myFunction()">Close</button>
       </div>
     </form>
     </div>
   </div>
 </div>
- <script>
 
-function showPreview(event){
-  if(event.target.files.length > 0){
-    var src = URL.createObjectURL(event.target.files[0]);
-    var preview = document.getElementById("file-ip-1-preview");
-    preview.src = src;
-    preview.style.display = "block";
-  }
-}
-	//  function previewBeforeUpload(id){
-    // document.querySelector("#"+id).addEventListener("change",function(e){
-    //   if(e.target.files.length == 0){
-    //     return;
-    //   }
-    //   let file = e.target.files[0];
-    //   let url = URL.createObjectURL(file);
-    //   document.querySelector("#"+id+"-preview div").innerText = file.name;
-    //   document.querySelector("#"+id+"-preview img").src = url;
-    // });
-    // }
-
-    // previewBeforeUpload("file-1");
-    // previewBeforeUpload("file-2");
-    // previewBeforeUpload("file-3");
- </script>

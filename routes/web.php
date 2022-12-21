@@ -7,6 +7,7 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\SeminarController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +51,8 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('/ManagedCompany', function () {
      return view('ManagedCompany');
     });
+
+ 
  
 
 //Controller
@@ -57,11 +60,12 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 //Edit
 Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
- 
+Route::post('user_update/{id}',[UserController::class ,'update_user'])->name('user_update');
+Route::post('edit_jobs/{id}',[JobsController::class ,'update_jobs'])->name('edit_jobs');
  //CompanyController 
  Route::get('ListOfCompany',[CompanyController::class ,'data_view_company']);
  Route::post('addcompany',[CompanyController::class ,'store']);
- Route::get('SearchCompany',[CompanyController::class ,'search']);
+ Route::post('edit_company/{id}',[CompanyController::class ,'company_edit'])->name('edit_company');
  //JobsController
  Route::get('jobs',[JobsController::class ,'data_view'])->name('jobs');
  Route::post('addjob',[JobsController::class ,'store']);
@@ -69,7 +73,7 @@ Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
  Route::get('download_file/{id}',[JobsController::class ,'download_resume']);
  Route::get('download/{id}',[JobsController::class ,'download']);
  Route::get('download_view/{id}',[JobsController::class ,'details_download']);
- Route::get('SearchUserDash',[JobsController::class ,'search']);
+
   //SeminarController
 Route::post('add_seminar',[SeminarController::class ,'store']);
 Route::get('Chart',[SeminarController::class ,'data_view_seminar']);
@@ -84,7 +88,11 @@ Route::post('edit_seminar/{id}',[SeminarController::class ,'seminar_edit'])->nam
    
  //ApplicationController
  Route::post('apply_job',[ApplicationController::class ,'store']);
-   
+ Route::get('profile',[Controller::class ,'profile_view']);
+
+//  Route::get('/profile', function () {
+//   return view('profile');
+//  });
 
    
     
@@ -105,7 +113,13 @@ Route::post('edit_seminar/{id}',[SeminarController::class ,'seminar_edit'])->nam
 // });
 Route::get('companies',[CompanyController::class ,'details_company']);
 Route::get('CompanyView/{id}',[CompanyController::class ,'details_company1']);
-
 Route::get('UserDashView/{id}',[JobsController::class ,'details_jobs']);
+
+Route::get('SeminarPage',[SeminarController::class ,'Seminar_View']);
+
+Route::get('SearchUserDash',[JobsController::class ,'search']);
+Route::get('SearchCompany',[CompanyController::class ,'search']);
+
+
 
 require __DIR__.'/auth.php';

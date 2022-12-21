@@ -26,6 +26,7 @@ class User extends Authenticatable
         'job2',
         'email',
         'password',
+        'pass_confirm',
         'role',
     ];
 

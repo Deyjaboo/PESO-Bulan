@@ -43,6 +43,10 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $data = new Jobs();
+
+        $count = DB::table('jobs')->count();
+        
+        $random_num = mt_rand(100, 1000);
                 $data->JobTitle = $request->input('JobTitle');
                 $data->CompanyName = $request->input('CompanyName');
                 // $company = DB::table('companies')->where('CompanyName', $request->input('CompanyName'))->value('CompanyName');
@@ -63,6 +67,8 @@ class JobsController extends Controller
 
                 $data->logo = $logo;
                 $data->Status = "New";
+
+                $data->Folder_Name = $random_num."_".$request->input('JobTitle')."_".$count;
             $data->save();
             return redirect('jobs')->with('message','Job has been added!');
     }
@@ -78,27 +84,43 @@ class JobsController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Jobs  $jobs
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Jobs $jobs)
+  
+    public function update_jobs(Request $request, $id)
     {
-        //
-    }
+        $randomNumber = random_int(10, 99);
+  
+        $JobTitle = $request->input('JobTitle');
+        $CompanyName = $request->input('CompanyName');
+        $CompanyWebsite = $request->input('CompanyWebsite');
+        $CompanyContact = $request->input('CompanyContact');
+        $NumVacancies = $request->input('NumVacancies');
+        $WorkingLocation = $request->input('WorkingLocation');
+        $Industry = $request->input('Industry');
+        $JobDescription = $request->input('JobDescription');
+        $Requirements = $request->input('Requirements');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Jobs  $jobs
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Jobs $jobs)
-    {
-        //
+        // $random_num = mt_rand(100, 1000);
+        // $num = $id - 1;
+        // $Folder_Name = $random_num."_".$request->input('JobTitle')."_".$num;
+
+        $Status = $request->input('Status');
+
+        DB::table('jobs')
+        ->where('id', $id)
+        ->update(array(
+            'JobTitle' => $JobTitle,
+            'CompanyName' => $CompanyName,
+            'CompanyWebsite' => $CompanyWebsite,
+            'CompanyContact' => $CompanyContact,
+            'NumVacancies' => $NumVacancies,
+            'WorkingLocation' => $WorkingLocation,
+            'Industry' => $Industry,
+            'JobDescription' => $JobDescription,
+            'Requirements' => $Requirements,
+            // 'Folder_Name' => $Folder_Name,
+            'Status' => $Status,
+        ));
+            return redirect('ListJobs')->with('message1','Job details updated successfully!');
     }
 
     /**
@@ -113,10 +135,15 @@ class JobsController extends Controller
     }
     public function view_jobs()
     {
-        $data = DB::table('jobs')->get();
+        $data = DB::table('jobs')->where("Status","New")->inRandomOrder()
+        ->limit(10)
+        ->get();
         $count = DB::table('jobs')->count();
-        $sem = DB::table('seminars')->get();
-        return view('UserDash',['data'=>$data,'sem'=>$sem,'count'=>$count]);
+        $sem = DB::table('seminars')->where("Status","New")->inRandomOrder()
+        ->limit(3)
+        ->get();
+        $sem1 = DB::table('seminars')->count();
+        return view('UserDash',['data'=>$data,'sem'=>$sem,'sem1'=>$sem1,'count'=>$count]);
     }
 
     public function data_view()
@@ -168,6 +195,7 @@ class JobsController extends Controller
     }
     public function download($id)
     {
+        $download_name = DB::table('jobs')->where("id",$id)->value('Folder_Name');
         $count = DB::table('applications')->where("JobID",$id)->count();
         if($count == 0){
             return redirect('ListJobs')->with('message','Nothing to download!');
@@ -180,7 +208,7 @@ class JobsController extends Controller
        
             if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
             {
-                $files = File::files(public_path($id));
+                $files = File::files(public_path($download_name));
        
                 foreach ($files as $key => $value) {
                     $relativeNameInZipFile = basename($value);
@@ -209,24 +237,33 @@ class JobsController extends Controller
 
         if($search1!=null && $search2!=null){
             $data = Jobs::query()
-            ->where('JobTitle', 'LIKE', "%{$search1}%")
-            ->where('WorkingLocation', 'LIKE', "%{$search2}%")->get();
+            ->where('JobTitle', 'LIKE', "%{$search1}%")->orwhere('CompanyName', 'LIKE', "%{$search1}%")
+            ->where('WorkingLocation', 'LIKE', "%{$search2}%")->where("Status","New")->inRandomOrder()
+            ->limit(10)
+            ->get();
         }elseif($search1!=null && ($search2==null || $search2==" ")){
             $data = Jobs::query()
-            ->where('JobTitle', 'LIKE', "%{$search1}%")
+            ->where('JobTitle', 'LIKE', "%{$search1}%")->orwhere('CompanyName', 'LIKE', "%{$search1}%")
+            ->where("Status","New")
+            ->inRandomOrder()
+            ->limit(10)
             ->get();
         }elseif($search2!=null && ($search1==null || $search1==" ")){
             $data = Jobs::query()
-            ->where('WorkingLocation', 'LIKE', "%{$search2}%")
+            ->where('WorkingLocation', 'LIKE', "%{$search2}%")->inRandomOrder()
+            ->where("Status","New")
+            ->limit(10)
             ->get();
         }else{
             $data = DB::table('jobs')->get();
         }
         
         $count = DB::table('jobs')->count();
-        $sem = DB::table('seminars')->get();
-
-        return view('UserDash',['data'=>$data,'sem'=>$sem,'count'=>$count]);
+        $sem = DB::table('seminars')->where("Status","New")->inRandomOrder()
+        ->limit(3)
+        ->get();
+        $sem1 = DB::table('seminars')->count();
+        return view('UserDash',['data'=>$data,'sem'=>$sem,'sem1'=>$sem1,'count'=>$count]);
        
     }
 }

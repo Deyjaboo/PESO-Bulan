@@ -29,7 +29,12 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>Requirements:</b></label>
-                <p>{{$data->SeminarRequirements}}</p>
+                <!-- <p>{{$data->SeminarRequirements}}</p> -->
+                <p>
+                 <?php
+                   echo nl2br($data->SeminarRequirements);
+                  ?>
+                </p>
                 <!-- <textarea class="form-control" name="Requirements" id="Requirements" cols="10" rows="5">{{$data->SeminarRequirements}}</textarea> -->
             </div>
         </div>

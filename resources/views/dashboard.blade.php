@@ -103,8 +103,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/peso-logo.png" class="mr-2" alt="logo"  style="width:60px;height:60px;"/>PESO-Bulan</a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/peso-logo.png" alt="logo" style="width:60px;height:60px;"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="dashboard"><img src="images/peso-logo.png" class="mr-2" alt="logo"  style="width:60px;height:60px;"/>PESO-Bulan</a>
+        <a class="navbar-brand brand-logo-mini" href="dashboard"><img src="images/peso-logo.png" alt="logo" style="width:60px;height:60px;"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -123,12 +123,16 @@
           </li>
         </ul> -->
         <ul class="navbar-nav navbar-nav-right">
-         
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/usericon.png" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a href="UserDash" class="dropdown-item">
+                <i class="ti-eye text-primary"></i>
+                View As User
+              </a> 
+
               <!-- <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
@@ -144,9 +148,12 @@
                     <span>Logout</span> 
                     </a>
                     </form>
+            
+                   
 
             </div>
           </li>
+         
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -164,7 +171,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
 
-      
+       
 
           <li class="nav-item">
             <a class="nav-link" href="dashboard">
@@ -173,14 +180,13 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="UserDash">
-            <i class="fa fa-home" style="font-size:20px;"></i>
+            <i class="fa fa-eye" style="font-size:20px;"></i>
            <i class="icon- menu-icon"></i>
-              <span class="menu-title">Home</span>
-
+              <span class="menu-title">View as User</span>
             </a>
-          </li>
+          </li> -->
 
 
 
@@ -199,7 +205,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListJobs">Lists Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListJobs">List Of Jobs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
               </ul>
             </div>
@@ -222,7 +228,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">List Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>

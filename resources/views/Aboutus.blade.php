@@ -81,6 +81,7 @@ letter-spacing: 1px;
 #texts{
   color:black;
   font-size: 12px;
+  text-align: justify;
 }
 
 .bttn{
@@ -136,7 +137,7 @@ body{
 nav{
     height: 6rem;
     width: 100vw;
-    background-color: #1B4F72;
+    background-color: #1E5298;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     /* position: fixed; */
@@ -201,7 +202,7 @@ nav{
     font-weight: bold;
 
 }
-.login-button:hover {
+/* .login-button:hover {
     color: #131418;
     background-color: #f2f5f7;
     border:1.5px solid #f2f5f7;
@@ -223,7 +224,7 @@ nav{
     background-color: transparent;
     border:1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
-}
+} */
 
 /*Styling Hamburger Icon*/
 .hamburger div{
@@ -385,6 +386,53 @@ nav{
 
 
 
+#dropbtn {
+  background-color: #ffffff;
+  color: blue;
+  padding: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-left: 20px;
+ margin-top: 10px;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 </style>
 <body>
     <nav>
@@ -400,24 +448,60 @@ nav{
             <li><a href="UserDash">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
+            <li><a href="SeminarPage">Seminar</a></li>
             <!-- <li><a href="#">Services</a></li> -->
             <li><a href="#">About Us</a></li>
+           
             @if (Route::has('login'))
             @auth
-              <li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf  
-                      <a class="login-button" href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">{{ Auth::user()->name }}
-                      </a>
-                </form>  
-              </li>
+                @if (Auth::user()->role == 'admin')
+                <div class="dropdown">
+                  <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
+
+                        <div class="dropdown-content">
+                        <a href="dashboard" class="dropdown-item" id="dropbtn">
+                              <i class="fa fa-eye" style="font-size:20px;color:blue"></i>
+                              View As Admin
+                            </a> 
+
+                          <form action="{{ route('logout') }}" method="POST">
+                                    @csrf  
+                      <a href="route('logout')" id="dropbtn"
+                              onclick="event.preventDefault();
+                            this.closest('form').submit();">  <i class="fa fa-sign-out" style="font-size:18px;color:blue"></i>Logout 
+                          
+                              </a>  
+                              </form>  
+                            
+                        </div>
+                </div>
                   @else
-                  <b> <li><a class="login-button" href="login">Login</a></li></b>
-                  <!-- <li><button class="join-button" href="#">Join</button></li> -->
+                  <div class="dropdown">
+                  <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
+
+                        <div class="dropdown-content">
+                          <a href="profile" class="dropdown-item" id="dropbtn">
+                              <i class="fa fa-eye" style="font-size:20px;color:blue"></i>
+                              View Profile
+                          </a> 
+
+                          <form action="{{ route('logout') }}" method="POST">
+                                    @csrf  
+                      <a href="route('logout')" id="dropbtn"
+                              onclick="event.preventDefault();
+                            this.closest('form').submit();">  <i class="fa fa-sign-out" style="font-size:18px;color:blue"></i>Logout 
+                          
+                              </a>  
+                              </form>  
+
+                            
+                        </div>
+                </div>
+                  @endif  
+                  @else
+                 <b> <li><a class="login-button" href="login">Login</a></li></b>
               @endauth
-            @endif
+            @endif  
           
         </ul>
     </nav>

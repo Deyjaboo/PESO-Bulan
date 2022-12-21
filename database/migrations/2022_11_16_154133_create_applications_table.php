@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('JobID');
             $table->string('UserID');
             $table->string('Resume');
+            $table->string('CompanyName');
+            $table->string('WorkLocation');
             $table->timestamps();
         });
     }

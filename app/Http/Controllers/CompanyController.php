@@ -71,7 +71,9 @@ class CompanyController extends Controller
     }
     public function details_company()
     {
-        $data = DB::table('companies')->get();
+        $data = DB::table('companies')->inRandomOrder()
+        ->limit(10)
+        ->get();
         return view('companies',['data'=>$data]);
     }
     public function details_company1($id)
@@ -87,7 +89,61 @@ class CompanyController extends Controller
 
         return view('companies',['data'=>$data]);
     }
+    public function company_edit(Request $request, $id)
+    {
+               if ($request->file('logo') != null){
+                $CompanyName = $request->input('CompanyName');
+                $Location = $request->input('Location');
+                $Contact = $request->input('Contact');
+                $Website = $request->input('Website');
+                $Industry = $request->input('Industry');
+                $About = $request->input('About');
+                //for picture
+                $file1 = $request->file('logo');
+                $extension = $file1->getClientOriginalName();
+                $filename = $extension;
+                $file1->move('images/', $filename);
+                $logo = $filename;
+                // $Date = $request->input('Date');
+                // $logo = $request->input('logo');
+
+                DB::table('companies')
+                ->where('id', $id)
+                ->update(array(
+                    'CompanyName' => $CompanyName,
+                    'Location' => $Location,
+                    'Contact' => $Contact,
+                    'Website' => $Website,
+                    'Industry' => $Industry,
+                    'About' => $About,
+                    'logo' => $logo,
+
+                ));
+               }else{
+                $CompanyName = $request->input('CompanyName');
+                $Location = $request->input('Location');
+                $Contact = $request->input('Contact');
+                $Website = $request->input('Website');
+                $Industry = $request->input('Industry');
+                $About = $request->input('About');
+
+                DB::table('companies')
+                ->where('id', $id)
+                ->update(array(
+                    'CompanyName' => $CompanyName,
+                    'Location' => $Location,
+                    'Contact' => $Contact,
+                    'Website' => $Website,
+                    'Industry' => $Industry,
+                    'About' => $About,
+
+                ));
+               }
+               
+       
+            return redirect('ListOfCompany')->with('message','Company details updated successfully!');
     
+    }
     /**
      * Display the specified resource.
      *
@@ -110,18 +166,7 @@ class CompanyController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Company $company)
-    {
-        //
-    }
-
+  
     /**
      * Remove the specified resource from storage.
      *

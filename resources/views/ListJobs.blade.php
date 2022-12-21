@@ -307,7 +307,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">List Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -429,6 +429,11 @@
                 </ul>
             </div>
         @endif
+        @if(session()->has('message1'))
+            <div class="alert alert-success">
+                {{ session()->get('message1') }}
+            </div>
+        @endif
         @if(session()->has('message'))
             <div class="alert alert-danger">
                 {{ session()->get('message') }}
@@ -451,7 +456,7 @@
                                             <th>Requirements</th> -->
                                             <!-- <th>DatePosted</th> -->
                                             <th>Status</th>
-                                            <th>Processes</th>
+                                            <th>Edit/Download</th>
                                         </tr>
                                     </thead>
                                      <tfoot>
@@ -468,7 +473,7 @@
                                             <th>Requirements</th> -->
                                             <!-- <th>DatePosted</th> -->
                                             <th>Status</th>
-                                            <th>Processes</th>
+                                            <th>Edit/Download</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -489,9 +494,10 @@
                                     
                                             <!-- <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td> -->
                                             <td>
-                                             
                                               <!-- <a class="btn btn-primary" href="{{ url ('/download_file',$data->id)}}"><i class='bx bx-download'></i></a> -->
-                                              <a class="btn btn-primary" data-toggle="modal" data-target="#download_view{{$data->id}}"><i class='bx bx-download'></i></a>
+                                              <a class="btn btn-primary" data-toggle="modal" data-target="#editjobs{{$data->id}}"><i class='bx bx-edit-alt'></i></a>
+                                              @include('modal.EditJobs')
+                                              <a class="btn btn-dark" data-toggle="modal" data-target="#download_view{{$data->id}}"><i class='bx bx-download'></i></a>
                                               @include('modal.DownloadView')
                                               <!-- <a class="btn btn-danger" href="{{ url ('/download',$data->id)}}"><i class='bx bx-download'></i> </a>   -->
                                               <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-edit-alt'></i></button> -->

@@ -343,7 +343,8 @@ body{
           <div class="form_wrap">
             <div class="form_item">
               <label>About the Company</label>
-              <input  style=" height: 100px;"  type="text" name="About" id="About" required>
+              <textarea cols="100" rows="10" name="About" id="About" required></textarea>
+            
             </div>
           </div>
 
@@ -356,25 +357,20 @@ body{
         <div class="form_item">
           <div class="form">
             <div class="grid">
-              <div class="form-element">
-            <input type="file" id="file-1" accept="image/*" name="Picture" id="Picture" required>
-            <label for="file-1" id="file-1-preview">
-              <img src="https://bit.ly/3ubuq5o" alt="" >
-              <div>
-                <span>+</span>
+
+                <div class="form-element">
+                  <input type="file" id="file-1" accept="image/*" name="Picture" id="Picture" required>
+                  <label for="file-1" id="file-1-preview">
+                  <img src="https://bit.ly/3ubuq5o" alt="" >
+                  <div>
+
+                    <span>+</span>
+                  </div>
+                  </label>
               </div>
-                </label>
-              </div>
-  
-          </div> 
-
-
-    
-
-         
-  
-  </div>
-</div>
+            </div> 
+          </div>
+        </div>
           
 
 </div>

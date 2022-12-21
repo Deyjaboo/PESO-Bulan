@@ -1,114 +1,53 @@
-<style>
-          #asd,#exampleModalLongTitle{
-            color:black;
-          }
-
-          .wrapper .form_container .form_item{
-  margin-bottom: 25px;
-}
-
-.form_wrap.fullname,
-.form_wrap.select_box{
-  display: flex;
-}
-
-.form_wrap.fullname .form_item,
-.form_wrap.select_box .form_item{
-  width: 50%;
-}
-
-.form_wrap.fullname .form_item:first-child,
-.form_wrap.select_box .form_item:first-child{
-  margin-right: 4%;
-}
-
-.wrapper .form_container .form_item label{
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form_item input[type="text"],
-.form_item select{
-  width: 100%;
-  padding: 10px;
-  font-size: 13px;
-  border: 1px solid #dadce0;
-  border-radius: 3px;
-}
-
-.form_item input[type="text"]:focus{
-  border-color: #6271f0;
-}
-
-@media screen and (max-width: 600px) {
-    .form_item {
-    width: 100%;
-  }
-}
-
-        </style>
-
-<div class="modal fade" id="useredit{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<!-- Modal -->
+<div class="modal fade" id="viewuserdetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Edit User Details</h6>
+        <h5 class="modal-title" id="exampleModalLongTitle">User Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-	  
-	<form action="{{ route ('user_update', $data->id) }}" method="post" enctype="multipart/form-data">
-      {{ csrf_field() }}
+      <form >
       <div class="modal-body">
-
-
-	   <div class="form-row">
-            <div class="form-group col-md-6">
-                <label id="headlabel" for="Name"><b>Name:</b></label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="" value="{{$data->name}}" required>
+      <div class="form-row">
+            <div class="form-group col-md-12">
+                <label id="headlabel" for="inputEmail4"><b>Name:</b></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="" value="{{ Auth::user()->name }}" required>
             </div>
+      </div>
 
-			<div class="form-group col-md-6">
-                <label id="headlabel" for="Name"><b>Email:</b></label>
-                <input type="text" class="form-control" name="email" id="email" placeholder="" value="{{$data->email}}" required>
-            </div>
-			<input type="hidden" class="form-control" name="password" id="password" placeholder="" value="{{$data->password}}" required>
-        </div> 
-		
-
-		<div class="form-row">
+        <div class="form-row">
             <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>Address:</b></label>
-                <input type="text" class="form-control" name="Address" id="Address" placeholder="" value="{{$data->address}}" required>
+                <input type="text" class="form-control" name="address" id="address" placeholder="" value="{{ Auth::user()->address }}" required>
             </div>
         </div>
 
-		<div class="form-row">
-            <div class="form-group col-md-6">
-                <label id="headlabel" for="Number"><b>Mobile Number:</b></label>
-                <input type="text" class="form-control" name="Number" id="Number" placeholder="" value="{{$data->contact}}" required>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Contact Number:</b></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="" value="{{ Auth::user()->contact }}" required>
             </div>
-
-			<div class="form-group col-md-6">
-                <label id="headlabel" for="Sex"><b>Sex:</b></label>
-				<select id="Sex" name="Sex" class="form-control" required>
-                        @if($data->sex == 'Male')
-                            <option value="Male" selected>Male</option>
-                            <option value="Female">Female</option>
-                        @else
-                            <option value="Male">Male</option>
-                            <option value="Female" selected>Female</option>
-                        @endif
+            <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Sex:</b></label>
+                <select class="form-control" name="sex" id="sex">
+                  @if( Auth::user()->sex == "Male")
+                  <option value="{{ Auth::user()->sex }}" selected>{{ Auth::user()->sex }}</option>
+                  <option value="Female">Female</option>
+                  @else
+                  <option value="Male">Male</option>
+                  <option value="Female" selected>Female</option>
+                  @endif
                 </select>
             </div>
         </div>
 
-		<div class="form-row">
+        <div class="form-row">
             <div class="form-group col-md-6">
         <b><label>Job1:<span class="text-danger"></span></label></b>
             <select id="Job1" name="Job1" class="form-control" required>
-                        @if($data->job1 == 'Accounting & Finance')
+                        @if(Auth::user()->job1 == 'Accounting & Finance')
                             <option value="Accounting & Finance" selected>Accounting & Finance</option>
 							<option value="BPO">BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
@@ -131,7 +70,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'BPO')
+                        @elseif(Auth::user()->job1 == 'BPO')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" selected>BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
@@ -154,7 +93,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Consumer Products')
+                        @elseif(Auth::user()->job1 == 'Consumer Products')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" selected>Consumer Products</option>
@@ -177,7 +116,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Financial Services')
+                        @elseif(Auth::user()->job1 == 'Financial Services')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -200,7 +139,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Government')
+                        @elseif(Auth::user()->job1 == 'Government')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -223,7 +162,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Human Resources')
+                        @elseif(Auth::user()->job1 == 'Human Resources')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -246,7 +185,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Insurance')
+                        @elseif(Auth::user()->job1 == 'Insurance')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -269,7 +208,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Manufacturing')
+                        @elseif(Auth::user()->job1 == 'Manufacturing')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -292,7 +231,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Tourism')
+                        @elseif(Auth::user()->job1 == 'Tourism')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -315,7 +254,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Transportation')
+                        @elseif(Auth::user()->job1 == 'Transportation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -338,7 +277,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Advertising')
+                        @elseif(Auth::user()->job1 == 'Advertising')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -361,7 +300,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Call Center')
+                        @elseif(Auth::user()->job1 == 'Call Center')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -384,7 +323,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Engineering')
+                        @elseif(Auth::user()->job1 == 'Engineering')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -407,7 +346,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Food & Beverages')
+                        @elseif(Auth::user()->job1 == 'Food & Beverages')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -430,7 +369,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Healthcare')
+                        @elseif(Auth::user()->job1 == 'Healthcare')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -453,7 +392,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Information Technology')
+                        @elseif(Auth::user()->job1 == 'Information Technology')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -476,7 +415,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Legal')
+                        @elseif(Auth::user()->job1 == 'Legal')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -499,7 +438,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Non-Profit Organisation')
+                        @elseif(Auth::user()->job1 == 'Non-Profit Organisation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -522,7 +461,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Retail')
+                        @elseif(Auth::user()->job1 == 'Retail')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -545,7 +484,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Telecommunications')
+                        @elseif(Auth::user()->job1 == 'Telecommunications')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -599,7 +538,7 @@
 		<div class="form-group col-md-6">
         <b><label>Job2:<span class="text-danger"></span></label></b> 
                         <select id="Job2" name="Job2" class="form-control" required>
-                        @if($data->job2 == 'Accounting & Finance')
+                        @if(Auth::user()->job2 == 'Accounting & Finance')
                             <option value="Accounting & Finance" selected>Accounting & Finance</option>
 							<option value="BPO">BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
@@ -622,7 +561,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'BPO')
+                        @elseif(Auth::user()->job2 == 'BPO')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" selected>BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
@@ -645,7 +584,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Consumer Products')
+                        @elseif(Auth::user()->job2 == 'Consumer Products')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" selected>Consumer Products</option>
@@ -668,7 +607,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Financial Services')
+                        @elseif(Auth::user()->job2 == 'Financial Services')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -691,7 +630,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Government')
+                        @elseif(Auth::user()->job2 == 'Government')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -714,7 +653,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Human Resources')
+                        @elseif(Auth::user()->job2 == 'Human Resources')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -737,7 +676,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Insurance')
+                        @elseif(Auth::user()->job2 == 'Insurance')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -760,7 +699,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Manufacturing')
+                        @elseif(Auth::user()->job2 == 'Manufacturing')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -783,7 +722,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Tourism')
+                        @elseif(Auth::user()->job2 == 'Tourism')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -806,7 +745,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Transportation')
+                        @elseif(Auth::user()->job2 == 'Transportation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -829,7 +768,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Advertising')
+                        @elseif(Auth::user()->job2 == 'Advertising')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -852,7 +791,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Call Center')
+                        @elseif(Auth::user()->job2 == 'Call Center')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -875,7 +814,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Engineering')
+                        @elseif(Auth::user()->job2 == 'Engineering')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -898,7 +837,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Food & Beverages')
+                        @elseif(Auth::user()->job2 == 'Food & Beverages')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -921,7 +860,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Healthcare')
+                        @elseif(Auth::user()->job2 == 'Healthcare')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -944,7 +883,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Information Technology')
+                        @elseif(Auth::user()->job2 == 'Information Technology')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -967,7 +906,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Legal')
+                        @elseif(Auth::user()->job2 == 'Legal')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -990,7 +929,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Non-Profit Organisation')
+                        @elseif(Auth::user()->job2 == 'Non-Profit Organisation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -1013,7 +952,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Retail')
+                        @elseif(Auth::user()->job2 == 'Retail')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -1036,7 +975,7 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Telecommunications')
+                        @elseif(Auth::user()->job2 == 'Telecommunications')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -1059,7 +998,7 @@
 							<option value="Telecommunications" selected>Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Training & Education')
+                        @elseif(Auth::user()->job2 == 'Training & Education')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
@@ -1104,20 +1043,80 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications" >Telecommunications</option>
 							<option value="Training & Education" >Training & Education</option>
-                            <option value ="Vehicular/Pedestrian Accident" selected>Vehicular/Pedestrian Accident</option>
+              <option value ="Vehicular/Pedestrian Accident" selected>Vehicular/Pedestrian Accident</option>
                         @endif
                         </select>
         </div>
         </div>
-        
-            <!-- <b><label>User Id:<span class="text-danger"></span></label></b> 
-            <input class="form-control" type="text" value="{{$data->id}}"> -->
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Email:</b></label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="" value="{{ Auth::user()->email }}" required>
+            </div>
+            <?php
+            $string =  Auth::user()->pass_confirm;
+            $password = substr($string, 3,-3);
+            ?>
+            <div class="form-group col-md-6">
+                <label id="headlabel" for="inputEmail4"><b>Password:</b></label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="" value="{{$password}}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+            </div>
+            <div class="form-group col-md-6">
+              <label><input type="checkbox" onclick="myFunction()"> Show Password<span class="text-danger"></span></label>
+            </div>
+        </div>
+       
+            <section id="sel">
+                <button type="button" class="btn0">Edit User</button> 
+                <button type="button" class="btn1" data-dismiss="modal">Close</button>  
+             </section>
+            
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Save changes</button>
-		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-	  </form>
+    </form>
     </div>
   </div>
 </div>
+<style>
+    #headlabel1{
+        color: blue;
+    }
+    #headlabel2{
+        color: red;
+    }
+    #sel{
+      text-align-last: right;
+    }
+    .btn0{
+  background-color: RoyalBlue;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.btn0:hover {      background-color: #008CBA;      color: white; }
+.btn1:hover {      background-color:  #ff4d4d;      color: white; }
+.btn1{
+  background-color: #ff3333;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+</style>

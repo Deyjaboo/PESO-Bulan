@@ -284,7 +284,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListJobs">Lists Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListJobs">List Of Jobs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
               </ul>
             </div>
@@ -304,7 +304,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">List Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -416,7 +416,23 @@
       <div class="main-panel">
         <div class="content-wrapper">
         <h3 class="font-weight-bold">Manage Users</h3>
-       
+        <br>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+       @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+    
         <div class="form_container">
                         <div class="card-body">
                                 <table id="datatablesSimple" class="TableData">
@@ -478,6 +494,9 @@
                       <!-- end table  -->
             </div>
         </div>
+        
+
+
         
         <!-- partial -->
       </div>

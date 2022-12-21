@@ -284,7 +284,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListJobs">Lists Of Jobs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListJobs">List Of Jobs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="jobs">Add Jobs</a></li>
               </ul>
             </div>
@@ -304,7 +304,7 @@
             </a>
             <div class="collapse" id="ui-basic1">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">Lists Of Company</a></li>
+                <li class="nav-item"> <a class="nav-link" href="ListOfCompany">List Of Company</a></li>
                 <li class="nav-item"> <a class="nav-link" href="ManagedCompany">Add Company</a></li>
               </ul>
             </div>
@@ -549,7 +549,7 @@
                       
             </div>
         </div>
-
+    
         
         
         <!-- partial -->

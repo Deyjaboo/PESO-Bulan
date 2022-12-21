@@ -151,7 +151,7 @@ body{
 nav{
     height: 6rem;
     width: 100vw;
-    background-color: #1B4F72;
+    background-color: #1E5298;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     /* position: fixed; */
@@ -216,14 +216,14 @@ nav{
     font-weight: bold;
 
 }
-.login-button:hover {
+/* .login-button:hover {
     color: #131418;
     background-color: #f2f5f7;
     border:1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
     font-weight: 600;
     font-weight: bold;
-}
+} */
 
 
 /*Styling Hamburger Icon*/
@@ -314,7 +314,11 @@ nav{
     transform: rotate(45deg) translate(-5px,-6px);
 }
 
-
+@media (min-width: 767px) {
+  .input-block  {
+ width: 50%;
+}
+}
 
 div.input-block {
   position: relative;
@@ -436,6 +440,17 @@ div.input-block input:focus+span.placeholder {
   .column {
     width: 100%;
   }
+
+  .box-body{
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .btn{
+    margin-left: 20px;
+    width: 42%;
+  }
+
+
 }
 
 
@@ -540,6 +555,35 @@ div.input-block input:focus+span.placeholder {
     border:0;
     /* border-bottom:2px solid #000;     */
   }
+
+  .div.input-block input {
+  font-size: 16px;
+  color: #495055;
+  width: 850px;
+  padding: 15px 15px;
+  border-radius: 0.5rem;
+  border: 2px solid #D9D9D9;
+  outline: none;
+}
+
+#search{
+  width: 95%;
+}
+#searchbtn{
+  width: 90%;
+}
+
+.dropdown-content {
+ 
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   min-width: 160px;
+  bottom: 50px;
+  z-index: 1; 
+margin-bottom: 50px;
+}
 }
 /* CSS */
 .button-32 {
@@ -595,6 +639,54 @@ nav ul li{
   color:#ff3300;
   font-weight: 600;
 }
+
+#dropbtn {
+  background-color: #ffffff;
+  color: blue;
+  padding: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-left: 30px;
+  margin-top: -20px;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 </style>
 <body>
     <nav>
@@ -610,24 +702,60 @@ nav ul li{
             <li><a href="UserDash">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
+            <li><a href="SeminarPage">Seminar</a></li>
             <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
+
             @if (Route::has('login'))
             @auth
-              <li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                      <a class="login-button" href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">{{ Auth::user()->name }}
-                      </a>
-                </form>
-              </li>
+                @if (Auth::user()->role == 'admin')
+                <div class="dropdown">
+                  <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
+
+                        <div class="dropdown-content">
+                        <a href="dashboard" class="dropdown-item" id="dropbtn">
+                              <i class="fa fa-eye" style="font-size:20px;color:blue"></i>
+                              View As Admin
+                            </a> 
+
+                          <form action="{{ route('logout') }}" method="POST">
+                                    @csrf  
+                      <a href="route('logout')" id="dropbtn"
+                              onclick="event.preventDefault();
+                            this.closest('form').submit();">  <i class="fa fa-sign-out" style="font-size:18px;color:blue"></i>Logout 
+                          
+                              </a>  
+                              </form>  
+                            
+                        </div>
+                </div>
                   @else
-                  <b> <li><a class="login-button" href="login">Login</a></li></b>
-                  <!-- <li><button class="join-button" href="#">Join</button></li> -->
+                  <div class="dropdown">
+                  <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
+
+                        <div class="dropdown-content">
+                          <a href="profile" class="dropdown-item" id="dropbtn">
+                              <i class="fa fa-eye" style="font-size:20px;color:blue"></i>
+                              View Profile
+                          </a> 
+
+                          <form action="{{ route('logout') }}" method="POST">
+                                    @csrf  
+                      <a href="route('logout')" id="dropbtn"
+                              onclick="event.preventDefault();
+                            this.closest('form').submit();">  <i class="fa fa-sign-out" style="font-size:18px;color:blue"></i>Logout 
+                          
+                              </a>  
+                              </form>  
+
+                            
+                        </div>
+                </div>
+                  @endif  
+                  @else
+                 <b> <li><a class="login-button" href="login">Login</a></li></b>
               @endauth
-            @endif
+            @endif  
 
         </ul>
     </nav>
@@ -644,16 +772,18 @@ nav ul li{
        {{ csrf_field() }}
       <input type="text" name="input-text" id="search"  spellcheck="false" autocomplete="off" required>
   
-  <span class="placeholder">
-  Search for Company
-  </span>
-  </div>
-    <button type="submit" class="btn"><i class="fa fa-search"></i>Search</button>
+      <span class="placeholder">
+      Search for Company
+      </span>
+      </div>
+      </form>  
+      
+    <button type="submit" id="searchbtn" class="btn"><i class="fa fa-search"></i>Search</button>
 
 </div>
-</form>  
 
-<!-- <div class="row">
+<!-- 
+<div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
     <p>Some text..</p>
@@ -662,7 +792,7 @@ nav ul li{
     <h2>Column 2</h2>
     <p>Some text..</p>
   </div>
-</div> -->
+</div>  -->
 
 
 
@@ -723,7 +853,7 @@ flex-direction: row;
                   </div>
                   <div class="box-body">
                   <?php
-                          $CompName = Str::limit($data->CompanyName, 10);
+                          $CompName = Str::limit($data->CompanyName, 20);
                           ?>
                     <h5 id="card_text" class="CompName" value="{{$CompName}}">{{$CompName}}</h5>
                     <!-- <b><h6 id="card_text" class="AboutComp" value="{{$data->About}}">About Company</h6></b> -->
@@ -750,8 +880,6 @@ flex-direction: row;
       		</div>
       	</div>
       </section>
-
-
 
 
 

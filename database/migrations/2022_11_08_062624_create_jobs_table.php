@@ -26,6 +26,7 @@ return new class extends Migration
             $table->longText('Requirements');
             $table->string('DatePosted');
             $table->string('logo');
+            $table->string('Folder_Name');
             $table->string('Status');
             $table->timestamps();
         });

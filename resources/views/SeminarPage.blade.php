@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/logo_peso.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- boostrap link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- card -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- card -->
-   
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    
     <title>PESO-Bulan</title>
 </head>
 <style>
@@ -28,9 +27,9 @@ box-sizing: border-box;
 }
 
 .course{
-/* background: #FFF; */
+background: #FFF;
 border-radius: 4px;
-/* box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2); */
+box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
 display: inline-block;
 overflow: hidden;
 width: 100%;
@@ -61,7 +60,7 @@ color: #FFF;
 display: inline-block;
 font-size: 8px;
 opacity: 0.8;
-/* margin-top: 30px; */
+margin-top: 30px;
 text-decoration: none;
 }
 .progress-container{
@@ -109,6 +108,7 @@ letter-spacing: 1px;
 width: 100%;
 height: 200px;
 float: none;
+display: inline-block;
 }
 .course-info{
 height: 140px;
@@ -213,8 +213,8 @@ nav{
     transition: all ease-in-out 350ms;
     font-weight: 600;
     font-weight: bold;
-} */
-/* .join-button{
+}
+.join-button{
     color: #131418;
     background-color: #61DAFB;
     border: 1.5px solid #61DAFB;
@@ -262,8 +262,7 @@ nav{
     }
     .nav-links{
         position: fixed;
-        background: #1B4F72;
-        color:white;
+        background: #1B4F72;;
         height: 100vh;
         width: 100%;
         flex-direction: column;
@@ -321,78 +320,7 @@ nav{
 
 
 
-div.input-block {
-  position: relative;
-  padding-left: 20px;
-}
-div.input-block input {
-  font-size: 16px;
-  color: #495055;
-  width: 350px;
-  padding: 15px 15px;
-  border-radius: 0.5rem;
-  border: 2px solid #D9D9D9;
-  outline: none;
-}
-div.input-block span.placeholder {
-  position: absolute;
-  margin: 17px 0;
-  padding: 0 4px;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  top: 0;
-  left: 25px;
-  transition: all 0.2s;
-  transform-origin: 0% 0%;
-  background: none;
-  pointer-events: none;
-}
-div.input-block input:valid+span.placeholder,
-div.input-block input:focus+span.placeholder {
-  transform: scale(0.8) translateY(-30px);
-  background: #fff;
-}
-div.input-block input:focus {
-  color: #284B63;
-  border-color: #284B63;
-}
-div.input-block input:focus+span.placeholder {
-  color: #1B4F72;
-}
-.place{
-    width: 400px;
-}
 
-.card {
-  /* background-color: dodgerblue;
-  color: white; */
-  padding: 1rem;
-  height: 3rem;
-  
-
-}
-
-.cards {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-}
-
-/* Screen larger than 600px? 2 column */
-@media (min-width: 767px) {
-  .cards { grid-template-columns: repeat(2, 1fr);
-   }
-}
-
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
-
-
-}
 
 
 
@@ -417,80 +345,28 @@ div.input-block input:focus+span.placeholder {
 }
 
 
-
-.wrapper{
-  max-width: 1000px;
-  width: 100%;
-  margin: 30px auto 0;
-  padding: 10px;
-}
-
-.wrapper .form_container{
-  background: #fff;
-  padding: 30px;
-   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15); 
-  border-radius: 3px;
-}
-
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; 
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@media screen and (max-width: 767px) {
-  .column {
-    width: 100%;
-  }
-} 
-
-
-
-.wrapper { 
-  /* margin-left:30px;
-  margin-right:30px; */
-  /* border : 2px solid #1B4F72;  */
-  overflow:hidden;
-  margin-bottom: 50px;
-  
-}
-
-.wrapper div {
-  
-   min-height: 150px;
-   padding: 10px;
-} 
-
 #one {
    background-color: white;
-  margin-left:10px;
+  margin-left:30px;
   color:black;
   float:left; 
-  margin-right:10px;
-  width:300px;
- 
+  margin-right:20px;
+  width:200px;
+  border : 2px solid #1B4F72; 
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   /* border-right:2px solid #1B4F72;; */
 }
 #two { 
-  /* background-color: white; */
+  background-color: white;
   color:black;
   overflow:hidden;
+
   /* border:2px dashed #ccc; */
-  min-height:150px;
+  min-height:170px;
   /* border : 2px solid #1B4F72;  */
-   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 @media screen and (max-width: 767px) {
@@ -504,20 +380,8 @@ div.input-block input:focus+span.placeholder {
     /* border-bottom:2px solid #000;     */
   }
 
-  #two{
-    float: right;
-display: inline-block;
-width: 100%;
-height: 450px;
-  }
-
-
-  #input-text1  #input-text2{
-    width: 90%;
-  }
-
-
   .dropdown-content {
+  margin-left: 20px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -525,9 +389,8 @@ height: 450px;
    min-width: 160px;
   bottom: 50px;
   z-index: 1; 
-margin-bottom: 50px;
-}
 
+}
 }
 
 
@@ -537,7 +400,42 @@ margin-bottom: 50px;
 
 } 
 
-/* CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 28%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: justify;
+}
+p{
+    color: black;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+h5{
+    color:RoyalBlue;
+}
+
 .button-62 {
   /* background: #1B4F72; */
   background: RoyalBlue;
@@ -570,45 +468,45 @@ margin-bottom: 50px;
   box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
-nav ul li a{
-color:white;
+.wrapper{
+  max-width: 450px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
 }
 
-nav ul li{
-  display:inline-block;
-  line-height:100px;
-  margin-top:20px;
+.wrapper .form_container{
+  background: #fff;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  border-color: #99bbff;
+  border-style: outset;
 }
 
-
-.txtt {
-  font-size: 1.5em;
-  letter-spacing: 0.04em;
-  margin: 0;
-  font-weight: normal;
-  color: #ff5252;
-  font-size: 20px;
+li a{
+    color: white;
 }
 
-.announcement {
-  padding: 10px 15px 0px;
-  border: 1px solid #e1e1e1;
-  background-color: #f9f9f9;
-  border-radius: 4px;
+.train{
+    color: black;
+    margin-left: 20px;
+    margin-top: 10px;
 }
-p{
-  color:black;
+#nodata{
+color: black;
 }
+
 
 #dropbtn {
- 
   background-color: #ffffff;
   color: blue;
-  padding: 10px;
+  padding: 8px;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   font-weight: bold;
+  
 
 }
 
@@ -620,20 +518,20 @@ p{
 }
 
 .dropdown-content {
-  margin-left: 30px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  /* min-width: 160px;
-  bottom: 50px;
-  z-index: 1; */
+  z-index: 1; 
+   margin-left: 30px;
 
+  
 }
 
 .dropdown-content a {
   color: black;
-  padding: 10px 5px;
+  padding: 5px;
   text-decoration: none;
   display: block;
 }
@@ -649,34 +547,26 @@ p{
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
-#eyy{
-  color: black;
-}
+      </style>
 
-span { width:100%; display:inline-block; }
-span.align-right { text-align:right; }
-</style>
 <body>
     <nav>
-
         <div class="logo">
             <img src="images/logo_peso.png" alt="Logo Image">
         </div>
-
         <div class="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-
-        <ul class="nav-links" >
-            <li style="color:red"><a href="#">Home</a></li>
+        <ul class="nav-links">
+            <li><a href="UserDash">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
             <li><a href="SeminarPage">Seminar</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
-
-
+        
             @if (Route::has('login'))
             @auth
                 @if (Auth::user()->role == 'admin')
@@ -727,146 +617,65 @@ span.align-right { text-align:right; }
                  <b> <li><a class="login-button" href="login">Login</a></li></b>
               @endauth
             @endif  
-            
-        
-
-             </ul>
-
-            
-
-             
-         </nav>
-   
-
-    <img src="images/Bulan.png" style="width:100%;height:300px;">
-<hr>
-      <form name="searchform" id="searchform" action="SearchUserDash" method="get" enctype="multipart/form-data">
-            {{ csrf_field() }}
-        <div class="cards">
-              <div class="input-block" >
-              <input type="text" name="input-text1" id="input-text1"  spellcheck="false" autocomplete="off"  >
-              <!-- <input type="text" name="input-text1" id="input-text1" required spellcheck="false" autocomplete="off"> -->
-              <span class="placeholder">
-              Search for Job tittle or Company name
-              </span>
-              </div>
-      
-              <div class="input-block">
-              <input type="text" name="input-text2" id="input-text2"  spellcheck="false" autocomplete="off" >
-              <span class="placeholder">
-              Location
-              </span>
-              </div>
-              
-              <!-- <a class="btn" href="javascript: submitform()"><i class="fa fa-search"></i> Search</a> -->
-              <button class="btn" id="searchbutton" name="searchbutton"><i class="fa fa-search"></i> Search</button>
-            
-        </div>
-      <hr>
-      </form>  
-      @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-       @if(session()->has('message'))
-            <div class="alert alert-success">
-               <center id="eyy">{{ session()->get('message') }}</center> 
-            </div>
-        @endif
-<script>
-
-// $(document).ready(function(){
-//     $('#searchbutton').attr('disabled',true);
-//     $('#input-text1').keyup(function(){
-//         if($(this).val.length > 0){
-//             $('#searchbutton').attr('disabled', false);
-//         }else{
-//           $('#searchbutton').attr('disabled', true);
-//         }
-//     })
-//     $('#input-text2').keyup(function(){
-//         if($(this).val.length > 0){
-//             $('#searchbutton').attr('disabled', false);
-//         }else{
-//           $('#searchbutton').attr('disabled', true);
-//         }
-//     })
-// });
-</script>
-
-<div class="wrapper">
-
- 
-          <div id="one">
-                <img src="images/seminar.png" alt=""  width="100%" height="100%">
-                @foreach($sem as $sem)
-                <div class="announcement">
-                <!-- <img src="images/ccc.png" alt="" width="50px" height="50px"> -->
-               
-                <span class="txtt">{{$sem->SeminarTitle}}</span>
-
-                  <br>
-                  <br>
-                  <p>(Duration: From {{$sem->DateStart}} to {{$sem->DateEnd}})</p>
-                  <p>Slots: {{$sem->SeminarSlots}}</p>
-                  <!-- <p>{{$sem->SeminarDescription}}</p> -->
-                  <a class="button-62 w3-right" data-toggle="modal" data-target="#seminar_view{{$sem->id}}">Learn more &raquo;</a>
-                
-                    @include('modal.SeminarView')
-                </div>
-                @endforeach
-                <br>
-                @if($sem1 > 0)
-                <span class="align-right">
-                  <a href="SeminarPage">View All&raquo;</a>
-                </span>
-                @else
-                <br>
-                <center class="txtt">
-                  No Seminars Available!
-                </center>
-                @endif
-                  <hr>
-                  <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
-          </div>
-  
-
-      @if($count != 0)
-		            	@foreach($data as $data)
-      <div id="two">
           
-                    <div class="course-info">
-                    <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
-                    </div>
+        </ul>
+    </nav>
 
-                    <div class="course-progress">
-                          <h3 id="card_text">{{$data->CompanyName}}</h3>
-                          <h6 id="card_text">Job Description</h6>
-                                <?php
-                                $About = Str::limit($data->JobDescription, 250);
-                                ?>
-                          <p id="texts">{{$About}} </p>  
-                    
-                          <br>       
-                        <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
-                            @include('modal.UserDashView'); 
-                        </div>
+    <img src="images/train.png" style="width:100%;height:300px;">
+ 
+        <!-- <div class="course">
+          <div class="course-info">
+          <img src="images/Seminars.png" style="width:110%;height:200%;">
+          </div>
 
-              
-               </div> 
-                    @endforeach
-                    @else
-                            <center><h1 id="eyy">No Job Available!</h1></center>
-                    @endif
+          <div class="course-progress">
+          
+           <b><h2 id="card_text">Training / Seminar</h2></b> 
+            <h4 id="card_text">Bulan,Sorsogon</h4>
+            <p id="texts">Training and Seminar should be top priority to organisations because the benefits to employees are numerous. According to Steptoe-Warren (2013) these benefits include:
+
+                Reduction in poor quality and defective products and services
+                Reduced waste (eg materials in the process of production)
+                Reduction in absenteeism
+                Reduction in staff turnover
+                Reduction in customer complaints and customer turnover
+                Increased staff loyalty/feelings of obligation (Shore et al. 2006) and motivation (Grant 2008)
+                A more flexible, empowered and adaptable workforce (Pfeffer 1998)
+                Enhanced company image</p>
       
-
-  </div>
-
+             <br><br> 
+          </div>
+          
+       </div> -->
+<br>
+      
+       <div class="row">
+        @foreach($sem as $sem)
+        <div class="column">
+        <div class="wrapper">
+        <div class="form_container">
+        <!-- <img src="images/Peso.png" style="width:100%;height:100%;"> -->
+        <!-- <img src="images/Peso.png" alt="" style="width:100%;"> -->
+            <h5>{{$sem->SeminarTitle}}</h5> 
+            <p>(Duration: From {{$sem->DateStart}} to {{$sem->DateEnd}})</p>
+            <p>Slots: {{$sem->SeminarSlots}}</p>
+          
+            <a class="button-62 w3-right" data-toggle="modal" data-target="#seminar_view{{$sem->id}}">Learn more &raquo;</a>
+            @include('modal.SeminarView')
+        </div>
+        </div>
+        </div>   
+        @endforeach
+        </div>
+        <br>
+        @if ($sem1 == 0)
+        <section>
+            <center>
+             <h1><i id="nodata">No Seminars Available!</i></h1>
+            </center>
+        </section>
+        @endif
+   
 </body>
 <script>
     const hamburger = document.querySelector(".hamburger");
@@ -883,8 +692,7 @@ hamburger.addEventListener('click', ()=>{
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
-
-
-
 </script>
+
+
 </html>

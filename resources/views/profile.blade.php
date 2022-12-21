@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/logo_peso.png"/>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- boostrap link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- card -->
    
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <title>PESO-Bulan</title>
 </head>
 <style>
@@ -28,9 +26,9 @@ box-sizing: border-box;
 }
 
 .course{
-/* background: #FFF; */
+background: #FFF;
 border-radius: 4px;
-/* box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2); */
+box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.2);
 display: inline-block;
 overflow: hidden;
 width: 100%;
@@ -61,7 +59,7 @@ color: #FFF;
 display: inline-block;
 font-size: 8px;
 opacity: 0.8;
-/* margin-top: 30px; */
+margin-top: 30px;
 text-decoration: none;
 }
 .progress-container{
@@ -109,6 +107,7 @@ letter-spacing: 1px;
 width: 100%;
 height: 200px;
 float: none;
+display: inline-block;
 }
 .course-info{
 height: 140px;
@@ -129,8 +128,7 @@ margin: 16px 0px;
 
     *{
     margin: 0;
-    padding: 0;
-    color: #f2f5f7;
+    padding-top: 0;
     font-family: sans-serif;
     letter-spacing: 1px;
     font-weight: 300;
@@ -138,7 +136,8 @@ margin: 16px 0px;
 body{
     overflow-x: hidden;
 }
-nav{
+nav.nav_head{
+    color: white;
     height: 6rem;
     width: 100vw;
     background-color: #1E5298;
@@ -171,6 +170,7 @@ nav{
 .nav-links li a{
     text-decoration: none;
     margin: 0 0.7vw;
+    color:white;
 }
 .nav-links li a:hover {
     color: #61DAFB;
@@ -213,8 +213,8 @@ nav{
     transition: all ease-in-out 350ms;
     font-weight: 600;
     font-weight: bold;
-} */
-/* .join-button{
+}
+.join-button{
     color: #131418;
     background-color: #61DAFB;
     border: 1.5px solid #61DAFB;
@@ -262,8 +262,7 @@ nav{
     }
     .nav-links{
         position: fixed;
-        background: #1B4F72;
-        color:white;
+        background: #1B4F72;;
         height: 100vh;
         width: 100%;
         flex-direction: column;
@@ -321,82 +320,6 @@ nav{
 
 
 
-div.input-block {
-  position: relative;
-  padding-left: 20px;
-}
-div.input-block input {
-  font-size: 16px;
-  color: #495055;
-  width: 350px;
-  padding: 15px 15px;
-  border-radius: 0.5rem;
-  border: 2px solid #D9D9D9;
-  outline: none;
-}
-div.input-block span.placeholder {
-  position: absolute;
-  margin: 17px 0;
-  padding: 0 4px;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  top: 0;
-  left: 25px;
-  transition: all 0.2s;
-  transform-origin: 0% 0%;
-  background: none;
-  pointer-events: none;
-}
-div.input-block input:valid+span.placeholder,
-div.input-block input:focus+span.placeholder {
-  transform: scale(0.8) translateY(-30px);
-  background: #fff;
-}
-div.input-block input:focus {
-  color: #284B63;
-  border-color: #284B63;
-}
-div.input-block input:focus+span.placeholder {
-  color: #1B4F72;
-}
-.place{
-    width: 400px;
-}
-
-.card {
-  /* background-color: dodgerblue;
-  color: white; */
-  padding: 1rem;
-  height: 3rem;
-  
-
-}
-
-.cards {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-}
-
-/* Screen larger than 600px? 2 column */
-@media (min-width: 767px) {
-  .cards { grid-template-columns: repeat(2, 1fr);
-   }
-}
-
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
-
-
-}
-
-
-
-
 
 
 .btn {
@@ -417,80 +340,28 @@ div.input-block input:focus+span.placeholder {
 }
 
 
-
-.wrapper{
-  max-width: 1000px;
-  width: 100%;
-  margin: 30px auto 0;
-  padding: 10px;
-}
-
-.wrapper .form_container{
-  background: #fff;
-  padding: 30px;
-   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15); 
-  border-radius: 3px;
-}
-
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; 
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@media screen and (max-width: 767px) {
-  .column {
-    width: 100%;
-  }
-} 
-
-
-
-.wrapper { 
-  /* margin-left:30px;
-  margin-right:30px; */
-  /* border : 2px solid #1B4F72;  */
-  overflow:hidden;
-  margin-bottom: 50px;
-  
-}
-
-.wrapper div {
-  
-   min-height: 150px;
-   padding: 10px;
-} 
-
 #one {
    background-color: white;
-  margin-left:10px;
+  margin-left:30px;
   color:black;
   float:left; 
-  margin-right:10px;
-  width:300px;
- 
+  margin-right:20px;
+  width:200px;
+  border : 2px solid #1B4F72; 
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   /* border-right:2px solid #1B4F72;; */
 }
 #two { 
-  /* background-color: white; */
+  background-color: white;
   color:black;
   overflow:hidden;
+
   /* border:2px dashed #ccc; */
-  min-height:150px;
+  min-height:170px;
   /* border : 2px solid #1B4F72;  */
-   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 @media screen and (max-width: 767px) {
@@ -504,20 +375,8 @@ div.input-block input:focus+span.placeholder {
     /* border-bottom:2px solid #000;     */
   }
 
-  #two{
-    float: right;
-display: inline-block;
-width: 100%;
-height: 450px;
-  }
-
-
-  #input-text1  #input-text2{
-    width: 90%;
-  }
-
-
   .dropdown-content {
+  margin-left: 20px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -525,8 +384,9 @@ height: 450px;
    min-width: 160px;
   bottom: 50px;
   z-index: 1; 
-margin-bottom: 50px;
+  margin-bottom: 50px;
 }
+
 
 }
 
@@ -537,105 +397,187 @@ margin-bottom: 50px;
 
 } 
 
-/* CSS */
-.button-62 {
-  /* background: #1B4F72; */
-  background: RoyalBlue;
+
+.columns {
+ display: block;
+ border-collapse: collapse;
+ text-align: center;
+ margin: 0 auto;
+ padding: 0;
+ width: 100%;
+
+
+}
+.col-12, .col-25, .col-33, .col-37, .col-50, .col-62, .col-66, .col-75, .col-87, .col-100 {
+	text-align: left;
+	display: block;
+	float: left;
+	padding: 10px 20px;
+	box-sizing: border-box;
+    
+}
+.col-12 img, .col-25 img, .col-33 img, .col-37 img, .col-50 img, .col-62 img, .col-66 img, .col-75 img, .col-87 img, .col-100 img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 200px) {
+ .columns {display: table;}
+ .col-12, .col-25 {width: 50%;}
+ .col-33, .col-37, .col-50, .col-62, .col-66, .col-75, .col-87, .col-100 {width: 100%;}
+}
+@media screen and (min-width: 680px) {
+ .col-12, .col-25 {width: 25%;}
+ .col-33 {width: calc(100%/3);}
+ .col-37 {width: 37.5%;}
+ .col-50 {width: 50%;}
+ .col-62 {width: 62.5%;}
+ .col-66 {width: calc(2/3*100%);}
+ .col-75 {width: 75%;}
+ .col-87 {width: 87.5%;}
+ .col-100 {width: 100%;}
+}
+@media screen and (min-width: 1200px) {.col-12 {width:12.5%;}}
+
+
+/* Clearfix:
+** ------------------------------ */
+.clearfix::after {
+ /*clearfix hack from W3Schools, via https://www.w3schools.com/css/css_float.asp -- add class to containing element*/
+ content: "";
+ clear: both;
+ display: table;
+}
+
+
+/* Typography:
+** ------------------------------ */
+/* Copyright (c) Steve Matteson ("Ascender Fonts"). This Font Software is licensed under the Apache License v2.00. This license is available at: https://www.fontsquirrel.com/license/open-sans */
+body {font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;}
+p.column-name {
+ color: black;
+ text-align: center;
+ font-weight: bold;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ 
+}
+
+
+#column-names{
+padding: 20px;
+ color: black;
+ font-weight: bold;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+/* label{
+    color: black;
+    font-weight: bold;
+} */
+
+
+.bg-red {background-color: #eb3b25;}
+.bg-blue {background-color: #2f91ae;}
+.bg-teal {background-color: #83c5b5;}
+
+.bg-charcoal {background-color: #808285;}
+.fg-charcoal {color: #808285;}
+
+#pro {
+  border-radius: 50%;
+}
+
+table {
+ 
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+
+.wrapper{
+  max-width: 1100px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
+}
+
+.wrapper .form_container{
+  background: #fff;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  border-style: groove;
+}
+
+.eight h1 {
+  text-align:center;
+ 
+  text-transform:uppercase;
+  font-size:26px; letter-spacing:1px;
   
-  border: 0;
-  border-radius: 12px;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 2.5;
-  outline: transparent;
-  padding: 0 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .2s ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 16px 0;
+  grid-gap: 22px;
 }
 
-.button-62:not([disabled]):focus {
-  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-.button-62:not([disabled]):hover {
-  box-shadow: 0 0 .25rem rgba(17, 195, 232, 1), -.125rem -.125rem 1rem rgba(17, 195, 232, 1), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-nav ul li a{
-color:white;
-}
-
-nav ul li{
-  display:inline-block;
-  line-height:100px;
-  margin-top:20px;
-}
-
-
-.txtt {
-  font-size: 1.5em;
-  letter-spacing: 0.04em;
-  margin: 0;
-  font-weight: normal;
-  color: #ff5252;
-  font-size: 20px;
-}
-
-.announcement {
-  padding: 10px 15px 0px;
-  border: 1px solid #e1e1e1;
-  background-color: #f9f9f9;
-  border-radius: 4px;
-}
-p{
-  color:black;
+.eight h1:after,.eight h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #ccc;
+  background-color:#f8f8f8;
 }
 
 #dropbtn {
  
-  background-color: #ffffff;
-  color: blue;
-  padding: 10px;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  cursor: pointer;
-  font-weight: bold;
+ background-color: #ffffff;
+ color: blue;
+ padding: 10px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ cursor: pointer;
+ font-weight: bold;
 
 }
 
 
 .dropdown {
-  position: relative;
-  display: inline-block;
-  
+ position: relative;
+ display: inline-block;
+ 
 }
 
 .dropdown-content {
-  margin-left: 30px;
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  /* min-width: 160px;
-  bottom: 50px;
-  z-index: 1; */
+ margin-left: 30px;
+ display: none;
+ position: absolute;
+ background-color: #f9f9f9;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ min-width: 100px;
+
+ z-index: 1;
 
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 10px 5px;
-  text-decoration: none;
-  display: block;
+ color: black;
+ padding: 10px 5px;
+ text-decoration: none;
+ display: block;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -643,21 +585,15 @@ p{
 
 
 .dropdown:hover .dropdown-content {
-  display: block;
+ display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+ background-color: #3e8e41;
 }
-#eyy{
-  color: black;
-}
-
-span { width:100%; display:inline-block; }
-span.align-right { text-align:right; }
 </style>
 <body>
-    <nav>
+    <nav class="nav_head">
 
         <div class="logo">
             <img src="images/logo_peso.png" alt="Logo Image">
@@ -668,15 +604,13 @@ span.align-right { text-align:right; }
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-
-        <ul class="nav-links" >
-            <li style="color:red"><a href="#">Home</a></li>
+        <ul class="nav-links">
+            <li><a href="UserDash">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
             <li><a href="SeminarPage">Seminar</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
             <li><a href="Aboutus">About Us</a></li>
-
-
             @if (Route::has('login'))
             @auth
                 @if (Auth::user()->role == 'admin')
@@ -705,10 +639,10 @@ span.align-right { text-align:right; }
                   <li>  <a class="login-button" href="#">{{ Auth::user()->name }}</a> </li>   
 
                         <div class="dropdown-content">
-                          <a href="profile" class="dropdown-item" id="dropbtn">
+                          <!-- <a href="profile" class="dropdown-item" id="dropbtn">
                               <i class="fa fa-eye" style="font-size:20px;color:blue"></i>
                               View Profile
-                          </a> 
+                          </a>  -->
 
                           <form action="{{ route('logout') }}" method="POST">
                                     @csrf  
@@ -727,44 +661,83 @@ span.align-right { text-align:right; }
                  <b> <li><a class="login-button" href="login">Login</a></li></b>
               @endauth
             @endif  
-            
+          
+        </ul>
+    </nav>
+<br>
+    <div class="eight">
+  <h1><b>User Profile</b></h1>
+</div>
+@foreach($data as $data)
+        <div class="columns">
+
+        <div class="col-33 "><p  class="column-name ">
+        <img src="images/usericon.png" alt="Avatar" id="pro" style="width:200px">
+        <br>
+        <!-- {{ Auth::user()->name }} -->
+        {{$data->name}}
+        <br>
+        <br>
+    </p></div>
+
+        <div class="col-66">
+
+                <section id="column-names"> 
+                    <table>
+  <tr>
+ 
+    <h5 id="add">Information:</h5>
+  </tr>
+  <tr>
+    <td>Address:</td>
+    <!-- <td>{{ Auth::user()->address }}</td> -->
+    <td>{{$data->address}}</td>
+  </tr>
+  <tr>
+    <td>Contact Number:</td>
+    <!-- <td>{{ Auth::user()->contact }}</td> -->
+    <td>{{$data->contact}}</td>
+  </tr>
+  <tr>
+    <td>Email Address:</td>
+    <!-- <td>{{ Auth::user()->email }}</td> -->
+    <td>{{$data->email}}</td>
+  </tr>
+  <tr>
+    <td>Industry:</td>
+    <!-- <td>{{ Auth::user()->job1 }} / {{ Auth::user()->job2 }}</td> -->
+    <td>{{$data->job1}} / {{$data->job2}}</td>
+  </tr>
+
+
+</table>
+@endforeach
+<br>
+<section id="view_details">
+<a href="javascript:void(0)" data-toggle="modal" data-target="#viewuserdetails"> View/Edit Details &raquo;</a>
+
+</section>
+@include('modal.ViewUserDetails')
+                
+                
+
+<style>
+#view_details{
+      text-align-last: right;
+    }
+</style>
+                </section>
+
+        </div>
+        </div>
         
 
-             </ul>
 
-            
-
-             
-         </nav>
-   
-
-    <img src="images/Bulan.png" style="width:100%;height:300px;">
-<hr>
-      <form name="searchform" id="searchform" action="SearchUserDash" method="get" enctype="multipart/form-data">
-            {{ csrf_field() }}
-        <div class="cards">
-              <div class="input-block" >
-              <input type="text" name="input-text1" id="input-text1"  spellcheck="false" autocomplete="off"  >
-              <!-- <input type="text" name="input-text1" id="input-text1" required spellcheck="false" autocomplete="off"> -->
-              <span class="placeholder">
-              Search for Job tittle or Company name
-              </span>
-              </div>
-      
-              <div class="input-block">
-              <input type="text" name="input-text2" id="input-text2"  spellcheck="false" autocomplete="off" >
-              <span class="placeholder">
-              Location
-              </span>
-              </div>
-              
-              <!-- <a class="btn" href="javascript: submitform()"><i class="fa fa-search"></i> Search</a> -->
-              <button class="btn" id="searchbutton" name="searchbutton"><i class="fa fa-search"></i> Search</button>
-            
-        </div>
-      <hr>
-      </form>  
-      @if ($errors->any())
+        <div class="wrapper">
+ <div class="form_containers">
+   <div class="main-panel">
+        <div class="content-wrapper">
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -773,101 +746,79 @@ span.align-right { text-align:right; }
                 </ul>
             </div>
         @endif
-       @if(session()->has('message'))
+        @if(session()->has('message'))
             <div class="alert alert-success">
-               <center id="eyy">{{ session()->get('message') }}</center> 
+                {{ session()->get('message') }}
             </div>
         @endif
-<script>
+        <div class="form_container">
+                        <div class="card-body">
+                                <table id="datatablesSimple" class="TableData">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Job Title</th>
+                                            <th>Company Name</th>
+                                            <th>Work Location</th>
+                                            <th>Job Title</th>
+                                            <th>UserName</th>
+                                        </tr>
+                                    </thead>
+                                     <tfoot>
+                                        <tr>
+                                        <th>ID</th>
+                                            <th>Job Title</th>
+                                            <th>Company Name</th>
+                                            <th>Work Location</th>
+                                            <th>Job Title</th>
+                                            <th>UserName</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Programmer</td>
+                                            <td>{{ Auth::user()->name }}.pdf</td>
+                                            <td>{{ Auth::user()->name }}</td>
+                                        </tr>
+                                    </tbody>
 
-// $(document).ready(function(){
-//     $('#searchbutton').attr('disabled',true);
-//     $('#input-text1').keyup(function(){
-//         if($(this).val.length > 0){
-//             $('#searchbutton').attr('disabled', false);
-//         }else{
-//           $('#searchbutton').attr('disabled', true);
-//         }
-//     })
-//     $('#input-text2').keyup(function(){
-//         if($(this).val.length > 0){
-//             $('#searchbutton').attr('disabled', false);
-//         }else{
-//           $('#searchbutton').attr('disabled', true);
-//         }
-//     })
-// });
-</script>
+                                </table>
+                                </div>
+                          </div>
+                      </div>  
+                      <!-- end table  -->
 
-<div class="wrapper">
+ </div>
+</div>
 
- 
-          <div id="one">
-                <img src="images/seminar.png" alt=""  width="100%" height="100%">
-                @foreach($sem as $sem)
-                <div class="announcement">
-                <!-- <img src="images/ccc.png" alt="" width="50px" height="50px"> -->
-               
-                <span class="txtt">{{$sem->SeminarTitle}}</span>
 
-                  <br>
-                  <br>
-                  <p>(Duration: From {{$sem->DateStart}} to {{$sem->DateEnd}})</p>
-                  <p>Slots: {{$sem->SeminarSlots}}</p>
-                  <!-- <p>{{$sem->SeminarDescription}}</p> -->
-                  <a class="button-62 w3-right" data-toggle="modal" data-target="#seminar_view{{$sem->id}}">Learn more &raquo;</a>
-                
-                    @include('modal.SeminarView')
-                </div>
-                @endforeach
-                <br>
-                @if($sem1 > 0)
-                <span class="align-right">
-                  <a href="SeminarPage">View All&raquo;</a>
-                </span>
-                @else
-                <br>
-                <center class="txtt">
-                  No Seminars Available!
-                </center>
-                @endif
-                  <hr>
-                  <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
-          </div>
-  
+            </div>
+   
+<style>
+    #add{
+        color:black;
+    }
+</style> 
 
-      @if($count != 0)
-		            	@foreach($data as $data)
-      <div id="two">
-          
-                    <div class="course-info">
-                    <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
-                    </div>
 
-                    <div class="course-progress">
-                          <h3 id="card_text">{{$data->CompanyName}}</h3>
-                          <h6 id="card_text">Job Description</h6>
-                                <?php
-                                $About = Str::limit($data->JobDescription, 250);
-                                ?>
-                          <p id="texts">{{$About}} </p>  
-                    
-                          <br>       
-                        <a class="button-62 w3-right" data-toggle="modal" data-target="#applicantModal1{{$data->id}}">View Details &raquo;</a>
-                            @include('modal.UserDashView'); 
-                        </div>
 
-              
-               </div> 
-                    @endforeach
-                    @else
-                            <center><h1 id="eyy">No Job Available!</h1></center>
-                    @endif
-      
 
-  </div>
+
 
 </body>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
 <script>
     const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -883,8 +834,10 @@ hamburger.addEventListener('click', ()=>{
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
-
-
-
 </script>
+
+<script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
+        <script src="js/datatables-simple-demo.js"></script>
 </html>

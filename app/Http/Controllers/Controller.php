@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Users;
 use DB;
+use auth;
 
 class Controller extends BaseController
 {
@@ -27,10 +28,17 @@ class Controller extends BaseController
         $data = DB::table('users')->where("role","user")->get();
         return view('Manageduser',['data'=>$data]);
     }
- 
+    
     public function user_show()
     {
         $data = DB::table('users')->where("id", $id)->get();
         return view('modal.UserEdit',['data'=>$data]);
     }
+    public function profile_view()
+    {
+        $data = DB::table('users')->where("id", auth()->user()->id)->get();
+        return view('profile',['data'=>$data]);
+    }
+    
+  
 }

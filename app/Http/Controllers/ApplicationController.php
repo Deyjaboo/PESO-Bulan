@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 class ApplicationController extends Controller
 {
     /**
@@ -35,20 +36,27 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        $folder_name = $request->input('job_id');
+        $folder_name = DB::table('jobs')->where('id', $request->input('job_id'))->value('Folder_Name');
+        // $random_num = mt_rand(100, 1000);
+        // $folder_name = $request->input('job_id');
+        // $folder_name = $request->input('Folder_Name');
         $data = new Application();
             $data->JobID = $request->input('job_id');
             $data->JobTitle = $request->input('JobTitle');
             $data->UserID = auth()->user()->id;
             $data->UserName = auth()->user()->name;
-              //for File Resume
+            //for File Resume
             $file1 = $request->file('resume');
             $extension = $file1->getClientOriginalName();
             $filename = $extension;
             $file1->move($folder_name, "(".auth()->user()->name.")".$filename);
             $data->Resume = "(".auth()->user()->name.")".$filename;
+
+            $data->CompanyName = DB::table('jobs')->where('id', $request->input('job_id'))->value('CompanyName');
+            $data->WorkLocation = DB::table('jobs')->where('id', $request->input('job_id'))->value('WorkingLocation');
+            
         $data->save();
-        return redirect('UserDash')->with('message','Job has been added!');
+        return redirect('UserDash')->with('message','Application sent successfully!');
     }
 
     /**

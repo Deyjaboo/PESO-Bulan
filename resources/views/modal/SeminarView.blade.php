@@ -20,19 +20,20 @@
 }
 
 .btn2{
-  width: 20%;
   background-color: #ff3333;
   border: none;
   color: white;
-  padding: 10px 30px;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  margin: 2px 2px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0.5rem;
 
 }
+.btn2:hover {      background-color:  #ff4d4d;      color: white; }
 
 #add{
 	float: right;
@@ -52,10 +53,18 @@
       <div class="modal-body">
          
      <b> <label for="" id="text">Description:</label> </b>
-                        <p id="parag">{{$sem->SeminarDescription}}</p>
-
+                <!-- <p id="parag">{{$sem->SeminarDescription}}</p> -->
+                <p id="parag">
+                    <?php
+                      echo nl2br($sem->SeminarDescription);
+                      ?>
+                </p>
                  <label for="" id="text">Requirements:</label>
-                 <p id="parag">{{$sem->SeminarRequirements}}</p>
+                 <p id="parag">
+                 <?php
+                   echo nl2br($sem->SeminarRequirements);
+                  ?>
+                 </p>
 
                  <label for="" id="text">Slots:</label>
                 <p>{{$sem->SeminarSlots}}</p>
@@ -66,7 +75,7 @@
             
       </div>
       <section>
-        <button type="button" class="btn2 btn-danger" id="add"  data-dismiss="modal">Close</button>
+        <button type="button" class="btn2" id="add"  data-dismiss="modal">Close</button>
       </section>
         
     </div>
@@ -75,7 +84,7 @@
         <!-- <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
-        <script src="js/datatables-simple-demo.js"></script> -->
+        <script src="js/datatables-simple-demo.js"></script>
 
     <!-- <script>
         function myFunction() {

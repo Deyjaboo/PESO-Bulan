@@ -31,7 +31,7 @@ p,input{
 }
 #imga{
   margin-left: 20px;
-  margin-right: 20px;
+
 }
 .modal-title{
   margin-top: 10px;
@@ -39,27 +39,40 @@ p,input{
 }
 
 @media screen and (max-width: 767px) {
-  img#imga{
-  padding-right: 20px;
+  #imga{
+  padding-right: 50px;
 }
+}
+.btn0{
+  background-color: RoyalBlue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.btn0:hover {      background-color: #008CBA;      color: white; }
+.btn1:hover {      background-color:  #ff4d4d;      color: white; }
+.btn1{
+  background-color: #ff3333;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 </style>
-<!-- <form action="">
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="applicantModal1{{$data->id}}">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-   <style>
-    #asd{
-      color:black;
-    }
-   </style>
-      <p id="asd">{{$data->id}}</p>
-      <p id="asd">{{$data->CompanyName}}</p>
-      <p id="asd">{{$data->NumVacancies}}</p>
-    </div>
-  </div>
-</div>
-</form> -->
+
 
 <form name="form" action="apply_job" method="post" enctype="multipart/form-data">
        {{ csrf_field() }}
@@ -108,11 +121,19 @@ p,input{
             <input type="hidden" value="{{$data->JobTitle}}" id="JobTitle" name="JobTitle">
 
             <label for="" id="asd">Job Description:</label>
-            <p id="asd">{{$data->JobDescription}}</p>
-
+            <!-- <p id="asd">{{$data->JobDescription}}</p> -->
+            <p id="asd">
+                 <?php
+                   echo nl2br($data->JobDescription);
+                  ?>
+            </p>
             <label for="" id="asd">Requirements:</label>
-            <p id="asd">{{$data->Requirements}}</p>
-
+            <!-- <p id="asd">{{$data->Requirements}}</p> -->
+            <p id="asd">
+                 <?php
+                   echo nl2br($data->Requirements);
+                  ?>
+            </p>
             <label for="" id="asd">Date Posted:</label>
             <p id="asd">{{$data->DatePosted}}</p>
             
@@ -125,10 +146,20 @@ p,input{
             
            
     <br>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Apply Now</button> 
-        </div>
+    <style>
+    #sel{
+      text-align-last: right;
+    }
+    </style>
+    <section id="sel">
+          <button type="button" class="btn1" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn0">Apply Now</button> 
+    </section>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn1" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn0">Apply Now</button> 
+        </div> -->
+       
     </div>
   </div>
 </div>

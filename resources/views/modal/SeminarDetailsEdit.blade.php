@@ -15,7 +15,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>Title:</b></label>
-                <input type="text" class="form-control" name="Title" id="Title" placeholder="" value="{{$data->SeminarTitle}}" required>
+                <input type="text" class="form-control" name="Title" id="Title" placeholder="" value="{{$data->SeminarTitle}}" value="{{old('SeminarTitle', $data->SeminarTitle)}}" required>
             </div>
         </div>
         <div class="form-row">
@@ -61,9 +61,10 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="myFunction()">Close</button>
       </div>
     </form>
     </div>
   </div>
 </div>
+

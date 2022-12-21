@@ -105,9 +105,11 @@ class SeminarController extends Controller
      * @param  \App\Models\Seminar  $seminar
      * @return \Illuminate\Http\Response
      */
-    public function show(Seminar $seminar)
+    public function Seminar_View(Seminar $seminar)
     {
-        //
+        $sem = DB::table('seminars')->inRandomOrder()->get();
+        $sem1 = DB::table('seminars')->count();
+        return view('SeminarPage',['sem'=>$sem,'sem1'=>$sem1]);
     }
 
     /**
@@ -121,17 +123,6 @@ class SeminarController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Seminar  $seminar
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Seminar $seminar)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

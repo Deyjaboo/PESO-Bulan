@@ -18,6 +18,20 @@
     color:red;
     font-size: 14px;
  }
+
+ /* #sup{
+	margin-top: -100px;
+ }
+ .join{
+	margin-top: -20px;
+ } */
+
+
+ @media screen and (max-width: 767px) {
+	#sup{
+	margin-top: -100px;
+ }
+}
 	</style>
     <body>
 	
@@ -198,10 +212,10 @@
 			<!-- SIGN UP CONTENT -->
 
 			<div class="col align-items-center flex-col">
-			<div class="text sign-up">
+			<div class="text sign-up" id="sup">
 			<h2> 
-			<img src="images/logo_peso.png" alt=""  style="width:300px;height:350px;" id="signup">
-			</h2> <h2>Join with us	</h2>
+			<img src="images/logo_peso.png" alt=""  style="width:250px;height:280px;" id="signup">
+			</h2> <h2 class="join">Join with us	</h2>
 			</div>
 			</div>
 

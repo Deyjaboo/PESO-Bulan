@@ -14,5 +14,7 @@ class Application extends Model
         'Resume',
         'JobID',
         'UserID',
+        'CompanyName',
+        'WorkLocation',
     ];
 }
