@@ -13,7 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   
+    <!-- table-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" type="text/css">
+ <!-- table-->
+
     <title>PESO-Bulan</title>
 </head>
 <style>
@@ -591,6 +595,17 @@ td, th {
 .dropdown:hover .dropbtn {
  background-color: #3e8e41;
 }
+
+
+
+
+#photo{
+    height: 205px;
+    width: 205px;
+    border-radius: 50%;
+}
+
+
 </style>
 <body>
     <nav class="nav_head">
@@ -664,21 +679,32 @@ td, th {
           
         </ul>
     </nav>
+
+
+    <!-- <div class="profile-pic-div">
+                  <img src="images/aaa.png" id="photo">
+                  <input type="file" id="file">
+                  <label for="file" id="uploadBtn">Choose Photo</label>
+                </div> -->
 <br>
     <div class="eight">
   <h1><b>User Profile</b></h1>
 </div>
 @foreach($data as $data)
         <div class="columns">
+        <div class="col-33 ">
+        <p  class="column-name ">
 
-        <div class="col-33 "><p  class="column-name ">
-        <img src="images/usericon.png" alt="Avatar" id="pro" style="width:200px">
+         <img src="images/{{ Auth::user()->pic }}" alt="Avatar" id="photo" > 
         <br>
-        <!-- {{ Auth::user()->name }} -->
+     
         {{$data->name}}
         <br>
         <br>
-    </p></div>
+        </p>
+        </div>
+        
+    
 
         <div class="col-66">
 
@@ -751,38 +777,44 @@ td, th {
                 {{ session()->get('message') }}
             </div>
         @endif
+
+
         <div class="form_container">
-                        <div class="card-body">
-                                <table id="datatablesSimple" class="TableData">
+
+        <center>     <h4>History of Application</h4></center>
+   
+
+        <div style="overflow-x:auto;">
+
+
+
+<table id="example" class="display"  width="100%">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                               
+                                            <th>id</th>
+                                            <th>Name</th>
                                             <th>Job Title</th>
                                             <th>Company Name</th>
-                                            <th>Work Location</th>
-                                            <th>Job Title</th>
-                                            <th>UserName</th>
+                                            <th>WorkingLocation</th>
+                                           
+                                        
                                         </tr>
                                     </thead>
-                                     <tfoot>
-                                        <tr>
-                                        <th>ID</th>
-                                            <th>Job Title</th>
-                                            <th>Company Name</th>
-                                            <th>Work Location</th>
-                                            <th>Job Title</th>
-                                            <th>UserName</th>
-                                        </tr>
-                                    </tfoot>
+                                    
+                                    @foreach($data1 as $data1)
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Programmer</td>
-                                            <td>{{ Auth::user()->name }}.pdf</td>
-                                            <td>{{ Auth::user()->name }}</td>
+                                          
+                                            <td>{{$data1->id}}</td>
+                                            <td>{{ Auth::User()->name}}</td>
+                                            <td>{{$data1->JobTitle}}</td>
+                                            <td>{{$data1->CompanyName}}</td>
+                                            <td>{{$data1->WorkLocation}}</td>
+                                           
                                         </tr>
                                     </tbody>
-
+                                    @endforeach
                                 </table>
                                 </div>
                           </div>
@@ -806,9 +838,22 @@ td, th {
 
 
 
+<!-- table -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<!-- table -->
 </body>
 
 <script>
+  //table script pagination
+  $(document).ready(function () {
+    $('#example').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+
+
 function myFunction() {
   var x = document.getElementById("password");
   if (x.type === "password") {
@@ -817,6 +862,54 @@ function myFunction() {
     x.type = "password";
   }
 }
+
+//declearing html elements
+
+const imgDiv = document.querySelector('.profile-pic-div');
+const img = document.querySelector('#photo');
+const file = document.querySelector('#file');
+const uploadBtn = document.querySelector('#uploadBtn');
+
+//if user hover on img div 
+
+imgDiv.addEventListener('mouseenter', function(){
+    uploadBtn.style.display = "block";
+});
+
+//if we hover out from img div
+
+imgDiv.addEventListener('mouseleave', function(){
+    uploadBtn.style.display = "none";
+});
+
+//lets work for image showing functionality when we choose an image to upload
+
+//when we choose a foto to upload
+
+file.addEventListener('change', function(){
+    //this refers to file
+    const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); //FileReader is a predefined function of JS
+
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+        });
+
+        reader.readAsDataURL(choosedFile);
+
+        //Allright is done
+
+        //please like the video
+        //comment if have any issue related to vide & also rate my work in comment section
+
+        //And aslo please subscribe for more tutorial like this
+
+        //thanks for watching
+    }
+});
 </script>
 
 <script>
@@ -834,10 +927,18 @@ hamburger.addEventListener('click', ()=>{
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
 </script>
-
-<script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
-        <script src="js/datatables-simple-demo.js"></script>
-</html>

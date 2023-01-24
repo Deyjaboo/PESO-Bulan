@@ -32,7 +32,9 @@
 .form .grid .form-element div span {
   font-size:40px;
 }
-
+#about{
+  text-align: justify;
+}
 </style>
 
 <!-- Modal -->
@@ -84,7 +86,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label id="headlabel" for="inputEmail4"><b>About:</b></label>
-                <p>{{$data->About}}</p>
+                <p id="about">{{$data->About}}</p>
             </div>
         </div>
         <div class="form-row">

@@ -25,6 +25,7 @@ class UserFactory extends Factory
             'contact' => "+6391",
             'job1' => "Job1",
             'job2' => "Job2",
+            'pic' => "usericon.png",
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'pass_confirm' =>"@31secret",

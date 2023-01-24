@@ -81,6 +81,65 @@
 .form .grid .form-element div span {
   font-size:40px;
 }
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+}
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+  top: 10px;
+}
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+.avatar-upload .avatar-edit input + label:after {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  color: #757575;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+.avatar-upload .avatar-preview {
+  width: 192px;
+  height: 192px;
+  position: relative;
+  border-radius: 100%;
+  border: 6px solid #F8F8F8;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 </style>
 
 <!-- Modal -->
@@ -98,7 +157,20 @@
       {{ csrf_field() }}
       <div class="modal-body">
 
-    
+ 
+	<center>
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' name="imageUpload" id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+            <div id="imagePreview" style="background-image: url('images/{{$data->logo}}');">
+            </div>
+        </div>
+    </div>
+	</center> 
+       
        
 
         <div class="form-row">
@@ -139,7 +211,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -162,7 +234,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -185,7 +257,7 @@
 							<option value="Consumer Products" selected>Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -208,7 +280,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" selected>Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -231,7 +303,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government" selected>Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -248,13 +320,13 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->Industry == 'Human Resources')
+                        @elseif($data->Industry == 'Hotel & Restaurants')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" selected>Human Resources</option>
+							<option value="Hotel & Restaurants" selected>Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -277,7 +349,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" selected>Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -300,7 +372,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" selected>Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -323,7 +395,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" selected>Tourism</option>
@@ -346,7 +418,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -369,7 +441,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -392,7 +464,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -415,7 +487,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -438,7 +510,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -461,7 +533,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -484,7 +556,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -507,7 +579,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -530,7 +602,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -553,7 +625,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -576,7 +648,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -598,7 +670,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -634,7 +706,7 @@
             </div> 
           </div>
         </div> -->
-			
+<!-- 			
 					<div class="center">
 			<div class="form-input">
 		<div class="preview">
@@ -644,7 +716,7 @@
         <input type="file" name="logo" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
 
 			</div>
-			</div> 
+			</div>  -->
 
         </div>
       </div>
@@ -658,27 +730,14 @@
 </div>
  <script>
 
-function showPreview(event){
-  if(event.target.files.length > 0){
-    var src = URL.createObjectURL(event.target.files[0]);
-    var preview = document.getElementById("file-ip-1-preview");
-    preview.src = src;
-    preview.style.display = "block";
-  }
-}
-	//  function previewBeforeUpload(id){
-    // document.querySelector("#"+id).addEventListener("change",function(e){
-    //   if(e.target.files.length == 0){
-    //     return;
-    //   }
-    //   let file = e.target.files[0];
-    //   let url = URL.createObjectURL(file);
-    //   document.querySelector("#"+id+"-preview div").innerText = file.name;
-    //   document.querySelector("#"+id+"-preview img").src = url;
-    // });
-    // }
+// function showPreview(event){
+//   if(event.target.files.length > 0){
+//     var src = URL.createObjectURL(event.target.files[0]);
+//     var preview = document.getElementById("file-ip-1-preview");
+//     preview.src = src;
+//     preview.style.display = "block";
+//   }
+// }
 
-    // previewBeforeUpload("file-1");
-    // previewBeforeUpload("file-2");
-    // previewBeforeUpload("file-3");
+
  </script>

@@ -138,7 +138,8 @@ class JobsController extends Controller
         $data = DB::table('jobs')->where("Status","New")->inRandomOrder()
         ->limit(10)
         ->get();
-        $count = DB::table('jobs')->count();
+
+        $count = $data->count();
         $sem = DB::table('seminars')->where("Status","New")->inRandomOrder()
         ->limit(3)
         ->get();
@@ -154,7 +155,8 @@ class JobsController extends Controller
     public function data_view_dashjobs()
     {
         $data = DB::table('jobs')->get();
-        return view('dashjobs',['data'=>$data]);
+        $num = DB::table('jobs')->count();
+        return view('dashjobs',['data'=>$data,'num'=>$num]);
     }
     public function data_view_jobs()
     {   
@@ -258,7 +260,8 @@ class JobsController extends Controller
             $data = DB::table('jobs')->get();
         }
         
-        $count = DB::table('jobs')->count();
+        $count = $data->count();
+
         $sem = DB::table('seminars')->where("Status","New")->inRandomOrder()
         ->limit(3)
         ->get();

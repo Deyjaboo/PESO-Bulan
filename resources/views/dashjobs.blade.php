@@ -788,14 +788,19 @@ flex-direction: row;
   padding: 5px 0px 10px 15px;
 }
 
-
+#nodata{
+color: black;
+}
+#cen{
+  margin: auto;
+}
 </style>
 
 
     <section class="items-bar">
       	<div class="container position-relative">
       		<div class="row gy-5">
-              
+              @if($num != null)
               @foreach($data as $data)
 			    <div class="col-md-6">
       			  <div class="box-item">
@@ -824,6 +829,11 @@ flex-direction: row;
       			  </div>
                 </div>
             @endforeach
+            @else
+            <div id="cen">
+             <h1><i id="nodata">No Jobs Available!</i></h1>
+            </div>
+            @endif
       		</div>
       	</div>
       </section>

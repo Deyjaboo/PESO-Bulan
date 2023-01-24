@@ -37,7 +37,8 @@ class Controller extends BaseController
     public function profile_view()
     {
         $data = DB::table('users')->where("id", auth()->user()->id)->get();
-        return view('profile',['data'=>$data]);
+        $data1 = DB::table('applications')->where("UserID", auth()->user()->id)->get();
+        return view('profile',['data'=>$data,'data1'=>$data1]);
     }
     
   

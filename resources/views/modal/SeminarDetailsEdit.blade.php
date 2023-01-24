@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
+
       <form action="{{ route ('edit_seminar' , $data->id) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       <div class="modal-body">
@@ -67,4 +67,3 @@
     </div>
   </div>
 </div>
-

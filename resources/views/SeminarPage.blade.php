@@ -547,6 +547,66 @@ color: black;
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+footer{
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1E5298;
+    color: #fff;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 5px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.socials a:hover i{
+    color: aqua;
+} 
       </style>
 
 <body>
@@ -621,7 +681,7 @@ color: black;
         </ul>
     </nav>
 
-    <img src="images/train.png" style="width:100%;height:300px;">
+    <img src="images/seminarpage.png" style="width:100%;height:300px;">
  
         <!-- <div class="course">
           <div class="course-info">
@@ -673,8 +733,30 @@ color: black;
             <center>
              <h1><i id="nodata">No Seminars Available!</i></h1>
             </center>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
         </section>
         @endif
+
+
+          
+       <footer>
+        <br>
+       <div class="footer-content">
+       <h3>PESO-Bulan</h3>
+       <p>Public Employment Service Office </p>
+       <ul class="socials">
+       <a href="https://www.dole.gov.ph/"> <img src="images/Dole.png"  alt="Avatar" style="width:30px"></a> 
+   <li></li>
+    <a href="https://bulan4706.com/"> <img src="images/BULAN LGU LOGO.png"  alt="Avatar" style="width:30px"></a> 
+    <li></li>
+    <a href="https://www.tesda.gov.ph/"> <img src="images/tesda.png"  alt="Avatar" style="width:30px"></a> 
+
+ </ul>
+        </div>
+        </footer> 
    
 </body>
 <script>

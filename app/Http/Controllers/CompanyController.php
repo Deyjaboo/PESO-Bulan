@@ -74,7 +74,10 @@ class CompanyController extends Controller
         $data = DB::table('companies')->inRandomOrder()
         ->limit(10)
         ->get();
-        return view('companies',['data'=>$data]);
+
+        $num = DB::table('companies')->inRandomOrder()
+        ->count();
+        return view('companies',['data'=>$data,'num'=>$num]);
     }
     public function details_company1($id)
     {
@@ -87,11 +90,14 @@ class CompanyController extends Controller
         $data = Company::query()
         ->where('CompanyName', 'LIKE', "%{$search}%")->get();
 
-        return view('companies',['data'=>$data]);
+        $num = Company::query()
+        ->where('CompanyName', 'LIKE', "%{$search}%")->count();
+
+        return view('companies',['data'=>$data,'num'=>$num]);
     }
     public function company_edit(Request $request, $id)
     {
-               if ($request->file('logo') != null){
+               if ($request->file('imageUpload') != null){
                 $CompanyName = $request->input('CompanyName');
                 $Location = $request->input('Location');
                 $Contact = $request->input('Contact');
@@ -99,7 +105,7 @@ class CompanyController extends Controller
                 $Industry = $request->input('Industry');
                 $About = $request->input('About');
                 //for picture
-                $file1 = $request->file('logo');
+                $file1 = $request->file('imageUpload');
                 $extension = $file1->getClientOriginalName();
                 $filename = $extension;
                 $file1->move('images/', $filename);

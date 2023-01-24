@@ -29,7 +29,31 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
  <!-- Button-->
+
+ <!-- table-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" type="text/css">
+ <!-- table-->
 </head>
+<style>
+  
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -440,59 +464,34 @@
             </div>
         @endif
         <div class="form_container">
-                        <div class="card-body">
-                                <table id="datatablesSimple" class="TableData">
+        <div style="overflow-x:auto;">
+
+                      <table id="example" class="display"  width="100%">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                         
                                             <th>Job Title</th>
                                             <th>Company Name</th>
-                                            <!-- <th>CompanyWebsite</th> -->
                                             <th>CompanyContact</th>
                                             <th>Vacancies</th>
                                             <th>WorkingLocation</th>
-                                            <th>Industry</th>
-                                            <!-- <th>JobDescription</th>
-                                            <th>Requirements</th> -->
-                                            <!-- <th>DatePosted</th> -->
+                                         
                                             <th>Status</th>
                                             <th>Edit/Download</th>
                                         </tr>
                                     </thead>
-                                     <tfoot>
-                                        <tr>
-                                        <th>id</th>
-                                            <th>Job Title</th>
-                                            <th>Company Name</th>
-                                            <!-- <th>CompanyWebsite</th> -->
-                                            <th>CompanyContact</th>
-                                            <th>Vacancies</th>
-                                            <th>WorkingLocation</th>
-                                            <th>Industry</th>
-                                            <!-- <th>JobDescription</th>
-                                            <th>Requirements</th> -->
-                                            <!-- <th>DatePosted</th> -->
-                                            <th>Status</th>
-                                            <th>Edit/Download</th>
-                                        </tr>
-                                    </tfoot>
+                                     
                                     <tbody>
                                     @foreach($data as $data)
                                         <tr>
-                                            <td>{{$data->id}}</td>
+                                        
                                             <td>{{$data->JobTitle}}</td>
                                             <td>{{$data->CompanyName}}</td>
-                                            <!-- <td>{{$data->CompanyWebsite}}</td> -->
                                             <td>{{$data->CompanyContact}}</td>
                                             <td>{{$data->NumVacancies}}</td>
                                             <td>{{$data->WorkingLocation}}</td>
-                                            <td>{{$data->Industry}}</td>
-                                            <!-- <td>{{$data->JobDescription}}</td>
-                                            <td>{{$data->Requirements}}</td> -->
-                                            <!-- <td>{{$data->DatePosted}}</td> -->
+                                          
                                             <td>{{$data->Status}}</td>
-                                    
-                                            <!-- <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td> -->
                                             <td>
                                               <!-- <a class="btn btn-primary" href="{{ url ('/download_file',$data->id)}}"><i class='bx bx-download'></i></a> -->
                                               <a class="btn btn-primary" data-toggle="modal" data-target="#editjobs{{$data->id}}"><i class='bx bx-edit-alt'></i></a>
@@ -545,11 +544,20 @@
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
   <!-- Table-->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
-        <script src="js/datatables-simple-demo.js"></script>
-</body>
+      <!-- table -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<!-- table -->
 
+</body>
+<script>
+  //table script pagination
+$(document).ready(function () {
+    $('#example').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
 </html>
 

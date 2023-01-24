@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="images/logo_peso.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <!-- card -->
   <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -15,7 +16,12 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
+p{
+  color:black;
+}
+h2{
+    color:black;
+}
 
 *{
 box-sizing: border-box;
@@ -433,6 +439,98 @@ nav{
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+ footer{
+    /* position:fixed; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1E5298;
+    color: #fff;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 5px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.socials a:hover i{
+    color: aqua;
+} 
+
+#aboutfooter{
+    padding: 50px;
+    text-align: justify;
+}
+
+#car{
+    font-weight: 500;
+    color:black;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  /* padding-left: 30px;
+  padding-right: 30px; */
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
 </style>
 <body>
     <nav>
@@ -506,18 +604,10 @@ nav{
         </ul>
     </nav>
 
-
- 
-        <div class="course">
-          <div class="course-info">
-          <img src="images/Peso.png" style="width:100%;height:150%;">
-          </div>
-
-          <div class="course-progress">
-          
-            <h2 id="card_text">Public Employment Service Office (PESO)</h2>
-            <h4 id="card_text">Bulan,Sorsogon</h4>
-            <p id="texts">The Public Employment Service Office or PESO is a non-free charging multi-employment service 
+    <center>
+        
+        <img src="images/home1.png" style="width:100%;height:500;">
+        <p id="aboutfooter">The Public Employment Service Office or PESO is a non-free charging multi-employment service 
               facility or entity established or accredited pursuant to Republic Act. No. 8579, otherwise known as 
               the PESO Act of 1999. This office is a venue where people could explore simultaneously various
                employment options and seek assistance they prefer; service as referral and information center for 
@@ -527,15 +617,78 @@ nav{
                 This office is linked to the regional offices if the Department of Labor and Employment
                  (DOLE) for coordination and technical supervision, 
               and to the DOLE central office, to constitute the national employment service network. </p>
-      
-             <br><br> 
-          </div>
-          
-       </div>
 
-    
-   
 
+              <h5><i id="card_text">  Core Services:
+              
+ Labor Market Information
+, Referral and Placement
+, Employment Coaching and Career Counseling</i>
+</h5>
+    </center>
+
+    <!-- <p>Programs Implemented:
+
+1. Special Program for the Employment of Students (SPES)
+2. Job Fairs
+3. PhilJobnet / PESO Employment Information System (PEIS)
+4. National Skills Registry Program (NSRP)
+5. DOLE Government Internship Program (DOLE-GIP)
+6. Tulong Pangkabuhayan para sa Ating Disadvantaged Workers (TUPAD)
+7. DOLE Integrated Livelihood and Emergency Employment Program (DILEEP)
+8. JOBSTART
+9. Pre-Employment Orientation Seminar (PAOS)</p> -->
+
+
+<!-- <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <p>1. Special Program for the Employment of Students (SPES)
+2. Job Fairs
+3. PhilJobnet / PESO Employment Information System (PEIS)
+4. National Skills Registry Program (NSRP)
+5. DOLE Government Internship Program (DOLE-GIP)
+6. Tulong Pangkabuhayan para sa Ating Disadvantaged Workers (TUPAD)
+7. DOLE Integrated Livelihood and Emergency Employment Program (DILEEP)
+8. JOBSTART
+9. Pre-Employment Orientation Seminar (PAOS)</p>
+
+
+
+  </div>
+</div> -->
+ 
+<center>  
+<div class="row">
+  <div class="column" >
+    <b><h2>Vision</h2></b>
+    <p>A Premier Investment centre with empowered and resilient community, progressive economy, sustainable environment and preserved heritage anchored on transformational and responsive governance.</p>
+  </div>
+  <div class="column">
+   <b><h2>Mission</h2></b> 
+    <p>To Live and uphold the values of respect for god , human life and dignity, the environment, and its heritage,to promote integrity in public service that will help to transform bulan into empowered, peaceful, prosperous,resilient and investment-friendly community.</p>
+  </div>
+</div>      
+</center>   
+
+
+    <br><br>
+       <footer>
+       <div class="footer-content">
+       <h3>PESO-Bulan</h3>
+       <p>Public Employment Service Office </p>
+       <ul class="socials">
+       <a href="https://www.dole.gov.ph/"> <img src="images/Dole.png"  alt="Avatar" style="width:30px"></a> 
+   <li></li>
+    <a href="https://bulan4706.com/"> <img src="images/BULAN LGU LOGO.png"  alt="Avatar" style="width:30px"></a> 
+    <li></li>
+    <a href="https://www.tesda.gov.ph/"> <img src="images/tesda.png"  alt="Avatar" style="width:30px"></a> 
+ </ul>
+        </div>
+        </footer> 
 
 </body>
 <script>

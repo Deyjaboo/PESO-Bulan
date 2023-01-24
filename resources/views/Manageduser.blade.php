@@ -33,7 +33,31 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
  <!-- Button-->
+
+ 
+ <!-- table-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" type="text/css">
+ <!-- table-->
 </head>
+
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -434,8 +458,9 @@
         @endif
     
         <div class="form_container">
-                        <div class="card-body">
-                                <table id="datatablesSimple" class="TableData">
+        <div style="overflow-x:auto;">
+
+                        <table id="example" class="display"  width="100%">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -443,26 +468,13 @@
                                             <th>Address</th>
                                             <th>Sex</th>
                                             <th>Contact</th>
-                                            <th>Job1</th>
-                                            <th>Job2</th>
+                                            <!-- <th>Job1</th>
+                                            <th>Job2</th> -->
                                             <th>Email</th>
-                                            <th>Processes</th>
+                                            <th>Edit</th>
                                         </tr>
                                     </thead>
-                                     <tfoot>
-                                        <tr>
-                                            <th></th>
-                                            <th>ID</th>
-                                            <th>Full Name</th>
-                                            <th>Address</th>
-                                            <th>Sex</th>
-                                            <th>Contact</th>
-                                            <th>Job1</th>
-                                            <th>Job2</th>
-                                            <th>Email</th>
-                                            <th>Processes</th>
-                                        </tr>
-                                    </tfoot>
+                                   
                                     <tbody>
                                     @foreach($data as $data)
                                         <tr>
@@ -471,8 +483,8 @@
                                             <td>{{$data->address}}</td>
                                             <td>{{$data->sex}}</td>
                                             <td>{{$data->contact}}</td>
-                                            <td>{{$data->job1}}</td>
-                                            <td>{{$data->job2}}</td>
+                                            <!-- <td>{{$data->job1}}</td>
+                                            <td>{{$data->job2}}</td> -->
                                             <td>{{$data->email}}</td>
                                             
                                           
@@ -527,12 +539,22 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-  <!-- Table-->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  <!-- gride line table-->
-        <script src="js/datatables-simple-demo.js"></script>
-</body>
 
+
+</body>
+   <!-- table -->
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<!-- table -->   
+
+<script>
+  //table script pagination
+$(document).ready(function () {
+    $('#example').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
 </html>
 

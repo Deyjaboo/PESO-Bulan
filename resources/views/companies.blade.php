@@ -776,10 +776,10 @@ nav ul li{
       Search for Company
       </span>
       </div>
-      </form>  
+     
       
     <button type="submit" id="searchbtn" class="btn"><i class="fa fa-search"></i>Search</button>
-
+    </form>  
 </div>
 
 <!-- 
@@ -843,8 +843,9 @@ flex-direction: row;
     <section class="items-bar">
       	<div class="container position-relative">
       		<div class="row gy-5">
-              
-              @foreach($data as $data)
+          @if($num != 0)
+            @foreach($data as $data)
+           
 			      <div class="col-md-4">
       				<div class="">
                 <div class="course">
@@ -877,11 +878,18 @@ flex-direction: row;
       			</div>
             </div>
             @endforeach
+            @else
+            <center><h1 id="hehe">No Data Available!</h1></center>
+            @endif
       		</div>
       	</div>
       </section>
 
-
+<style>
+  #hehe{
+    color: black;
+  }
+</style>
 
 <script>
   const hamburger = document.querySelector(".hamburger");

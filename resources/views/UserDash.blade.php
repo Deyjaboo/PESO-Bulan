@@ -655,6 +655,66 @@ p{
 
 span { width:100%; display:inline-block; }
 span.align-right { text-align:right; }
+
+footer{
+
+bottom: 0;
+left: 0;
+right: 0;
+background: #1E5298;
+color: #fff;
+}
+
+.footer-content{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+}
+.footer-content h3{
+font-size: 2rem;
+font-weight: 500;
+text-transform: capitalize;
+
+}
+.footer-content p{
+max-width: 500px;
+margin: 10px auto;
+line-height: 5px;
+font-size: 14px;
+color: #cacdd2;
+}
+
+.socials{
+list-style: none;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 1rem 0 2rem 0;
+}
+
+.socials li{
+margin: 0 10px;
+}
+
+.socials a{
+text-decoration: none;
+color: #fff;
+border: 1.1px solid white;
+padding: 5px;
+border-radius: 50%;
+}
+
+.socials a i{
+font-size: 1.1rem;
+width: 20px;
+transition: color .4s ease;
+}
+
+.socials a:hover i{
+color: aqua;
+} 
 </style>
 <body>
     <nav>
@@ -670,7 +730,7 @@ span.align-right { text-align:right; }
         </div>
 
         <ul class="nav-links" >
-            <li style="color:red"><a href="#">Home</a></li>
+            <li style="color:red"><a href="UserDash">Home</a></li>
             <li><a href="dashjobs">Jobs</a></li>
             <li><a href="companies">Companies</a></li>
             <li><a href="SeminarPage">Seminar</a></li>
@@ -727,8 +787,6 @@ span.align-right { text-align:right; }
                  <b> <li><a class="login-button" href="login">Login</a></li></b>
               @endauth
             @endif  
-            
-        
 
              </ul>
 
@@ -738,7 +796,7 @@ span.align-right { text-align:right; }
          </nav>
    
 
-    <img src="images/Bulan.png" style="width:100%;height:300px;">
+    <img src="images/home.png" style="width:100%;height:300px;">
 <hr>
       <form name="searchform" id="searchform" action="SearchUserDash" method="get" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -832,7 +890,7 @@ span.align-right { text-align:right; }
                 </center>
                 @endif
                   <hr>
-                  <a href="dashjobs"><img src="images/findjob.png" alt=""  width="100%" height="100%"></a>
+                  <a href="dashjobs"><img src="images/get.gif" alt=""  width="100%" height="100%"></a>
           </div>
   
 
@@ -842,11 +900,14 @@ span.align-right { text-align:right; }
           
                     <div class="course-info">
                     <img src="images/{{$data->logo}}" style="width:100%;height:100%;">
+                   
+                    
                     </div>
 
                     <div class="course-progress">
-                          <h3 id="card_text">{{$data->CompanyName}}</h3>
-                          <h6 id="card_text">Job Description</h6>
+                          <h3 id="card_text">{{$data->JobTitle}}</h3>
+                          <!-- <h6><i id="card_text">(- {{$data->CompanyName}} )</i></h6> -->
+                          <h6 id="card_text">Job Description:</h6>
                                 <?php
                                 $About = Str::limit($data->JobDescription, 250);
                                 ?>
@@ -866,6 +927,22 @@ span.align-right { text-align:right; }
       
 
   </div>
+
+  <footer>
+        <br>
+       <div class="footer-content">
+       <h3>PESO-Bulan</h3>
+       <p>Public Employment Service Office </p>
+       <ul class="socials">
+ 
+    <a href="https://www.dole.gov.ph/"> <img src="images/Dole.png"  alt="Avatar" style="width:30px"></a> 
+   <li></li>
+    <a href="https://bulan4706.com/"> <img src="images/BULAN LGU LOGO.png"  alt="Avatar" style="width:30px"></a> 
+    <li></li>
+    <a href="https://www.tesda.gov.ph/"> <img src="images/tesda.png"  alt="Avatar" style="width:30px"></a> 
+ </ul>
+        </div>
+        </footer> 
 
 </body>
 <script>

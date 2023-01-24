@@ -106,7 +106,7 @@
 
 		<div class="form-row">
             <div class="form-group col-md-6">
-        <b><label>Job1:<span class="text-danger"></span></label></b>
+        <b><label>Job Specialization:<span class="text-danger"></span></label></b>
             <select id="Job1" name="Job1" class="form-control" required>
                         @if($data->job1 == 'Accounting & Finance')
                             <option value="Accounting & Finance" selected>Accounting & Finance</option>
@@ -114,7 +114,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -137,7 +137,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -160,7 +160,7 @@
 							<option value="Consumer Products" selected>Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -183,7 +183,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" selected>Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -206,7 +206,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government" selected>Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -223,13 +223,13 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job1 == 'Human Resources')
+                        @elseif($data->job1 == 'Hotel & Restaurants')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" selected>Human Resources</option>
+							<option value="Hotel & Restaurants" selected>Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -252,7 +252,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" selected>Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -275,7 +275,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" selected>Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -298,7 +298,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" selected>Tourism</option>
@@ -321,7 +321,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -344,7 +344,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -367,7 +367,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -390,7 +390,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -413,7 +413,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -436,7 +436,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -459,7 +459,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -482,7 +482,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -505,7 +505,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -528,7 +528,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -551,7 +551,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -574,7 +574,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -597,7 +597,7 @@
 
 
 		<div class="form-group col-md-6">
-        <b><label>Job2:<span class="text-danger"></span></label></b> 
+        <b><label>Job Specialization:<span class="text-danger"></span></label></b> 
                         <select id="Job2" name="Job2" class="form-control" required>
                         @if($data->job2 == 'Accounting & Finance')
                             <option value="Accounting & Finance" selected>Accounting & Finance</option>
@@ -605,7 +605,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -628,7 +628,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -651,7 +651,7 @@
 							<option value="Consumer Products" selected>Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -674,7 +674,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" selected>Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -697,7 +697,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government" selected>Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -714,13 +714,13 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
                            
-                        @elseif($data->job2 == 'Human Resources')
+                        @elseif($data->job2 == 'Hotel & Restaurants')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" selected>Human Resources</option>
+							<option value="Hotel & Restaurants" selected>Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -743,7 +743,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" selected>Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -766,7 +766,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" selected>Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -789,7 +789,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" selected>Tourism</option>
@@ -812,7 +812,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -835,7 +835,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -858,7 +858,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -881,7 +881,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -904,7 +904,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -927,7 +927,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -950,7 +950,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -973,7 +973,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -996,7 +996,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -1019,7 +1019,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -1042,7 +1042,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -1065,7 +1065,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -1088,7 +1088,7 @@
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>

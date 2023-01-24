@@ -47,7 +47,7 @@
 						
 						<div class="input-group">
 							<i class='bx bxs-user'></i>
-							<input type="text" placeholder="Name"  name="name" id="name" required>
+							<input type="text" placeholder="Name"  name="name" id="name" autocomplete="off" required>
 						</div>
 						<div class="input-group">
 							<i class='bx bxs-user'></i>
@@ -72,15 +72,14 @@
 						<!-- <label for="Name">Preferred Industry:</label> -->
 						<div class="flex-parent-element">
 						<div class="flex-child-element ">	
-						
 						<select class="input-group"  name="job1" id="job1" required>
-							<option value="" selected="selected" disabled="disabled">Industry</option>
+							<option value="" selected="selected" disabled="disabled">Job Specialization</option>
 							<option value="Accounting & Finance">Accounting & Finance</option>
 							<option value="BPO">BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -97,16 +96,17 @@
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
 						</select>
-					</div>
+						</div>
+						
 						<div class="flex-child-element ">
 						<select class="input-group"  name="job2" id="job2" required>
-							<option value="" selected="selected" disabled="disabled">Industry</option>
+							<option value="" selected="selected" disabled="disabled">Job Specialization</option>
 							<option value="Accounting & Finance">Accounting & Finance</option>
 							<option value="BPO">BPO</option>
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -129,12 +129,26 @@
 			
 						<div class="input-group">
 							<i class='bx bx-mail-send'></i>
-							<input type="email" placeholder="Email" name="email" password="email" required> 
+							<input type="email" placeholder="Email" name="email" password="email"  required> 
 						</div>
 						<div class="input-group">
 							<i class='bx bxs-lock-alt'></i>
-							<input type="password" placeholder="password" name="password" password="password" required> 
+							<input type="password" placeholder="Password" name="password1" id="password1" required> 
 						</div>
+						<!-- <section id="sel">
+							<label><input type="checkbox" onclick="myFunction1()"> Show Password<span class="text-danger"></span></label>
+						</section> -->
+						<script>
+								function myFunction1() {
+								var x = document.getElementById("password1");
+								if (x.type === "password") {
+									x.type = "text";
+								} else {
+									x.type = "password";
+								}
+								}
+							</script>
+							<br>
 						<button>
 							Sign up
 						</button>
@@ -151,6 +165,7 @@
 			
 			</div>
 		    </form>
+						
 			<!-- END SIGN UP -->
 			<!-- SIGN IN -->
 			
@@ -170,6 +185,20 @@
 							<i class='bx bxs-lock-alt'></i>
 							<input type="password" placeholder="Password" name="password" id="password" required>
 						</div>
+							<section id="sel">
+								<label><input type="checkbox" onclick="myFunction()"> Show Password<span class="text-danger"></span></label>
+							</section>
+							<script>
+								function myFunction() {
+								var x = document.getElementById("password");
+								if (x.type === "password") {
+									x.type = "text";
+								} else {
+									x.type = "password";
+								}
+								}
+							</script>
+							<br>
 						<button type="submit">
 							Sign in
 						</button>
@@ -192,7 +221,11 @@
 				</div>
 				
 			</div>
-
+			<style>
+    #sel{
+      text-align-last: right;
+    }
+    </style>
 			<!-- END SIGN IN -->
 		</div>
 		<!-- END FORM SECTION -->

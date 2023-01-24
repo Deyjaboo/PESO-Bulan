@@ -60,7 +60,7 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 //Edit
 Route::get('UserEdit/{id}',[Controller::class ,'user_show']);
-Route::post('user_update/{id}',[UserController::class ,'update_user'])->name('user_update');
+
 Route::post('edit_jobs/{id}',[JobsController::class ,'update_jobs'])->name('edit_jobs');
  //CompanyController 
  Route::get('ListOfCompany',[CompanyController::class ,'data_view_company']);
@@ -94,7 +94,7 @@ Route::post('edit_seminar/{id}',[SeminarController::class ,'seminar_edit'])->nam
 //   return view('profile');
 //  });
 
-   
+Route::post('user_update/{id}',[UserController::class ,'update_user'])->name('user_update');
     
  });
 //  view jobs userdash

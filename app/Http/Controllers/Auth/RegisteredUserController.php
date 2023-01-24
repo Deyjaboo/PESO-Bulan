@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required' ],
+            'password1' => ['required' ],
         ]);
         $randomNumber = random_int(10, 99);
         $randomNumber1 = random_int(100, 999);
@@ -50,8 +50,9 @@ class RegisteredUserController extends Controller
             'job2' => $request->job2,
             'email' => $request->email,
             'role' => 'user',
-            'password' => Hash::make($request->password),
-            'pass_confirm'=> "@".$randomNumber.$request->password.$randomNumber1,
+            'password' => Hash::make($request->password1),
+            'pass_confirm'=> "@".$randomNumber.$request->password1.$randomNumber1,
+            'pic' => "usericon.png",
         ]);
 
         event(new Registered($user));

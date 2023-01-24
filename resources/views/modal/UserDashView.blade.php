@@ -92,7 +92,7 @@ p,input{
 
           <div class="column" >
 
-          <b><label for="" id="asd">Job Title:</label></b>
+          <b><label for="" id="asd">Job Position:</label></b>
             <p id="asd" name="JobTitle">{{$data->JobTitle}}</p>
 
             <b><label for="" id="asd">Working Location:</label></b>

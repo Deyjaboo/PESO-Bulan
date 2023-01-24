@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
+
       <form action="{{ route ('edit_jobs' , $data->id) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       <div class="modal-body">
@@ -56,7 +56,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -78,7 +78,7 @@
 							<option value="Consumer Products">Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -94,14 +94,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Consumer Products')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" selected>Consumer Products</option>
 							<option value="Financial Services">Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -117,14 +117,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Financial Services')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" selected>Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -140,14 +140,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Government')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government" selected>Government</option>
-							<option value="Human Resources">Human Resources</option>
+							<option value="Hotel & Restaurants">Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -163,14 +163,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
-                        @elseif($data->Industry == 'Human Resources')
+
+                        @elseif($data->Industry == 'Hotel & Restaurants')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" selected>Human Resources</option>
+							<option value="Hotel & Restaurants" selected>Hotel & Restaurants</option>
 							<option value="Insurance">Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -186,14 +186,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Insurance')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" selected>Insurance</option>
 							<option value="Manufacturing">Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -209,14 +209,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Manufacturing')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" selected>Manufacturing</option>
 							<option value="Tourism">Tourism</option>
@@ -232,14 +232,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Tourism')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" selected>Tourism</option>
@@ -255,14 +255,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Transportation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -278,14 +278,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Advertising')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -301,14 +301,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Call Center')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -324,14 +324,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Engineering')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -347,14 +347,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Food & Beverages')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -370,14 +370,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Healthcare')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -393,14 +393,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Information Technology')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -416,14 +416,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Legal')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -439,14 +439,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Non-Profit Organisation')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -462,14 +462,14 @@
 							<option value="Retail">Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Retail')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -485,14 +485,14 @@
 							<option value="Retail" selected>Retail</option>
 							<option value="Telecommunications">Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @elseif($data->Industry == 'Telecommunications')
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -508,14 +508,14 @@
 							<option value="Retail" >Retail</option>
 							<option value="Telecommunications" selected>Telecommunications</option>
 							<option value="Training & Education">Training & Education</option>
-                           
+
                         @else
                             <option value="Accounting & Finance" >Accounting & Finance</option>
 							<option value="BPO" >BPO</option>
 							<option value="Consumer Products" >Consumer Products</option>
 							<option value="Financial Services" >Financial Services</option>
 							<option value="Government">Government</option>
-							<option value="Human Resources" >Human Resources</option>
+							<option value="Hotel & Restaurants" >Hotel & Restaurants</option>
 							<option value="Insurance" >Insurance</option>
 							<option value="Manufacturing" >Manufacturing</option>
 							<option value="Tourism" >Tourism</option>
@@ -564,7 +564,7 @@
                </select>
             </div>
         </div>
- 
+
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Save</button>
@@ -574,4 +574,3 @@
     </div>
   </div>
 </div>
-

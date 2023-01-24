@@ -28,7 +28,28 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
  <!-- Button-->
+  <!-- table-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" type="text/css">
+ <!-- table-->
 </head>
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -287,45 +308,35 @@
             </div>
         @endif
         <div class="form_container">
-                        <div class="card-body">
-                                <table id="datatablesSimple" class="TableData">
+        <div style="overflow-x:auto;">
+
+                      <table id="examples" class="display"  width="100%">
                                     <thead>
                                         <tr>
                                             <th>Company Logo</th>
-                                            <th>ID</th>
+                                            <!-- <th>ID</th> -->
                                             <th>Company Name</th>
                                             <th>Location</th>
                                             <th>Contact</th>
                                             <th>Website</th>
                                             <th>Industry</th>
-                                            <th>Edit/View_Details</th>
+                                            <th>Edit_Details</th>
                                         </tr>
                                     </thead>
-                                     <tfoot>
-                                        <tr>
-                                            <th>Company Logo</th>
-                                            <th>ID</th>
-                                            <th>Company Name</th>
-                                            <th>Location</th>
-                                            <th>Contact</th>
-                                            <th>Website</th>
-                                            <th>Industry</th>
-                                            <th>Edit/View_Details</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                     @foreach($data as $data)
                                         <tr>
                                             <td><img src="images/{{$data->logo}}" alt=""  width="100px" height="100px"></td>
-                                            <td>{{$data->id}}</td>
+                                            <!-- <td>{{$data->id}}</td> -->
                                             <td>{{$data->CompanyName}}</td>
                                             <td>{{$data->Location}}</td>
                                             <td>{{$data->Contact}}</td>
                                             <td>{{$data->Website}}</td>
                                             <td>{{$data->Industry}}</td>
                                             <td>
-                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#company_edit{{$data->id}}"><i class='bx bx-comment-edit' ></i></button>
-                                                @include('modal.CompanyEdit')
+                                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#company_edit{{$data->id}}"><i class='bx bx-comment-edit'></i></button>
+                                              <!-- <a class="btn btn-success" data-toggle="modal" data-target="#company_edit{{$data->id}}"><i class='bx bx-comment-edit'></i></a>   -->
+                                              @include('modal.CompanyEdit')
                                                
                                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ViewCompany{{$data->id}}"><i class='bx bx-info-square'></i></button>
                                               @include('modal.CompanyDetailsView')
@@ -352,7 +363,7 @@
      
     <!-- page-body-wrapper ends -->
   </div>
-  <script>
+  <!-- <script>
     function previewBeforeUpload(id){
     document.querySelector("#"+id).addEventListener("change",function(e){
       if(e.target.files.length == 0){
@@ -368,7 +379,7 @@
     previewBeforeUpload("file-1");
     previewBeforeUpload("file-2");
     previewBeforeUpload("file-3");
-  </script>
+  </script> -->
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
@@ -392,11 +403,35 @@
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
   <!-- Table-->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>  
-        <script src="js/datatables-simple-demo.js"></script>
+       <!-- table -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<!-- table -->
 </body>
+<script>
+  //table script pagination
+$(document).ready(function () {
+    $('#examples').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
+</script>
 
 </html>
 

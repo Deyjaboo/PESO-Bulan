@@ -339,7 +339,7 @@ textarea{
 
         <div class="form_wrap">
         <div class="form_item">
-          <label>Job Title</label>
+          <label>Job Position</label>
           <input type="text" name="JobTitle" id="JobTitle">
         </div>
       </div>
@@ -390,7 +390,7 @@ textarea{
                 <option value="Consumer Products">Consumer Products</option>
                 <option value="Financial Services">Financial Services</option>
                 <option value="Government">Government</option>
-                <option value="Human Resources">Human Resources</option>
+                <option value="Hotel & Restaurants">Hotel & Restaurants</option>
                 <option value="Insurance">Insurance</option>
                 <option value="Manufacturing">Manufacturing</option>
                 <option value="Tourism">Tourism</option>

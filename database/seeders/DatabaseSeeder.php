@@ -48,6 +48,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('secret'),
             'pass_confirm' => '@32secret_2!',
+            'pic' => 'usericon.png',
             'role' => 'admin',
             'created_at' => now(),
             'updated_at' => now()

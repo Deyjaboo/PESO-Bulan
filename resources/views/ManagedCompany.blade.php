@@ -318,7 +318,7 @@ body{
                 <option value="Consumer Products">Consumer Products</option>
                 <option value="Financial Services">Financial Services</option>
                 <option value="Government">Government</option>
-                <option value="Human Resources">Human Resources</option>
+                <option value="Hotel & Restaurants">Hotel & Restaurants</option>
                 <option value="Insurance">Insurance</option>
                 <option value="Manufacturing">Manufacturing</option>
                 <option value="Tourism">Tourism</option>
